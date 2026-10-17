@@ -1,0 +1,9 @@
+{
+  "message_id": "<reply_002@mail.example>",
+  "in_reply_to": null,
+  "sender_email": "moonlight.cafe@mail.example",
+  "subject": "발주",
+  "body": "연유 3, 초코소스 1개 10/22 납품 부탁드려요",
+  "received_at": "2026-10-19T09:30:00",
+  "attachments": []
+}

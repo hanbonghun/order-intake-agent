@@ -1,0 +1,29 @@
+{
+  "case_id": "reply_007",
+  "category": "reply",
+  "description": "단위 누락 → 회신 '박스로' → 재고 부족(12병 > 4병)으로 검토",
+  "expected": {
+    "is_order": true,
+    "decision": "review",
+    "customer_id": 2,
+    "delivery_date": "2026-10-22",
+    "delivery_address": "서울특별시 성동구 서울숲2길 18",
+    "items": [
+      {
+        "sku": "SYR-002",
+        "quantity": 2,
+        "unit": "박스",
+        "base_quantity": 12,
+        "raw_text": "카라멜 시럽"
+      },
+      {
+        "sku": "SYR-001",
+        "quantity": 2,
+        "unit": "병",
+        "base_quantity": 2,
+        "raw_text": "바닐라 시럽"
+      }
+    ],
+    "first_decision": "inquire"
+  }
+}

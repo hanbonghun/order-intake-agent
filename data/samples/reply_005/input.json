@@ -1,0 +1,9 @@
+{
+  "message_id": "<reply_005@dabang.example>",
+  "in_reply_to": null,
+  "sender_email": "supsok@dabang.example",
+  "subject": "파우더 주문",
+  "body": "녹차 라떼 파우더 2봉 부탁드려요",
+  "received_at": "2026-10-19T11:00:00",
+  "attachments": []
+}

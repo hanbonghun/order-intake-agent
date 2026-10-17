@@ -5,7 +5,6 @@
 - graph: 실제 에이전트
 """
 from collections.abc import Callable
-from functools import cache
 
 from evals.dataset import Case
 
@@ -20,33 +19,37 @@ def oracle(case: Case, ctx: dict) -> dict:
     return dict(case.expected)
 
 
-@cache
-def _graph():
-    from app.agent.graph import build_graph
-
-    return build_graph()
-
-
 def graph(case: Case, ctx: dict) -> dict:
-    # TODO(2단계): 재질의 시나리오는 interrupt 시점에 case.reply로 재개
+    """운영과 같은 경로로 실행한다: 메일 원본(.eml) → 수신 처리 → 그래프. 재질의 시나리오는 스크립트된 회신으로 재개한다."""
+    from app.agent.runtime import get_graph
     from app.db.seed import load_seed, reset_schema
     from app.db.session import get_conn
-    from app.services.intake import save_document
+    from app.ingest.handler import handle_email
+    from evals.eml import build_eml, build_reply_eml
 
-    document = dict(case.input, attachments=[str(case.dir / a) for a in case.input.get("attachments", [])])
     with get_conn() as conn:
         reset_schema(conn)   # 케이스 간 주문·재고 영향을 없앤다
         load_seed(conn)
-        document_id = save_document(conn, document)
-    # LangSmith 추적에서 케이스·평가 버전으로 찾을 수 있게 이름·태그·메타데이터를 붙인다 (추적이 꺼져 있으면 무시됨)
-    config = {
-        "run_name": case.case_id,
-        "tags": [f"eval:{ctx['tag']}", case.category],
-        "metadata": {"case_id": case.case_id, "category": case.category, "eval_tag": ctx["tag"],
-                     "git_commit": ctx["git"].get("commit"), "expected_decision": case.expected.get("decision")},
-    }
-    state = _graph().invoke({"document": document, "document_id": document_id}, config=config)
 
+    # LangSmith 추적에서 케이스·평가 버전으로 찾을 수 있게 이름·태그·메타데이터를 붙인다 (추적이 꺼져 있으면 무시됨)
+    def run_config(step: str) -> dict:
+        return {
+            "run_name": f"{case.case_id}:{step}",
+            "tags": [f"eval:{ctx['tag']}", case.category],
+            "metadata": {"case_id": case.case_id, "category": case.category, "eval_tag": ctx["tag"], "step": step,
+                         "git_commit": ctx["git"].get("commit"), "expected_decision": case.expected.get("decision")},
+        }
+
+    first = handle_email(build_eml(case.input, case.dir), run_config("intake"))
+    replied = False
+    if case.reply and first["status"] == "awaiting_reply":
+        with get_conn() as conn:
+            inquiry = conn.execute("SELECT * FROM outbound_messages WHERE message_id = %s",
+                                   (first["inquiry_message_id"],)).fetchone()
+        handle_email(build_reply_eml(case.input, case.reply, inquiry), run_config("reply"))
+        replied = True
+
+    state = get_graph().get_state({"configurable": {"thread_id": first["thread_id"]}}).values
     usage = state.get("usage", [])
     meta = {
         "input_tokens": sum(u["input_tokens"] for u in usage),
@@ -59,6 +62,7 @@ def graph(case: Case, ctx: dict) -> dict:
     return {
         "is_order": True,
         "decision": state.get("decision"),
+        "first_decision": first.get("decision"),
         "customer_id": state.get("customer_id"),
         "delivery_date": state.get("delivery_date"),
         "delivery_address": state.get("delivery_address"),
@@ -75,6 +79,10 @@ def graph(case: Case, ctx: dict) -> dict:
             "matched_items": [m.model_dump(exclude={"candidates"}) for m in state.get("matched_items", [])],
             "issues": [i.model_dump() for i in state.get("issues", [])],
             "order_id": state.get("order_id"),
+            "first_status": first["status"],
+            "replied": replied,
+            "inquiry_count": state.get("inquiry_count", 0),
+            "reply_draft": state.get("reply_draft"),
         },
     }
 

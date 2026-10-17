@@ -2,7 +2,7 @@
 
 다양한 형식(이메일 본문, PDF, 엑셀)으로 들어오는 발주를 읽고, 상품을 매칭하고, 주문을 자동 등록하는 LangGraph 기반 에이전트.
 
-> 개발 진행 중 (1단계 완료: 깨끗한 발주 30건 전부 정확 등록). 설계는 [order-intake-agent-design.md](order-intake-agent-design.md), 개선 이력은 [docs/eval-log.md](docs/eval-log.md) 참고.
+> 개발 진행 중 (2단계: resolver, 재질의 루프 구현). 설계는 [order-intake-agent-design.md](order-intake-agent-design.md), 개선 이력은 [docs/eval-log.md](docs/eval-log.md) 참고.
 
 ## 빠른 시작
 
@@ -15,10 +15,17 @@ curl localhost:8000/health
 
 `.env.example`을 `.env`로 복사하고 LLM 설정을 채운다 (기본 Ollama qwen3:8b, OpenAI 사용 시 키와 모델명).
 
-## API (Mock ERP)
+## API
+
+```bash
+# 메일 원본으로 발주 넣기 (회신 메일도 같은 엔드포인트)
+curl -X POST localhost:8000/intake -H 'Content-Type: message/rfc822' --data-binary @order.eml
+```
 
 | Method | Endpoint | 설명 |
 |---|---|---|
+| POST | `/intake` | 메일 원본(.eml) 수신. 새 발주는 그래프 시작, 재질의 회신은 기존 스레드 재개 |
+| GET | `/intake/{id}` | 처리 상태와 재질의 초안 조회 |
 | POST | `/orders` | 주문 생성. `Idempotency-Key` 헤더 필수, 같은 키 재요청 시 기존 주문 반환(200), 재고 부족 409 |
 | GET | `/orders/{id}` | 주문 조회 |
 | GET | `/products?q=&customer_id=` | 상품 유사도 검색 (pg_trgm) |

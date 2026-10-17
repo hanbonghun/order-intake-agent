@@ -21,6 +21,9 @@ class Settings(BaseSettings):
     llm_small_price_input_per_mtok: float | None = None
     llm_small_price_output_per_mtok: float | None = None
 
+    attachments_dir: str = "data/attachments"   # 수신 첨부 저장 위치 (S3 등으로 교체 가능)
+    outbound_domain: str = "sinseon-market.example"  # 우리가 보내는 메일의 Message-ID 도메인
+
     ollama_base_url: str = "http://localhost:11434"
     openai_api_key: str | None = None
 

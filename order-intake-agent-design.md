@@ -83,7 +83,8 @@
 
 ```mermaid
 flowchart LR
-    A[발주·회신 수신<br/>POST /intake] --> B[LangGraph 에이전트]
+    M[메일 서버<br/>웹훅·폴러] --> A[수신 계층<br/>POST /intake<br/>MIME 파싱·첨부 저장<br/>회신 스레드 판별]
+    A --> B[LangGraph 에이전트]
     B --> C[(PostgreSQL<br/>상품·거래처·주문<br/>+ 체크포인트)]
     B --> D[주문 API<br/>Mock ERP]
     B --> E[LLM API]
@@ -91,6 +92,17 @@ flowchart LR
     D --> C
     G[검토자<br/>/reviews] --> B
 ```
+
+### 수신 계층과 에이전트의 경계
+판단이 필요 없는 메일 형식 처리는 백엔드, 판단이 필요한 처리는 그래프에 둔다.
+
+| 단계 | 위치 | 이유 |
+|---|---|---|
+| 메일 수신, MIME 파싱(헤더, text/HTML 본문, 첨부), 첨부 저장 | 수신 계층 (`app/ingest`) | 형식 처리. 재시도·중복 수신은 인프라 영역 |
+| 같은 Message-ID 중복 수신 무시 | 수신 계층 | 결정적 |
+| 회신 판별: `In-Reply-To`/`References`가 우리가 보낸 메일(`outbound_messages`) 또는 원래 발주를 가리키면 기존 스레드 재개 | 수신 계층 | DB 조회로 끝나는 결정적 작업 |
+| 회신 본문의 인용된 이전 메일 제거 | 수신 계층 | 인용된 원래 품목을 다시 읽어 중복 주문하는 것을 방지 |
+| 첨부 내용 → 텍스트 | 그래프 (`parse_document`) | 추후 멀티모달 OCR이 들어갈 자리. 추적·재시도에 포함되도록 |
 
 ### 기술 스택
 | 영역 | 선택 | 이유 |
@@ -160,6 +172,17 @@ CREATE TABLE intake_documents (
         -- received / processing / awaiting_reply / needs_review / done / skipped / rejected / failed
     thread_id       VARCHAR(100),             -- LangGraph thread (회신은 원 발주의 thread를 공유)
     received_at     TIMESTAMP DEFAULT now()
+);
+
+-- 우리가 보낸 메일 (재질의·주문 확인). 회신 스레드 매칭용
+CREATE TABLE outbound_messages (
+    id          SERIAL PRIMARY KEY,
+    message_id  VARCHAR(200) UNIQUE NOT NULL,
+    document_id INT NOT NULL REFERENCES intake_documents(id),
+    kind        VARCHAR(20) NOT NULL,      -- inquiry / confirmation
+    subject     TEXT,
+    body        TEXT,
+    created_at  TIMESTAMP DEFAULT now()
 );
 
 -- 주문
@@ -384,11 +407,11 @@ def decide(issues: list[Issue], inquiry_count: int) -> str:
 
 ### 7-8. 재질의 루프 (2단계)
 
-1. `draft_inquiry`: `resolvable_by == "customer"`인 이슈만 모아 질문 초안 작성. `intake_documents.status = 'awaiting_reply'`
-2. `await_reply`: `interrupt()`로 대기. 1~2단계에서는 초안을 발송하지 않고 API 응답과 DB에 저장한다 (실제 발송은 확장 범위)
-3. 회신 도착: `POST /intake`에서 `in_reply_to`가 `awaiting_reply` 문서의 `message_id`와 일치하면 새 그래프를 띄우지 않고 해당 thread를 `Command(resume=회신본문)`으로 재개
-4. `merge_reply`: 회신에서 납기일, 단위, 품목 정정 등을 structured output으로 추출해 state에 병합, `inquiry_count += 1`
-5. `match_products`부터 다시 실행 (확정 품목은 유지)
+1. `draft_inquiry`: 거래처가 답할 수 있는 이슈만 번호 붙은 질문(`Question`)으로 만든다 (질문 구성은 코드, 문장은 LLM). 애매한 품목은 후보 상품명, 단위 불명은 "박스(N개입) / 낱개"를 선택지로 제시. 초안은 `outbound_messages`에 Message-ID와 함께 저장 (실제 발송은 확장 범위)
+2. `await_reply`: `interrupt()`로 멈추고 상태를 PostgresSaver에 저장. 문서 상태 `awaiting_reply`
+3. 회신 도착: 수신 계층이 `In-Reply-To`/`References`로 원래 스레드를 찾고, 인용 부분을 제거한 회신을 `Command(resume={"text", "received_at"})`로 전달. 대기 중이 아닌 스레드의 회신은 새 발주로 처리하지 않고 사람 검토로
+4. `merge_reply`: 질문 번호별로 update / remove / unanswered를 structured output으로 추출해 병합, `inquiry_count += 1`. "빼주세요"는 품목 상태 `removed`
+5. `match_products`부터 다시 실행: 확정·제외된 품목은 유지하고 바뀐 품목만 다시 매칭 → 필요하면 resolver → validate. 답하지 않은 항목은 다시 재질의(최대 2회), 회신 후 내부 문제만 남으면 검토
 
 ### 7-9. 프롬프트 인젝션 대응
 
@@ -471,8 +494,8 @@ graph = builder.compile(checkpointer=checkpointer)  # PostgresSaver
 
 | Method | Endpoint | 설명 |
 |---|---|---|
-| POST | `/intake` | 발주·회신 수신 (본문, 첨부, `message_id`, `in_reply_to`). 회신이면 기존 thread 재개 |
-| GET | `/intake/{id}` | 처리 상태·추출 결과·이슈·재질의 초안 조회 |
+| POST | `/intake` | 메일 원본(.eml, `message/rfc822`) 수신. 새 발주면 그래프 시작, 회신이면 기존 thread 재개 |
+| GET | `/intake/{id}` | 처리 상태와 우리가 보낸 메일(재질의 초안 등) 조회 |
 | GET | `/reviews` | 사람 검토 대기 목록 (2단계) |
 | POST | `/reviews/{id}/resolve` | `approve` / `request_inquiry` / `reject` 반영 후 그래프 재개 (2단계) |
 | GET | `/products?q=` | 상품 검색 (resolver 도구 겸용) |
@@ -544,6 +567,7 @@ order-intake-agent/
 │   │   ├── nodes/           # 노드별 파일
 │   │   ├── resolver/        # 매칭 해결 서브그래프 + 도구
 │   │   └── prompts/         # 프롬프트 템플릿
+│   ├── ingest/              # 수신 계층: .eml 파싱, 인용 제거, 새 발주/회신 분기
 │   ├── services/            # 매칭, 신뢰도 판정, 주문 생성, 별칭 학습
 │   ├── db/                  # 모델, 세션, 마이그레이션
 │   └── parsers/             # PDF, 엑셀 파서

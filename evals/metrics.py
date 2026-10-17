@@ -36,7 +36,12 @@ def score_case(expected: dict, result: dict) -> dict:
     # 자동 등록했는데 등록하면 안 되는 건이었거나 내용이 틀린 경우
     misregistered = created and not (expected.get("decision") == "create" and order_exact)
 
+    first_ok = None
+    if "first_decision" in expected:   # 재질의 시나리오: 회신 전 결정도 맞았는지
+        first_ok = expected["first_decision"] == result.get("first_decision")
+
     return {
+        "first_decision_ok": first_ok,
         "classification_ok": bool(expected.get("is_order")) == bool(result.get("is_order")),
         "decision_ok": expected.get("decision") == result.get("decision"),
         "fields": fields,
@@ -66,6 +71,9 @@ def aggregate(scored: list[dict]) -> dict:
     }
     for f in FIELDS:
         metrics[f"field_accuracy.{f}"] = _ratio(sum(s["score"]["fields"][f] for s in orders), len(orders))
+
+    with_first = [s for s in scored if s["score"].get("first_decision_ok") is not None]
+    metrics["first_decision_accuracy"] = _ratio(sum(s["score"]["first_decision_ok"] for s in with_first), len(with_first))
 
     exp_n = sum(s["score"]["items_expected"] for s in orders)
     got_n = sum(s["score"]["items_predicted"] for s in orders)

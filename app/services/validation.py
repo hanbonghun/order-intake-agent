@@ -36,6 +36,7 @@ def collect_issues(
         issues.append(Issue(code="past_delivery_date", resolvable_by="customer", detail=f"납품일이 수신일 이전: {delivery_date}"))
     if not delivery_address:
         issues.append(Issue(code="missing_delivery_address", resolvable_by="customer", detail="배송지 미기재, 기본 배송지 없음"))
+    items = [i for i in items if i.status != "removed"]
     if not items:
         issues.append(Issue(code="no_items", resolvable_by="customer", detail="주문 품목 없음"))
     for item in items:

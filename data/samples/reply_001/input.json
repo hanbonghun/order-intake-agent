@@ -1,0 +1,9 @@
+{
+  "message_id": "<reply_001@kongbokk.example>",
+  "in_reply_to": null,
+  "sender_email": "roastery@kongbokk.example",
+  "subject": "원두 주문",
+  "body": "하우스블렌드 5봉, 수프리모 2봉 보내주세요",
+  "received_at": "2026-10-19T09:00:00",
+  "attachments": []
+}

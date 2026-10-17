@@ -1,0 +1,29 @@
+{
+  "case_id": "reply_001",
+  "category": "reply",
+  "description": "납기 누락 → 회신 '목요일 오전' (월요일 회신 → 10/22)",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 5,
+    "delivery_date": "2026-10-22",
+    "delivery_address": "서울특별시 종로구 북촌로5길 21",
+    "items": [
+      {
+        "sku": "COF-001",
+        "quantity": 5,
+        "unit": "봉",
+        "base_quantity": 5,
+        "raw_text": "하우스블렌드"
+      },
+      {
+        "sku": "COF-003",
+        "quantity": 2,
+        "unit": "봉",
+        "base_quantity": 2,
+        "raw_text": "수프리모"
+      }
+    ],
+    "first_decision": "inquire"
+  }
+}

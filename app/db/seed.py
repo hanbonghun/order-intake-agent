@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[2]
 SCHEMA = Path(__file__).with_name("schema.sql")
 SEED_DIR = ROOT / "data" / "seed"
 
-DOMAIN_TABLES = "order_items, orders, intake_documents, product_aliases, products, customers"
+DOMAIN_TABLES = "outbound_messages, order_items, orders, intake_documents, product_aliases, products, customers"
 
 
 def _load(name: str):

@@ -15,6 +15,7 @@ def create_order(state: OrderState) -> dict:
             OrderItemIn(sku=m.sku, quantity=m.quantity, unit=m.unit, base_quantity=m.base_quantity,
                         raw_text=m.raw_text, match_method=m.method)
             for m in state["matched_items"]
+            if m.status != "removed"
         ],
     )
     with get_conn() as conn:

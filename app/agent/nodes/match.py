@@ -40,8 +40,20 @@ def _match_item(conn, customer_id, item: ExtractedItem) -> MatchedItem:
     )
 
 
+KEEP_STATUSES = ("confirmed", "out_of_stock", "removed")
+
+
 def match_products(state: OrderState) -> dict:
+    """재질의 회신 후 다시 실행될 때는 이미 확정된 품목을 유지하고, 바뀌었거나 미해결인 품목만 다시 매칭한다."""
     customer_id = state.get("customer_id")
+    previous = state.get("matched_items") or []
+    changed = set(state.get("changed_items") or [])
+    items = []
     with get_conn() as conn:
-        items = [_match_item(conn, customer_id, i) for i in state.get("extracted_items", [])]
-    return {"matched_items": items}
+        for idx, extracted in enumerate(state.get("extracted_items", [])):
+            prev = previous[idx] if idx < len(previous) else None
+            if prev is not None and prev.status in KEEP_STATUSES and idx not in changed:
+                items.append(prev)
+            else:
+                items.append(_match_item(conn, customer_id, extracted))
+    return {"matched_items": items, "changed_items": []}

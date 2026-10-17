@@ -1,0 +1,9 @@
+{
+  "message_id": "<reply_004@mail.example>",
+  "in_reply_to": null,
+  "sender_email": "lounge17@mail.example",
+  "subject": "발주",
+  "body": "코카콜라 500ml 1박스, 아몬드밀크 6개 10/22 납품",
+  "received_at": "2026-10-19T10:30:00",
+  "attachments": []
+}

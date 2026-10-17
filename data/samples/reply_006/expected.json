@@ -1,0 +1,36 @@
+{
+  "case_id": "reply_006",
+  "category": "reply",
+  "description": "납기 누락 + 수량 누락 → 회신이 둘 다 답함",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 10,
+    "delivery_date": "2026-10-23",
+    "delivery_address": "서울특별시 마포구 독막로 45",
+    "items": [
+      {
+        "sku": "DAI-004",
+        "quantity": 4,
+        "unit": "개",
+        "base_quantity": 4,
+        "raw_text": "생크림"
+      },
+      {
+        "sku": "FRT-001",
+        "quantity": 30,
+        "unit": "개",
+        "base_quantity": 30,
+        "raw_text": "레몬"
+      },
+      {
+        "sku": "DAI-007",
+        "quantity": 2,
+        "unit": "개",
+        "base_quantity": 2,
+        "raw_text": "무염버터"
+      }
+    ],
+    "first_decision": "inquire"
+  }
+}

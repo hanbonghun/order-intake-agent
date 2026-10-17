@@ -1,0 +1,9 @@
+{
+  "message_id": "<reply_003@mail.example>",
+  "in_reply_to": null,
+  "sender_email": "today.beans@mail.example",
+  "subject": "주문요",
+  "body": "시럽 2병, 콜드브루 원액 3병 10/23까지요",
+  "received_at": "2026-10-19T10:00:00",
+  "attachments": []
+}

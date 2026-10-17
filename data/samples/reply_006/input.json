@@ -1,0 +1,9 @@
+{
+  "message_id": "<reply_006@mail.example>",
+  "in_reply_to": null,
+  "sender_email": "jungwon.kitchen@mail.example",
+  "subject": "식자재 주문",
+  "body": "생크림 4개, 레몬, 무염버터 2개 보내주세요",
+  "received_at": "2026-10-19T11:30:00",
+  "attachments": []
+}

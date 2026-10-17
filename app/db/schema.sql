@@ -73,3 +73,14 @@ CREATE TABLE order_items (
     raw_text      TEXT,
     match_method  VARCHAR(20)            -- exact_alias / resolver / human / history
 );
+
+-- 우리가 보낸 메일 (재질의·주문 확인). 회신의 In-Reply-To/References로 원래 발주 스레드를 찾는 데 쓴다
+CREATE TABLE outbound_messages (
+    id          SERIAL PRIMARY KEY,
+    message_id  VARCHAR(200) UNIQUE NOT NULL,
+    document_id INT NOT NULL REFERENCES intake_documents(id),
+    kind        VARCHAR(20) NOT NULL,      -- inquiry / confirmation
+    subject     TEXT,
+    body        TEXT,
+    created_at  TIMESTAMP DEFAULT now()
+);

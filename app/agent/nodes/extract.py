@@ -16,7 +16,7 @@ class ExtractionResult(BaseModel):
     items: list[ExtractedItem]
 
 
-def _normalize_date(value: str | None) -> str | None:
+def normalize_date(value: str | None) -> str | None:
     # 형식이 틀린 날짜는 누락으로 취급해 validate에서 재질의 대상이 되게 한다
     if not value:
         return None
@@ -36,7 +36,7 @@ def extract(state: OrderState) -> dict:
     )
     return {
         "customer_name": result.customer_name,
-        "delivery_date": _normalize_date(result.delivery_date),
+        "delivery_date": normalize_date(result.delivery_date),
         "delivery_address": (result.delivery_address or "").strip() or None,
         "extracted_items": result.items,
         "usage": [usage],

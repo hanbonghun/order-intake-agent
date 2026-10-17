@@ -1,0 +1,9 @@
+{
+  "message_id": "<reply_007@mail.example>",
+  "in_reply_to": null,
+  "sender_email": "corner.coffee@mail.example",
+  "subject": "시럽 주문",
+  "body": "카라멜 시럽 2, 바닐라 시럽 2병 10/22 부탁드립니다",
+  "received_at": "2026-10-19T12:00:00",
+  "attachments": []
+}

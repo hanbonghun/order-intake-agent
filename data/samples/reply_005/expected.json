@@ -1,0 +1,22 @@
+{
+  "case_id": "reply_005",
+  "category": "reply",
+  "description": "납기 누락 → 회신이 답하지 않음 → 다시 재질의 대기",
+  "expected": {
+    "is_order": true,
+    "decision": "inquire",
+    "customer_id": 4,
+    "delivery_date": null,
+    "delivery_address": "경기도 성남시 분당구 정자일로 95, 102호",
+    "items": [
+      {
+        "sku": "PWD-001",
+        "quantity": 2,
+        "unit": "봉",
+        "base_quantity": 2,
+        "raw_text": "녹차 라떼 파우더"
+      }
+    ],
+    "first_decision": "inquire"
+  }
+}

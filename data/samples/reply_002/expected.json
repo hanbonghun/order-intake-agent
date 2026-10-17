@@ -1,0 +1,29 @@
+{
+  "case_id": "reply_002",
+  "category": "reply",
+  "description": "단위 누락(이력 없음) → 회신 '박스로'",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 8,
+    "delivery_date": "2026-10-22",
+    "delivery_address": "서울특별시 서대문구 연희로 88",
+    "items": [
+      {
+        "sku": "DAI-006",
+        "quantity": 3,
+        "unit": "박스",
+        "base_quantity": 72,
+        "raw_text": "연유"
+      },
+      {
+        "sku": "SYR-005",
+        "quantity": 1,
+        "unit": "개",
+        "base_quantity": 1,
+        "raw_text": "초코소스"
+      }
+    ],
+    "first_decision": "inquire"
+  }
+}

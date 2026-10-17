@@ -1,0 +1,22 @@
+{
+  "case_id": "reply_004",
+  "category": "reply",
+  "description": "미취급 상품 → 회신 '빼고 보내주세요'",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 6,
+    "delivery_date": "2026-10-22",
+    "delivery_address": "서울특별시 강남구 도산대로17길 9, 2층",
+    "items": [
+      {
+        "sku": "DAI-010",
+        "quantity": 6,
+        "unit": "개",
+        "base_quantity": 6,
+        "raw_text": "아몬드밀크"
+      }
+    ],
+    "first_decision": "inquire"
+  }
+}

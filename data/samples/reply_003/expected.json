@@ -1,0 +1,29 @@
+{
+  "case_id": "reply_003",
+  "category": "reply",
+  "description": "애매한 품목 '시럽' → 회신 '헤이즐넛'",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 3,
+    "delivery_date": "2026-10-23",
+    "delivery_address": "서울특별시 용산구 한강대로40길 7",
+    "items": [
+      {
+        "sku": "SYR-003",
+        "quantity": 2,
+        "unit": "병",
+        "base_quantity": 2,
+        "raw_text": "시럽"
+      },
+      {
+        "sku": "COF-005",
+        "quantity": 3,
+        "unit": "병",
+        "base_quantity": 3,
+        "raw_text": "콜드브루 원액"
+      }
+    ],
+    "first_decision": "inquire"
+  }
+}
