@@ -7,7 +7,7 @@ OK_ITEM = MatchedItem(raw_text="우유 2박스", status="confirmed", sku="DAI-00
 
 
 def _issues(**overrides):
-    args = dict(customer_id=1, delivery_date="2026-10-21", delivery_address="서울", items=[OK_ITEM],
+    args = dict(customer_id=1, customer_match="email", delivery_date="2026-10-21", delivery_address="서울", items=[OK_ITEM],
                 received_on=date(2026, 10, 20))
     return collect_issues(**(args | overrides))
 
@@ -29,6 +29,12 @@ def test_past_date_is_issue():
 
 def test_unknown_customer_goes_to_review_first():
     issues = _issues(customer_id=None, delivery_date=None)
+    assert decide(issues) == "review"
+
+
+def test_name_only_customer_goes_to_review():
+    issues = _issues(customer_match="name", delivery_date=None)
+    assert "unverified_sender" in [i.code for i in issues]
     assert decide(issues) == "review"
 
 

@@ -44,6 +44,7 @@ class OrderState(TypedDict, total=False):
     classify_reason: str
     customer_name: Optional[str]        # 문서에 적힌 상호
     customer_id: Optional[int]
+    customer_match: Optional[Literal["email", "name"]]   # 거래처를 무엇으로 식별했는지
     delivery_date: Optional[str]        # YYYY-MM-DD
     delivery_address: Optional[str]
     extracted_items: list[ExtractedItem]

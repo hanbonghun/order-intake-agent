@@ -18,6 +18,7 @@ ITEM_ISSUES = {
 
 def collect_issues(
     customer_id: Optional[int],
+    customer_match: Optional[str],
     delivery_date: Optional[str],
     delivery_address: Optional[str],
     items: list[MatchedItem],
@@ -26,6 +27,8 @@ def collect_issues(
     issues = []
     if customer_id is None:
         issues.append(Issue(code="unknown_customer", resolvable_by="internal", detail="발신자로 거래처를 찾지 못함"))
+    elif customer_match == "name":
+        issues.append(Issue(code="unverified_sender", resolvable_by="internal", detail="등록되지 않은 메일, 상호명으로만 식별"))
     if delivery_date is None:
         issues.append(Issue(code="missing_delivery_date", resolvable_by="customer", detail="납품일 미기재"))
     elif received_on and date.fromisoformat(delivery_date) < received_on:
@@ -44,8 +47,8 @@ def collect_issues(
 def decide(issues: list[Issue], inquiry_count: int = 0) -> str:
     if not issues:
         return "create"
-    if any(i.code == "unknown_customer" for i in issues):
-        return "review"
+    if any(i.code in ("unknown_customer", "unverified_sender") for i in issues):
+        return "review"   # 확인되지 않은 상대에게 재질의하지 않는다
     if any(i.resolvable_by == "customer" for i in issues) and inquiry_count < MAX_INQUIRIES:
         return "inquire"   # 거래처에 물을 것만 묻는다. 내부 문제는 회신 후 검토로
     return "review"

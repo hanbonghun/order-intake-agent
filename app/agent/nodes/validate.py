@@ -8,6 +8,7 @@ def validate(state: OrderState) -> dict:
     received_at = state["document"].get("received_at")
     issues = collect_issues(
         customer_id=state.get("customer_id"),
+        customer_match=state.get("customer_match"),
         delivery_date=state.get("delivery_date"),
         delivery_address=state.get("delivery_address"),
         items=state.get("matched_items", []),

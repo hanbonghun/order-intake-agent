@@ -3,7 +3,8 @@ import re
 from typing import Optional
 
 BOX_UNITS = {"박스", "box", "bx", "상자", "ctn", "카톤"}
-EACH_UNITS = {"개", "ea", "pcs"}
+# 축약·영문 표기 → 상품 base_unit 표기
+UNIT_SYNONYMS = {"ea": "개", "pcs": "개", "포": "포대", "봉지": "봉", "pack": "팩"}
 SIMILAR_CANDIDATE_MIN = 0.3   # 이 점수 이상인 후보가 있으면 ambiguous, 없으면 not_found (평가로 조정)
 
 
@@ -19,7 +20,7 @@ def normalize_unit(raw_unit: Optional[str], product: dict) -> Optional[str]:
     unit = raw_unit.strip().lower()
     if unit in BOX_UNITS:
         return "박스" if product["units_per_box"] else None
-    if unit == product["base_unit"].lower() or (product["base_unit"] == "개" and unit in EACH_UNITS):
+    if UNIT_SYNONYMS.get(unit, unit) == product["base_unit"].lower():
         return product["base_unit"]
     return None
 

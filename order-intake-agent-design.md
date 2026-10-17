@@ -292,7 +292,7 @@ class OrderState(TypedDict):
 | parse_document | 본문 + 첨부(PDF·엑셀)를 하나의 텍스트로 | X | |
 | classify | 발주 메일인지 판별 | O (소형 모델) | 문의·광고 필터링 |
 | extract | 품목·수량·단위·납기·배송지 구조화 | O | structured output. 본문은 데이터로만 취급 |
-| identify_customer | 발신 이메일로 거래처 조회 | X | 실패 시 본문 상호명으로 재시도. 배송지 미기재 시 기본 배송지로 채움 |
+| identify_customer | 발신 이메일로 거래처 조회 | X | 실패 시 본문 상호명으로 재시도(미확인으로 표시). 배송지 미기재 시 기본 배송지로 채움 |
 | match_products | 별칭 정확 일치, 단위 해석, 후보 검색 | X | 7-4 참고 |
 | resolve_matches | 미해결 품목을 도구 호출로 해결 | O | 2단계. 7-5 참고 |
 | validate | 필수값·재고·매칭 상태로 decision 결정 | X | 7-6 참고 |
@@ -308,7 +308,7 @@ class OrderState(TypedDict):
 1. **거래처 별칭 정확 일치** (공백·대소문자 차이는 무시): `product_aliases`에서 `customer_id = 해당 거래처`를 먼저 찾고, 없으면 공용 별칭(`customer_id IS NULL`)과 정식 명칭을 찾는다. 일치하면 `confirmed`
 2. **후보 검색**: 정식 명칭 + 별칭 대상 trgm(필요 시 임베딩 하이브리드)으로 상위 5개 후보와 신호를 수집
 3. **단위 해석**
-   - 원문에 단위가 있으면 그대로 환산
+   - 원문에 단위가 있으면 정규화 후 환산 (box→박스, 포→포대 등 동의어 사전)
    - 없으면 해당 거래처의 같은 상품 과거 주문 단위를 기본값으로 사용
    - 이력도 없고 `units_per_box`가 있는 상품이면 `unit_unclear`
 4. **재고 확인**: 확정 품목의 `base_quantity > stock`이면 `out_of_stock`
@@ -350,7 +350,7 @@ class OrderState(TypedDict):
 | 납기일 누락, 수신일 이전 납기일 | customer |
 | 배송지 누락 | (거래처 `default_address`로 대체, 없으면 customer) |
 | `unit_unclear`, `quantity_missing`, `not_found` | customer |
-| 거래처 식별 실패 | internal |
+| 거래처 식별 실패, 상호명으로만 식별(등록되지 않은 메일) | internal |
 | `ambiguous` (후보 간 판단) | internal |
 | `out_of_stock` | internal (부분 출고·대체품은 담당자가 결정) |
 
@@ -358,8 +358,8 @@ class OrderState(TypedDict):
 def decide(issues: list[Issue], inquiry_count: int) -> str:
     if not issues:
         return "create"
-    if any(i.code == "unknown_customer" for i in issues):
-        return "review"
+    if any(i.code in ("unknown_customer", "unverified_sender") for i in issues):
+        return "review"   # 확인되지 않은 상대에게 재질의하지 않는다
     if any(i.resolvable_by == "customer" for i in issues) and inquiry_count < 2:
         return "inquire"    # 거래처에 물을 것만 묻는다
     return "review"

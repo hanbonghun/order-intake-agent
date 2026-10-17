@@ -22,6 +22,7 @@ def test_base_unit_and_each_synonyms():
     assert normalize_unit("ea", MILK) == "개"
     assert normalize_unit("봉", BEANS) == "봉"
     assert normalize_unit("병", MILK) is None
+    assert normalize_unit("포", {"base_unit": "포대", "units_per_box": None}) == "포대"
 
 
 def test_resolve_unit_priority():
