@@ -17,8 +17,11 @@ services:
 
   app:
     build: .
+    env_file:
+      - path: .env          # LLM·LangSmith 키
+        required: false
     environment:
-      DATABASE_URL: postgresql://intake:intake@db:5432/intake
+      DATABASE_URL: postgresql://intake:intake@db:5432/intake   # env_file보다 우선
     ports:
       - "8000:8000"
     depends_on:
