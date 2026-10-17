@@ -1,0 +1,9 @@
+{
+  "message_id": "<nonorder_004@mail.example>",
+  "in_reply_to": null,
+  "sender_email": "jungwon.kitchen@mail.example",
+  "subject": "휴무 안내",
+  "body": "10/26~10/28 내부 공사로 휴무합니다. 해당 기간에는 배송 받지 않습니다.",
+  "received_at": "2026-10-19T12:00:00",
+  "attachments": []
+}

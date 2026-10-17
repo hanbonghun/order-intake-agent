@@ -1,0 +1,9 @@
+{
+  "message_id": "<nonorder_001@mail.example>",
+  "in_reply_to": null,
+  "sender_email": "corner.coffee@mail.example",
+  "subject": "단가표 문의",
+  "body": "안녕하세요. 다음 달 원두 단가표 받아볼 수 있을까요?",
+  "received_at": "2026-10-19T09:00:00",
+  "attachments": []
+}

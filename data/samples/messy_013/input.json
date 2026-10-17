@@ -1,0 +1,9 @@
+{
+  "message_id": "<messy_013@mail.example>",
+  "in_reply_to": null,
+  "sender_email": "bada.pasta@mail.example",
+  "subject": "2호점 발주",
+  "body": "이번 주는 송도 2호점으로 받을게요: 인천광역시 연수구 센트럴로 123, 1층\n레몬 30개, 무염버터 4개, 10/22",
+  "received_at": "2026-10-19T11:30:00",
+  "attachments": []
+}

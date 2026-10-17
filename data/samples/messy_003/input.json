@@ -1,0 +1,9 @@
+{
+  "message_id": "<messy_003@haneul-cafe.example>",
+  "in_reply_to": null,
+  "sender_email": "order@haneul-cafe.example",
+  "subject": "내일 발주",
+  "body": "우유 2, 하우스블렌드 3봉 내일 오전에 부탁해요~",
+  "received_at": "2026-10-19T08:30:00",
+  "attachments": []
+}

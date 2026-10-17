@@ -1,0 +1,28 @@
+{
+  "case_id": "messy_009",
+  "category": "messy",
+  "description": "발주 + 단가 문의 혼합 (문의 속 '레몬'은 품목이 아님)",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 10,
+    "delivery_date": "2026-10-22",
+    "delivery_address": "서울특별시 마포구 독막로 45",
+    "items": [
+      {
+        "sku": "DAI-004",
+        "quantity": 4,
+        "unit": "개",
+        "base_quantity": 4,
+        "raw_text": "동물성 생크림"
+      },
+      {
+        "sku": "DAI-007",
+        "quantity": 3,
+        "unit": "개",
+        "base_quantity": 3,
+        "raw_text": "무염버터"
+      }
+    ]
+  }
+}

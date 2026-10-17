@@ -1,0 +1,28 @@
+{
+  "case_id": "messy_012",
+  "category": "messy",
+  "description": "등록되지 않은 개인 메일로 발주 → 상호명만으로 자동 등록하지 않고 확인",
+  "expected": {
+    "is_order": true,
+    "decision": "review",
+    "customer_id": 15,
+    "delivery_date": "2026-10-22",
+    "delivery_address": "경기도 수원시 영통구 광교중앙로 140",
+    "items": [
+      {
+        "sku": "BAK-001",
+        "quantity": 2,
+        "unit": "포대",
+        "base_quantity": 2,
+        "raw_text": "강력분"
+      },
+      {
+        "sku": "DAI-007",
+        "quantity": 10,
+        "unit": "개",
+        "base_quantity": 10,
+        "raw_text": "무염버터"
+      }
+    ]
+  }
+}

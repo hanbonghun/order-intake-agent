@@ -1,0 +1,21 @@
+{
+  "case_id": "messy_008",
+  "category": "messy",
+  "description": "진짜로 애매한 품목: '시럽' (이 거래처는 바닐라·헤이즐넛을 모두 주문함)",
+  "expected": {
+    "is_order": true,
+    "decision": "inquire",
+    "customer_id": 3,
+    "delivery_date": "2026-10-21",
+    "delivery_address": "서울특별시 용산구 한강대로40길 7",
+    "items": [
+      {
+        "sku": "COF-005",
+        "quantity": 2,
+        "unit": "병",
+        "base_quantity": 2,
+        "raw_text": "콜드브루 원액"
+      }
+    ]
+  }
+}

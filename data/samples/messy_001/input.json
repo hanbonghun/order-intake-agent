@@ -1,0 +1,9 @@
+{
+  "message_id": "<messy_001@mail.example>",
+  "in_reply_to": null,
+  "sender_email": "corner.coffee@mail.example",
+  "subject": "발주",
+  "body": "10/21 납품 부탁드려요\n바닐나 시럽 2병\n하우스 블랜드 원두 3봉",
+  "received_at": "2026-10-19T09:12:00",
+  "attachments": []
+}

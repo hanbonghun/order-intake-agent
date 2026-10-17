@@ -1,0 +1,28 @@
+{
+  "case_id": "messy_001",
+  "category": "messy",
+  "description": "오타: '바닐나 시럽', '하우스 블랜드 원두'",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 2,
+    "delivery_date": "2026-10-21",
+    "delivery_address": "서울특별시 성동구 서울숲2길 18",
+    "items": [
+      {
+        "sku": "SYR-001",
+        "quantity": 2,
+        "unit": "병",
+        "base_quantity": 2,
+        "raw_text": "바닐나 시럽"
+      },
+      {
+        "sku": "COF-001",
+        "quantity": 3,
+        "unit": "봉",
+        "base_quantity": 3,
+        "raw_text": "하우스 블랜드 원두"
+      }
+    ]
+  }
+}

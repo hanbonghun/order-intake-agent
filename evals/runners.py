@@ -58,7 +58,7 @@ def graph(case: Case) -> dict:
         "items": [
             {"sku": m.sku, "quantity": m.quantity, "unit": m.unit, "base_quantity": m.base_quantity}
             for m in state.get("matched_items", [])
-            if m.sku
+            if m.status in ("confirmed", "out_of_stock")   # 품목·단위·수량이 확정된 것만
         ],
         "meta": meta,
         "trace": {

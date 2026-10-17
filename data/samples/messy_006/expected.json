@@ -1,0 +1,28 @@
+{
+  "case_id": "messy_006",
+  "category": "messy",
+  "description": "재고 부족 (카라멜 시럽 재고 4병 < 요청 6병)",
+  "expected": {
+    "is_order": true,
+    "decision": "review",
+    "customer_id": 1,
+    "delivery_date": "2026-10-22",
+    "delivery_address": "서울특별시 마포구 월드컵로12길 34, 1층",
+    "items": [
+      {
+        "sku": "SYR-002",
+        "quantity": 1,
+        "unit": "박스",
+        "base_quantity": 6,
+        "raw_text": "카라멜 시럽"
+      },
+      {
+        "sku": "SYR-001",
+        "quantity": 2,
+        "unit": "병",
+        "base_quantity": 2,
+        "raw_text": "바닐라 시럽"
+      }
+    ]
+  }
+}

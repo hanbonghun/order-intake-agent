@@ -1,0 +1,21 @@
+{
+  "case_id": "messy_007",
+  "category": "messy",
+  "description": "취급하지 않는 상품 요청",
+  "expected": {
+    "is_order": true,
+    "decision": "inquire",
+    "customer_id": 6,
+    "delivery_date": "2026-10-23",
+    "delivery_address": "서울특별시 강남구 도산대로17길 9, 2층",
+    "items": [
+      {
+        "sku": "DAI-010",
+        "quantity": 6,
+        "unit": "개",
+        "base_quantity": 6,
+        "raw_text": "아몬드밀크"
+      }
+    ]
+  }
+}

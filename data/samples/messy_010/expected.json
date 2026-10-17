@@ -1,0 +1,35 @@
+{
+  "case_id": "messy_010",
+  "category": "messy",
+  "description": "한글 수량 표현",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 13,
+    "delivery_date": "2026-10-23",
+    "delivery_address": "서울특별시 광진구 아차산로 312",
+    "items": [
+      {
+        "sku": "FRT-003",
+        "quantity": 5,
+        "unit": "팩",
+        "base_quantity": 5,
+        "raw_text": "생딸기"
+      },
+      {
+        "sku": "DAI-008",
+        "quantity": 2,
+        "unit": "개",
+        "base_quantity": 2,
+        "raw_text": "크림치즈"
+      },
+      {
+        "sku": "DAI-001",
+        "quantity": 1,
+        "unit": "박스",
+        "base_quantity": 12,
+        "raw_text": "서울우유"
+      }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "message_id": "<nonorder_003@packaging.example>",
+  "in_reply_to": null,
+  "sender_email": "promo@packaging.example",
+  "subject": "[특가] 친환경 포장용기 20% 할인",
+  "body": "카페 사장님들께 드리는 특별 혜택! 포장용기 1,000개 이상 구매 시 20% 할인해 드립니다.",
+  "received_at": "2026-10-19T11:00:00",
+  "attachments": []
+}

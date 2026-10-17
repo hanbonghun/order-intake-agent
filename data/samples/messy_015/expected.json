@@ -1,0 +1,42 @@
+{
+  "case_id": "messy_015",
+  "category": "messy",
+  "description": "축약 단위 '포'(=포대) + 단위 누락(이력 '개') + 거래처 별칭 '우유'",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 14,
+    "delivery_date": "2026-10-23",
+    "delivery_address": "서울특별시 은평구 연서로 133",
+    "items": [
+      {
+        "sku": "BAK-001",
+        "quantity": 3,
+        "unit": "포대",
+        "base_quantity": 3,
+        "raw_text": "강력분"
+      },
+      {
+        "sku": "BAK-002",
+        "quantity": 2,
+        "unit": "포대",
+        "base_quantity": 2,
+        "raw_text": "박력분"
+      },
+      {
+        "sku": "DAI-003",
+        "quantity": 2,
+        "unit": "박스",
+        "base_quantity": 24,
+        "raw_text": "우유"
+      },
+      {
+        "sku": "DAI-006",
+        "quantity": 6,
+        "unit": "개",
+        "base_quantity": 6,
+        "raw_text": "연유"
+      }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "message_id": "<nonorder_006@mail.example>",
+  "in_reply_to": null,
+  "sender_email": "ongi.brunch@mail.example",
+  "subject": "거래명세서",
+  "body": "9월 거래명세서 메일로 보내주실 수 있을까요?",
+  "received_at": "2026-10-19T14:00:00",
+  "attachments": []
+}

@@ -1,0 +1,9 @@
+{
+  "message_id": "<messy_008@mail.example>",
+  "in_reply_to": null,
+  "sender_email": "today.beans@mail.example",
+  "subject": "주문",
+  "body": "시럽 3병이랑 콜드브루 원액 2병 수요일까지 부탁드려요",
+  "received_at": "2026-10-19T16:45:00",
+  "attachments": []
+}

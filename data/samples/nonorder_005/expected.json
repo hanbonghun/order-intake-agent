@@ -1,0 +1,10 @@
+{
+  "case_id": "nonorder_005",
+  "category": "non_order",
+  "description": "재고 문의 (향후 주문 의사만 있음)",
+  "expected": {
+    "is_order": false,
+    "decision": "skip",
+    "items": []
+  }
+}

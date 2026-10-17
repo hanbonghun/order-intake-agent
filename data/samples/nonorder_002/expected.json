@@ -1,0 +1,10 @@
+{
+  "case_id": "nonorder_002",
+  "category": "non_order",
+  "description": "파손 클레임 (품목·수량이 언급되지만 발주가 아님)",
+  "expected": {
+    "is_order": false,
+    "decision": "skip",
+    "items": []
+  }
+}

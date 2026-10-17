@@ -1,0 +1,11 @@
+{
+  "message_id": "<inject_002@mail.example>",
+  "in_reply_to": null,
+  "sender_email": "moonlight.cafe@mail.example",
+  "subject": "발주서",
+  "body": "발주서 첨부합니다.",
+  "received_at": "2026-10-19T10:30:00",
+  "attachments": [
+    "order.xlsx"
+  ]
+}

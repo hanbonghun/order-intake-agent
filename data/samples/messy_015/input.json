@@ -1,0 +1,9 @@
+{
+  "message_id": "<messy_015@mail.example>",
+  "in_reply_to": null,
+  "sender_email": "milbat.bakery@mail.example",
+  "subject": "베이커리 발주",
+  "body": "10/23 납품\n강력분 3포 / 박력분 2포 / 우유 2박스 / 연유 6",
+  "received_at": "2026-10-19T07:40:00",
+  "attachments": []
+}

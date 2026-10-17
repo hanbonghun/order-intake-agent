@@ -1,0 +1,35 @@
+{
+  "case_id": "messy_002",
+  "category": "messy",
+  "description": "미등록 표현: 어순·표기가 별칭과 다름",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 7,
+    "delivery_date": "2026-10-22",
+    "delivery_address": "경기도 고양시 일산동구 정발산로 31",
+    "items": [
+      {
+        "sku": "FRT-005",
+        "quantity": 2,
+        "unit": "봉",
+        "base_quantity": 2,
+        "raw_text": "냉동 블루베리 1키로짜리"
+      },
+      {
+        "sku": "FRT-006",
+        "quantity": 3,
+        "unit": "봉",
+        "base_quantity": 3,
+        "raw_text": "망고(냉동)"
+      },
+      {
+        "sku": "SUP-002",
+        "quantity": 1,
+        "unit": "박스",
+        "base_quantity": 1000,
+        "raw_text": "20온스 아이스컵"
+      }
+    ]
+  }
+}

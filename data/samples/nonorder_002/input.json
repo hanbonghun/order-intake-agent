@@ -1,0 +1,9 @@
+{
+  "message_id": "<nonorder_002@haneul-cafe.example>",
+  "in_reply_to": null,
+  "sender_email": "order@haneul-cafe.example",
+  "subject": "파손 건",
+  "body": "어제 받은 서울우유 1박스 중 2개가 파손돼서 왔어요. 교환 가능할까요?",
+  "received_at": "2026-10-19T10:00:00",
+  "attachments": []
+}

@@ -1,0 +1,35 @@
+{
+  "case_id": "messy_014",
+  "category": "messy",
+  "description": "상대 날짜 '다음 주 화요일' (목요일 수신)",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 5,
+    "delivery_date": "2026-10-27",
+    "delivery_address": "서울특별시 종로구 북촌로5길 21",
+    "items": [
+      {
+        "sku": "COF-002",
+        "quantity": 3,
+        "unit": "봉",
+        "base_quantity": 3,
+        "raw_text": "예가체프"
+      },
+      {
+        "sku": "COF-003",
+        "quantity": 2,
+        "unit": "봉",
+        "base_quantity": 2,
+        "raw_text": "수프리모"
+      },
+      {
+        "sku": "COF-004",
+        "quantity": 1,
+        "unit": "봉",
+        "base_quantity": 1,
+        "raw_text": "디카페인 원두"
+      }
+    ]
+  }
+}

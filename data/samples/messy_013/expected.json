@@ -1,0 +1,28 @@
+{
+  "case_id": "messy_013",
+  "category": "messy",
+  "description": "기본 배송지가 아닌 주소 지정",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 12,
+    "delivery_date": "2026-10-22",
+    "delivery_address": "인천광역시 연수구 센트럴로 123, 1층",
+    "items": [
+      {
+        "sku": "FRT-001",
+        "quantity": 30,
+        "unit": "개",
+        "base_quantity": 30,
+        "raw_text": "레몬"
+      },
+      {
+        "sku": "DAI-007",
+        "quantity": 4,
+        "unit": "개",
+        "base_quantity": 4,
+        "raw_text": "무염버터"
+      }
+    ]
+  }
+}

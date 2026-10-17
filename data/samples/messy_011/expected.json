@@ -1,0 +1,28 @@
+{
+  "case_id": "messy_011",
+  "category": "messy",
+  "description": "거래처별 의미 차이: 소담비스트로의 '생크림'은 식물성 휘핑크림",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 11,
+    "delivery_date": "2026-10-21",
+    "delivery_address": "서울특별시 송파구 백제고분로 210",
+    "items": [
+      {
+        "sku": "DAI-005",
+        "quantity": 5,
+        "unit": "개",
+        "base_quantity": 5,
+        "raw_text": "생크림"
+      },
+      {
+        "sku": "FRT-002",
+        "quantity": 15,
+        "unit": "개",
+        "base_quantity": 15,
+        "raw_text": "라임"
+      }
+    ]
+  }
+}
