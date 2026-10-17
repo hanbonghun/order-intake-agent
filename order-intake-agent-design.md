@@ -243,6 +243,7 @@ class ExtractedItem(BaseModel):
 ItemStatus = Literal[
     "confirmed",       # SKU·단위 확정
     "ambiguous",       # 후보가 여럿 (내부 판단 필요)
+    "unclear_product", # resolver가 거래처 확인 필요로 판단 (거래처에 질문)
     "unit_unclear",    # 단위 불명확, 거래처 이력도 없음 (거래처에 질문)
     "quantity_missing",# 수량 미기재 (거래처에 질문)
     "not_found",       # 맞는 상품 없음 (거래처에 질문)
@@ -339,6 +340,7 @@ class OrderState(TypedDict):
 | `agrees_with_top1` | resolver 선택이 검색 1위와 같은가 |
 
 - 초기 규칙: `in_candidates AND (in_history OR (agrees_with_top1 AND margin ≥ τ))`이면 `confirmed`, 아니면 `ambiguous`
+- 안전장치: 선택한 상품과 점수가 비슷한(차이 ≤ 0.15) **다른 이력 상품**이 후보에 있으면 `unclear_product`(거래처 확인). LLM이 애매한 품목을 하나로 찍어도 확정되지 않게 한다
 - `τ`와 규칙 조합은 **평가셋으로 튜닝**한다 (3단계의 자동처리율 vs 오등록률 곡선)
 
 ### 7-6. 판정 규칙 (`validate`)
@@ -349,7 +351,7 @@ class OrderState(TypedDict):
 |---|---|
 | 납기일 누락, 수신일 이전 납기일 | customer |
 | 배송지 누락 | (거래처 `default_address`로 대체, 없으면 customer) |
-| `unit_unclear`, `quantity_missing`, `not_found` | customer |
+| `unit_unclear`, `quantity_missing`, `not_found`, `unclear_product` | customer |
 | 거래처 식별 실패, 상호명으로만 식별(등록되지 않은 메일) | internal |
 | `ambiguous` (후보 간 판단) | internal |
 | `out_of_stock` | internal (부분 출고·대체품은 담당자가 결정) |
