@@ -1,4 +1,8 @@
+from dotenv import load_dotenv
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+# LangSmith 등 라이브러리는 os.environ을 직접 읽으므로 .env를 환경변수로도 올린다 (이미 설정된 값은 유지)
+load_dotenv(override=False)
 
 
 class Settings(BaseSettings):

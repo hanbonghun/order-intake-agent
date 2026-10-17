@@ -40,3 +40,9 @@ uv run pytest
 ```
 
 결과는 `evals/runs/{tag}.json`에 케이스별 상세와 함께 저장된다.
+
+## 추적 (LangSmith, 선택)
+
+`.env`에 `LANGSMITH_TRACING=true`, `LANGSMITH_API_KEY`, `LANGSMITH_PROJECT`를 넣으면 노드·LLM·도구 호출이 모두 추적된다.
+평가 실행 시 각 실행은 케이스 ID로 이름이 붙고 `eval:{tag}`, 카테고리 태그와 커밋 해시 메타데이터가 달린다.
+로컬 평가 결과(JSON)가 기준 자료이고, LangSmith는 실패 원인 디버깅용이다.

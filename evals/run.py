@@ -36,7 +36,7 @@ def run(runner_name: str, tag: str, categories: list[str] | None, limit: int | N
     for case in load_cases(categories=categories)[:limit]:
         started = time.perf_counter()
         try:
-            result, error = runner(case), None
+            result, error = runner(case, {"tag": tag, "git": git}), None
         except Exception as e:  # 한 케이스 실패가 전체 평가를 멈추지 않게
             result, error = {"is_order": None, "decision": "error", "items": []}, f"{type(e).__name__}: {e}"
         meta = result.pop("meta", {}) if isinstance(result.get("meta"), dict) else {}
@@ -116,6 +116,9 @@ def main():
         return
     report = run(args.runner, args.tag or args.runner, args.category, args.limit)
     print_report(report)
+    # LangSmith는 백그라운드로 전송하므로 종료 전에 남은 추적을 내보낸다
+    from langchain_core.tracers.langchain import wait_for_all_tracers
+    wait_for_all_tracers()
 
 
 if __name__ == "__main__":

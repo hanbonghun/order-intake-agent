@@ -9,14 +9,14 @@ from functools import cache
 
 from evals.dataset import Case
 
-Runner = Callable[[Case], dict]
+Runner = Callable[[Case, dict], dict]   # (케이스, 실행 컨텍스트: tag·git)
 
 
-def dummy(case: Case) -> dict:
+def dummy(case: Case, ctx: dict) -> dict:
     return {"is_order": False, "decision": "skip", "items": []}
 
 
-def oracle(case: Case) -> dict:
+def oracle(case: Case, ctx: dict) -> dict:
     return dict(case.expected)
 
 
@@ -27,7 +27,7 @@ def _graph():
     return build_graph()
 
 
-def graph(case: Case) -> dict:
+def graph(case: Case, ctx: dict) -> dict:
     # TODO(2단계): 재질의 시나리오는 interrupt 시점에 case.reply로 재개
     from app.db.seed import load_seed, reset_schema
     from app.db.session import get_conn
@@ -38,7 +38,14 @@ def graph(case: Case) -> dict:
         reset_schema(conn)   # 케이스 간 주문·재고 영향을 없앤다
         load_seed(conn)
         document_id = save_document(conn, document)
-    state = _graph().invoke({"document": document, "document_id": document_id})
+    # LangSmith 추적에서 케이스·평가 버전으로 찾을 수 있게 이름·태그·메타데이터를 붙인다 (추적이 꺼져 있으면 무시됨)
+    config = {
+        "run_name": case.case_id,
+        "tags": [f"eval:{ctx['tag']}", case.category],
+        "metadata": {"case_id": case.case_id, "category": case.category, "eval_tag": ctx["tag"],
+                     "git_commit": ctx["git"].get("commit"), "expected_decision": case.expected.get("decision")},
+    }
+    state = _graph().invoke({"document": document, "document_id": document_id}, config=config)
 
     usage = state.get("usage", [])
     meta = {
