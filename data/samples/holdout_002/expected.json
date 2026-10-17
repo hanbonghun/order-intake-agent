@@ -1,0 +1,35 @@
+{
+  "case_id": "holdout_002",
+  "category": "holdout",
+  "description": "hold-out (create) — 문장은 gpt-5.4-mini-2026-03-17 생성, 사람 검수",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 6,
+    "delivery_date": "2026-10-29",
+    "delivery_address": "서울특별시 강남구 도산대로17길 9, 2층",
+    "items": [
+      {
+        "sku": "DAI-002",
+        "quantity": 1,
+        "unit": "박스",
+        "base_quantity": 12,
+        "raw_text": "서울우유 저지방 1L"
+      },
+      {
+        "sku": "DAI-010",
+        "quantity": 6,
+        "unit": "개",
+        "base_quantity": 6,
+        "raw_text": "아몬드밀크 950ml"
+      },
+      {
+        "sku": "SYR-006",
+        "quantity": 2,
+        "unit": "병",
+        "base_quantity": 2,
+        "raw_text": "사탕수수 시럽 1L"
+      }
+    ]
+  }
+}

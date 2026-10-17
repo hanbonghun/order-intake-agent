@@ -1,0 +1,35 @@
+{
+  "case_id": "holdout_005",
+  "category": "holdout",
+  "description": "hold-out (create) — 문장은 gpt-5.4-mini-2026-03-17 생성, 사람 검수 / 검수 수정: 작성 모델이 예가체프를 '블렌드 원두'로 바꿔 써서 정답을 COF-001로 교정",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 2,
+    "delivery_date": "2026-10-28",
+    "delivery_address": "서울특별시 성동구 서울숲2길 18",
+    "items": [
+      {
+        "sku": "COF-001",
+        "quantity": 2,
+        "unit": "봉",
+        "base_quantity": 2,
+        "raw_text": "블렌드 원두 1kg"
+      },
+      {
+        "sku": "DAI-009",
+        "quantity": 1,
+        "unit": "박스",
+        "base_quantity": 12,
+        "raw_text": "오트밀크 바리스타 1L"
+      },
+      {
+        "sku": "SUP-006",
+        "quantity": 1,
+        "unit": "박스",
+        "base_quantity": 5000,
+        "raw_text": "일자 빨대 개별포장"
+      }
+    ]
+  }
+}

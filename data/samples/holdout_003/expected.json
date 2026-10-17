@@ -1,0 +1,42 @@
+{
+  "case_id": "holdout_003",
+  "category": "holdout",
+  "description": "hold-out (create) — 문장은 gpt-5.4-mini-2026-03-17 생성, 사람 검수",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 15,
+    "delivery_date": "2026-10-28",
+    "delivery_address": "경기도 수원시 영통구 광교중앙로 140",
+    "items": [
+      {
+        "sku": "BAK-001",
+        "quantity": 2,
+        "unit": "포대",
+        "base_quantity": 2,
+        "raw_text": "강력분 20kg"
+      },
+      {
+        "sku": "DAI-007",
+        "quantity": 12,
+        "unit": "개",
+        "base_quantity": 12,
+        "raw_text": "무염버터 450g"
+      },
+      {
+        "sku": "DAI-004",
+        "quantity": 6,
+        "unit": "개",
+        "base_quantity": 6,
+        "raw_text": "동물성 생크림 1L"
+      },
+      {
+        "sku": "FRT-003",
+        "quantity": 3,
+        "unit": "팩",
+        "base_quantity": 3,
+        "raw_text": "생딸기 500g"
+      }
+    ]
+  }
+}

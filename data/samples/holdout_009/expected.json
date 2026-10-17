@@ -1,0 +1,28 @@
+{
+  "case_id": "holdout_009",
+  "category": "holdout",
+  "description": "hold-out (review) — 문장은 gpt-5.4-mini-2026-03-17 생성, 사람 검수",
+  "expected": {
+    "is_order": true,
+    "decision": "review",
+    "customer_id": 4,
+    "delivery_date": "2026-10-28",
+    "delivery_address": "경기도 성남시 분당구 정자일로 95, 102호",
+    "items": [
+      {
+        "sku": "SYR-002",
+        "quantity": 1,
+        "unit": "박스",
+        "base_quantity": 6,
+        "raw_text": "카라멜 시럽 1L"
+      },
+      {
+        "sku": "PWD-001",
+        "quantity": 2,
+        "unit": "봉",
+        "base_quantity": 2,
+        "raw_text": "녹차 라떼 파우더 1kg"
+      }
+    ]
+  }
+}

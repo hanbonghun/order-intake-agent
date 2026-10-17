@@ -1,0 +1,35 @@
+{
+  "case_id": "holdout_012",
+  "category": "holdout",
+  "description": "hold-out (create) — 문장은 gpt-5.4-mini-2026-03-17 생성, 사람 검수",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 1,
+    "delivery_date": "2026-10-27",
+    "delivery_address": "서울특별시 마포구 월드컵로12길 34, 1층",
+    "items": [
+      {
+        "sku": "DAI-004",
+        "quantity": 3,
+        "unit": "개",
+        "base_quantity": 3,
+        "raw_text": "동물성 생크림 1L"
+      },
+      {
+        "sku": "PWD-001",
+        "quantity": 2,
+        "unit": "봉",
+        "base_quantity": 2,
+        "raw_text": "녹차 라떼 파우더 1kg"
+      },
+      {
+        "sku": "SYR-002",
+        "quantity": 2,
+        "unit": "병",
+        "base_quantity": 2,
+        "raw_text": "카라멜 시럽 1L"
+      }
+    ]
+  }
+}

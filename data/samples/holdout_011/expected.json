@@ -1,0 +1,10 @@
+{
+  "case_id": "holdout_011",
+  "category": "holdout",
+  "description": "hold-out (skip) — 문장은 gpt-5.4-mini-2026-03-17 생성, 사람 검수",
+  "expected": {
+    "is_order": false,
+    "decision": "skip",
+    "items": []
+  }
+}

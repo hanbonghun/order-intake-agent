@@ -1,0 +1,9 @@
+{
+  "message_id": "<holdout_012@haneul-cafe.example>",
+  "in_reply_to": null,
+  "sender_email": "order@haneul-cafe.example",
+  "subject": "내일 납품 부탁드려요",
+  "body": "안녕하세요. 하늘카페입니다.\n\n내일 납품 부탁드릴게요.\n- 생크림 1L 3개\n- 녹차 라떼 파우더 1kg 2봉\n- 카라멜 시럽 1L 2병\n\n확인 부탁드립니다.",
+  "attachments": [],
+  "received_at": "2026-10-26T08:40:00"
+}

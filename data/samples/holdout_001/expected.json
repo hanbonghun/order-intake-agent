@@ -1,0 +1,35 @@
+{
+  "case_id": "holdout_001",
+  "category": "holdout",
+  "description": "hold-out (create) — 문장은 gpt-5.4-mini-2026-03-17 생성, 사람 검수",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 9,
+    "delivery_date": "2026-10-28",
+    "delivery_address": "서울특별시 중구 을지로 100, 1층",
+    "items": [
+      {
+        "sku": "PWD-004",
+        "quantity": 2,
+        "unit": "개",
+        "base_quantity": 2,
+        "raw_text": "얼그레이 티백 100개입"
+      },
+      {
+        "sku": "FRT-002",
+        "quantity": 15,
+        "unit": "개",
+        "base_quantity": 15,
+        "raw_text": "라임"
+      },
+      {
+        "sku": "COF-001",
+        "quantity": 3,
+        "unit": "봉",
+        "base_quantity": 3,
+        "raw_text": "원두 하우스블렌드 1kg"
+      }
+    ]
+  }
+}

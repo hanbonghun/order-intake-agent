@@ -1,0 +1,9 @@
+{
+  "message_id": "<holdout_008@mail.example>",
+  "in_reply_to": null,
+  "sender_email": "today.beans@mail.example",
+  "subject": "10/28 납품 요청드립니다",
+  "body": "안녕하세요 오늘의원두입니다.\n\n10/28에 아래 품목 발주 부탁드립니다.\n\n- 콜드브루 원액 1L 3병\n- 오렌지쥬스 1L 2박스\n\n확인 부탁드려요.",
+  "attachments": [],
+  "received_at": "2026-10-26T15:30:00"
+}

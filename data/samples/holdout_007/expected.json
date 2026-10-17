@@ -1,0 +1,28 @@
+{
+  "case_id": "holdout_007",
+  "category": "holdout",
+  "description": "hold-out (inquire) — 문장은 gpt-5.4-mini-2026-03-17 생성, 사람 검수",
+  "expected": {
+    "is_order": true,
+    "decision": "inquire",
+    "customer_id": 10,
+    "delivery_date": null,
+    "delivery_address": "서울특별시 마포구 독막로 45",
+    "items": [
+      {
+        "sku": "DAI-004",
+        "quantity": 4,
+        "unit": "개",
+        "base_quantity": 4,
+        "raw_text": "동물성 생크림 1L"
+      },
+      {
+        "sku": "FRT-001",
+        "quantity": 30,
+        "unit": "개",
+        "base_quantity": 30,
+        "raw_text": "레몬"
+      }
+    ]
+  }
+}

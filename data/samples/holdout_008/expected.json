@@ -1,0 +1,21 @@
+{
+  "case_id": "holdout_008",
+  "category": "holdout",
+  "description": "hold-out (inquire) — 문장은 gpt-5.4-mini-2026-03-17 생성, 사람 검수",
+  "expected": {
+    "is_order": true,
+    "decision": "inquire",
+    "customer_id": 3,
+    "delivery_date": "2026-10-28",
+    "delivery_address": "서울특별시 용산구 한강대로40길 7",
+    "items": [
+      {
+        "sku": "COF-005",
+        "quantity": 3,
+        "unit": "병",
+        "base_quantity": 3,
+        "raw_text": "콜드브루 원액 1L"
+      }
+    ]
+  }
+}

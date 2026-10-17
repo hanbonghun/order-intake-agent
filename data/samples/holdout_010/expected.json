@@ -1,0 +1,21 @@
+{
+  "case_id": "holdout_010",
+  "category": "holdout",
+  "description": "hold-out (inquire) — 문장은 gpt-5.4-mini-2026-03-17 생성, 사람 검수",
+  "expected": {
+    "is_order": true,
+    "decision": "inquire",
+    "customer_id": 7,
+    "delivery_date": "2026-10-29",
+    "delivery_address": "경기도 고양시 일산동구 정발산로 31",
+    "items": [
+      {
+        "sku": "FRT-004",
+        "quantity": 3,
+        "unit": "봉",
+        "base_quantity": 3,
+        "raw_text": "냉동 딸기 1kg"
+      }
+    ]
+  }
+}
