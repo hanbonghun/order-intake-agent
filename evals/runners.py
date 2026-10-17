@@ -28,9 +28,17 @@ def _graph():
 
 
 def graph(case: Case) -> dict:
-    # TODO: 주문 생성 구현 후 케이스마다 DB를 시드 상태로 초기화, 재질의 시나리오는 interrupt 시점에 case.reply로 재개
+    # TODO(2단계): 재질의 시나리오는 interrupt 시점에 case.reply로 재개
+    from app.db.seed import load_seed, reset_schema
+    from app.db.session import get_conn
+    from app.services.intake import save_document
+
     document = dict(case.input, attachments=[str(case.dir / a) for a in case.input.get("attachments", [])])
-    state = _graph().invoke({"document": document})
+    with get_conn() as conn:
+        reset_schema(conn)   # 케이스 간 주문·재고 영향을 없앤다
+        load_seed(conn)
+        document_id = save_document(conn, document)
+    state = _graph().invoke({"document": document, "document_id": document_id})
 
     usage = state.get("usage", [])
     meta = {
@@ -57,6 +65,9 @@ def graph(case: Case) -> dict:
             "classify_reason": state.get("classify_reason"),
             "customer_name": state.get("customer_name"),
             "extracted_items": [i.model_dump() for i in state.get("extracted_items", [])],
+            "matched_items": [m.model_dump(exclude={"candidates"}) for m in state.get("matched_items", [])],
+            "issues": [i.model_dump() for i in state.get("issues", [])],
+            "order_id": state.get("order_id"),
         },
     }
 

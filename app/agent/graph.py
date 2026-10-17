@@ -3,8 +3,10 @@ from langgraph.graph import END, START, StateGraph
 from app.agent.nodes.classify import classify
 from app.agent.nodes.customer import identify_customer
 from app.agent.nodes.extract import extract
+from app.agent.nodes.match import match_products
+from app.agent.nodes.order import create_order, draft_confirmation
 from app.agent.nodes.parse import parse_document
-from app.agent.nodes.stubs import create_order, draft_confirmation, match_products, validate
+from app.agent.nodes.validate import validate
 from app.agent.state import OrderState
 
 

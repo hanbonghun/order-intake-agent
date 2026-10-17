@@ -11,7 +11,7 @@ class ExtractedItem(BaseModel):
     unit: Optional[str]         # 원문 그대로: "박스" / "box" / "개" / None
 
 
-ItemStatus = Literal["confirmed", "ambiguous", "unit_unclear", "not_found", "out_of_stock"]
+ItemStatus = Literal["confirmed", "ambiguous", "unit_unclear", "quantity_missing", "not_found", "out_of_stock"]
 
 
 class MatchedItem(BaseModel):
@@ -50,6 +50,7 @@ class OrderState(TypedDict, total=False):
     matched_items: list[MatchedItem]
     issues: list[Issue]
     decision: Literal["create", "inquire", "review"]
+    inquiry_count: int                  # 재질의 횟수 (2단계)
     order_id: Optional[int]
     reply_draft: Optional[str]
 
