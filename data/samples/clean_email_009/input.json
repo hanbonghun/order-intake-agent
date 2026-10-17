@@ -1,0 +1,9 @@
+{
+  "message_id": "<clean_email_009@mail.example>",
+  "in_reply_to": null,
+  "sender_email": "onecup@mail.example",
+  "subject": "한잔의여유 주문 (10월 15일)",
+  "body": "신선마켓 담당자님께,\n\n아래 품목 발주합니다.\n\n1. PET 아이스컵 16oz / 1박스\n2. 서울우유 1리터 / 3 박스\n3. 하우스 원두 / 2봉\n4. 아이스컵 돔리드 92파이 / 1 박스\n\n납품일: 10월 15일\n배송지: 서울특별시 중구 을지로 100, 1층\n\n한잔의여유",
+  "attachments": [],
+  "received_at": "2026-10-13T08:59:00"
+}

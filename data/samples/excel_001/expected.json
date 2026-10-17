@@ -1,0 +1,42 @@
+{
+  "case_id": "excel_001",
+  "category": "excel",
+  "description": "깨끗한 발주: 등록된 명칭·별칭, 단위·납기 명시",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 11,
+    "delivery_date": "2026-10-12",
+    "delivery_address": "서울특별시 송파구 백제고분로 210",
+    "items": [
+      {
+        "sku": "DAI-008",
+        "quantity": 1,
+        "unit": "개",
+        "base_quantity": 1,
+        "raw_text": "크림치즈 1kg"
+      },
+      {
+        "sku": "FRT-002",
+        "quantity": 18,
+        "unit": "개",
+        "base_quantity": 18,
+        "raw_text": "라임"
+      },
+      {
+        "sku": "FRT-001",
+        "quantity": 11,
+        "unit": "개",
+        "base_quantity": 11,
+        "raw_text": "레몬"
+      },
+      {
+        "sku": "DAI-005",
+        "quantity": 5,
+        "unit": "개",
+        "base_quantity": 5,
+        "raw_text": "식물성 휘핑크림 1L"
+      }
+    ]
+  }
+}

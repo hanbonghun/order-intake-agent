@@ -1,0 +1,42 @@
+{
+  "case_id": "pdf_007",
+  "category": "pdf",
+  "description": "깨끗한 발주: 등록된 명칭·별칭, 단위·납기 명시",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 7,
+    "delivery_date": "2026-10-07",
+    "delivery_address": "경기도 고양시 일산동구 정발산로 31",
+    "items": [
+      {
+        "sku": "FRT-001",
+        "quantity": 27,
+        "unit": "개",
+        "base_quantity": 27,
+        "raw_text": "레몬"
+      },
+      {
+        "sku": "FRT-006",
+        "quantity": 2,
+        "unit": "봉",
+        "base_quantity": 2,
+        "raw_text": "냉동 망고 1kg"
+      },
+      {
+        "sku": "FRT-004",
+        "quantity": 3,
+        "unit": "봉",
+        "base_quantity": 3,
+        "raw_text": "냉동 딸기 1kg"
+      },
+      {
+        "sku": "SUP-002",
+        "quantity": 2,
+        "unit": "박스",
+        "base_quantity": 2000,
+        "raw_text": "PET 아이스컵 20oz"
+      }
+    ]
+  }
+}

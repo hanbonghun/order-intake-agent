@@ -1,0 +1,35 @@
+{
+  "case_id": "pdf_006",
+  "category": "pdf",
+  "description": "깨끗한 발주: 등록된 명칭·별칭, 단위·납기 명시",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 6,
+    "delivery_date": "2026-10-07",
+    "delivery_address": "서울특별시 강남구 도산대로17길 9, 2층",
+    "items": [
+      {
+        "sku": "SUP-004",
+        "quantity": 1,
+        "unit": "박스",
+        "base_quantity": 1000,
+        "raw_text": "돔리드"
+      },
+      {
+        "sku": "SYR-001",
+        "quantity": 1,
+        "unit": "병",
+        "base_quantity": 1,
+        "raw_text": "바닐라시럽"
+      },
+      {
+        "sku": "DAI-002",
+        "quantity": 1,
+        "unit": "박스",
+        "base_quantity": 12,
+        "raw_text": "서울우유 저지방 1L"
+      }
+    ]
+  }
+}

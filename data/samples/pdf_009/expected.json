@@ -1,0 +1,42 @@
+{
+  "case_id": "pdf_009",
+  "category": "pdf",
+  "description": "깨끗한 발주: 등록된 명칭·별칭, 단위·납기 명시",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 9,
+    "delivery_date": "2026-10-09",
+    "delivery_address": "서울특별시 중구 을지로 100, 1층",
+    "items": [
+      {
+        "sku": "FRT-001",
+        "quantity": 26,
+        "unit": "개",
+        "base_quantity": 26,
+        "raw_text": "레몬"
+      },
+      {
+        "sku": "FRT-002",
+        "quantity": 20,
+        "unit": "개",
+        "base_quantity": 20,
+        "raw_text": "생라임"
+      },
+      {
+        "sku": "DAI-001",
+        "quantity": 2,
+        "unit": "박스",
+        "base_quantity": 24,
+        "raw_text": "서울우유 1리터"
+      },
+      {
+        "sku": "SYR-001",
+        "quantity": 3,
+        "unit": "병",
+        "base_quantity": 3,
+        "raw_text": "바닐라 시럽 1L"
+      }
+    ]
+  }
+}

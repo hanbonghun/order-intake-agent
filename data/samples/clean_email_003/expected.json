@@ -1,0 +1,42 @@
+{
+  "case_id": "clean_email_003",
+  "category": "clean_email",
+  "description": "깨끗한 발주: 등록된 명칭·별칭, 단위·납기 명시",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 3,
+    "delivery_date": "2026-10-09",
+    "delivery_address": "서울특별시 용산구 한강대로40길 7",
+    "items": [
+      {
+        "sku": "DAI-001",
+        "quantity": 2,
+        "unit": "박스",
+        "base_quantity": 24,
+        "raw_text": "서울우유 1L"
+      },
+      {
+        "sku": "COF-005",
+        "quantity": 4,
+        "unit": "병",
+        "base_quantity": 4,
+        "raw_text": "콜드브루 원액 1L"
+      },
+      {
+        "sku": "SUP-004",
+        "quantity": 2,
+        "unit": "박스",
+        "base_quantity": 2000,
+        "raw_text": "돔뚜껑"
+      },
+      {
+        "sku": "SYR-003",
+        "quantity": 1,
+        "unit": "병",
+        "base_quantity": 1,
+        "raw_text": "헤이즐넛 시럽 1L"
+      }
+    ]
+  }
+}

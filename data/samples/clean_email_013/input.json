@@ -1,0 +1,9 @@
+{
+  "message_id": "<clean_email_013@mail.example>",
+  "in_reply_to": null,
+  "sender_email": "ongi.brunch@mail.example",
+  "subject": "[발주] 온기브런치",
+  "body": "품목\t수량\n딸기 500g\t5팩\n원두 하우스블렌드 1kg\t2봉\n\n납품 희망일 10월 8일\n잘 부탁드립니다.",
+  "attachments": [],
+  "received_at": "2026-10-07T17:34:00"
+}

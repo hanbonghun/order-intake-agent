@@ -1,0 +1,28 @@
+{
+  "case_id": "pdf_003",
+  "category": "pdf",
+  "description": "깨끗한 발주: 등록된 명칭·별칭, 단위·납기 명시",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 3,
+    "delivery_date": "2026-10-14",
+    "delivery_address": "서울특별시 용산구 한강대로40길 7",
+    "items": [
+      {
+        "sku": "DAI-001",
+        "quantity": 1,
+        "unit": "박스",
+        "base_quantity": 12,
+        "raw_text": "흰우유 1L"
+      },
+      {
+        "sku": "FRT-001",
+        "quantity": 18,
+        "unit": "개",
+        "base_quantity": 18,
+        "raw_text": "레몬"
+      }
+    ]
+  }
+}

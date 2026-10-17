@@ -1,0 +1,9 @@
+{
+  "message_id": "<clean_email_003@mail.example>",
+  "in_reply_to": null,
+  "sender_email": "today.beans@mail.example",
+  "subject": "오늘의원두 주문 (10월 9일(금))",
+  "body": "신선마켓 담당자님께,\n\n아래 품목 발주합니다.\n\n1. 서울우유 1L / 2박스\n2. 콜드브루 원액 1L / 4병\n3. 돔뚜껑 / 2박스\n4. 헤이즐넛 시럽 1L / 1 병\n\n납품일: 10월 9일(금)\n\n오늘의원두",
+  "attachments": [],
+  "received_at": "2026-10-07T08:22:00"
+}

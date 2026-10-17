@@ -1,0 +1,11 @@
+{
+  "message_id": "<pdf_010@mail.example>",
+  "in_reply_to": null,
+  "sender_email": "jungwon.kitchen@mail.example",
+  "subject": "발주서 송부",
+  "body": "첨부파일 확인 부탁드려요~",
+  "attachments": [
+    "order.pdf"
+  ],
+  "received_at": "2026-10-09T13:42:00"
+}

@@ -1,0 +1,49 @@
+{
+  "case_id": "clean_email_010",
+  "category": "clean_email",
+  "description": "깨끗한 발주: 등록된 명칭·별칭, 단위·납기 명시",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 10,
+    "delivery_date": "2026-10-17",
+    "delivery_address": "서울특별시 마포구 독막로 45",
+    "items": [
+      {
+        "sku": "DAI-004",
+        "quantity": 3,
+        "unit": "개",
+        "base_quantity": 3,
+        "raw_text": "동물성 생크림"
+      },
+      {
+        "sku": "DAI-007",
+        "quantity": 4,
+        "unit": "개",
+        "base_quantity": 4,
+        "raw_text": "무염버터 450g"
+      },
+      {
+        "sku": "DAI-001",
+        "quantity": 1,
+        "unit": "박스",
+        "base_quantity": 12,
+        "raw_text": "서울우유 1L"
+      },
+      {
+        "sku": "FRT-001",
+        "quantity": 22,
+        "unit": "개",
+        "base_quantity": 22,
+        "raw_text": "레몬"
+      },
+      {
+        "sku": "BAK-003",
+        "quantity": 1,
+        "unit": "포대",
+        "base_quantity": 1,
+        "raw_text": "백설탕 15kg"
+      }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "message_id": "<clean_email_008@mail.example>",
+  "in_reply_to": null,
+  "sender_email": "moonlight.cafe@mail.example",
+  "subject": "[달빛카페] 발주 요청",
+  "body": "안녕하세요, 달빛카페입니다.\n10/13(화) 납품 부탁드립니다.\n\n- 아이스컵 돔리드 92파이 1box\n- 16oz 컵 1 박스\n\n감사합니다.\n달빛카페 드림",
+  "attachments": [],
+  "received_at": "2026-10-12T11:32:00"
+}

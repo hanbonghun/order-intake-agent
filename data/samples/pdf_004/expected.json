@@ -1,0 +1,28 @@
+{
+  "case_id": "pdf_004",
+  "category": "pdf",
+  "description": "깨끗한 발주: 등록된 명칭·별칭, 단위·납기 명시",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 4,
+    "delivery_date": "2026-10-14",
+    "delivery_address": "경기도 성남시 분당구 정자일로 95, 102호",
+    "items": [
+      {
+        "sku": "SYR-001",
+        "quantity": 2,
+        "unit": "병",
+        "base_quantity": 2,
+        "raw_text": "바닐라 시럽 1L"
+      },
+      {
+        "sku": "DAI-001",
+        "quantity": 2,
+        "unit": "박스",
+        "base_quantity": 24,
+        "raw_text": "서울우유 1L"
+      }
+    ]
+  }
+}

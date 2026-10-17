@@ -1,0 +1,11 @@
+{
+  "message_id": "<pdf_007@coffee-garden.example>",
+  "in_reply_to": null,
+  "sender_email": "garden@coffee-garden.example",
+  "subject": "발주서 송부",
+  "body": "첨부파일 확인 부탁드려요~",
+  "attachments": [
+    "order.pdf"
+  ],
+  "received_at": "2026-10-06T12:17:00"
+}

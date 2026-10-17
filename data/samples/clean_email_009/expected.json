@@ -1,0 +1,42 @@
+{
+  "case_id": "clean_email_009",
+  "category": "clean_email",
+  "description": "깨끗한 발주: 등록된 명칭·별칭, 단위·납기 명시",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 9,
+    "delivery_date": "2026-10-15",
+    "delivery_address": "서울특별시 중구 을지로 100, 1층",
+    "items": [
+      {
+        "sku": "SUP-001",
+        "quantity": 1,
+        "unit": "박스",
+        "base_quantity": 1000,
+        "raw_text": "PET 아이스컵 16oz"
+      },
+      {
+        "sku": "DAI-001",
+        "quantity": 3,
+        "unit": "박스",
+        "base_quantity": 36,
+        "raw_text": "서울우유 1리터"
+      },
+      {
+        "sku": "COF-001",
+        "quantity": 2,
+        "unit": "봉",
+        "base_quantity": 2,
+        "raw_text": "하우스 원두"
+      },
+      {
+        "sku": "SUP-004",
+        "quantity": 1,
+        "unit": "박스",
+        "base_quantity": 1000,
+        "raw_text": "아이스컵 돔리드 92파이"
+      }
+    ]
+  }
+}

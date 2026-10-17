@@ -1,0 +1,11 @@
+{
+  "message_id": "<excel_003@mail.example>",
+  "in_reply_to": null,
+  "sender_email": "ongi.brunch@mail.example",
+  "subject": "발주서(엑셀)",
+  "body": "첨부파일 확인 부탁드려요~",
+  "attachments": [
+    "order.xlsx"
+  ],
+  "received_at": "2026-10-12T10:11:00"
+}

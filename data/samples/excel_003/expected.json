@@ -1,0 +1,49 @@
+{
+  "case_id": "excel_003",
+  "category": "excel",
+  "description": "깨끗한 발주: 등록된 명칭·별칭, 단위·납기 명시",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 13,
+    "delivery_date": "2026-10-15",
+    "delivery_address": "서울특별시 광진구 아차산로 312",
+    "items": [
+      {
+        "sku": "DAI-001",
+        "quantity": 2,
+        "unit": "박스",
+        "base_quantity": 24,
+        "raw_text": "흰우유 1L"
+      },
+      {
+        "sku": "FRT-003",
+        "quantity": 4,
+        "unit": "팩",
+        "base_quantity": 4,
+        "raw_text": "딸기 500g"
+      },
+      {
+        "sku": "COF-001",
+        "quantity": 2,
+        "unit": "봉",
+        "base_quantity": 2,
+        "raw_text": "하우스 원두"
+      },
+      {
+        "sku": "DAI-008",
+        "quantity": 2,
+        "unit": "개",
+        "base_quantity": 2,
+        "raw_text": "크림치즈 1kg"
+      },
+      {
+        "sku": "FRT-005",
+        "quantity": 2,
+        "unit": "봉",
+        "base_quantity": 2,
+        "raw_text": "냉동블루베리"
+      }
+    ]
+  }
+}

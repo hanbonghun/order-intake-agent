@@ -1,0 +1,9 @@
+{
+  "message_id": "<clean_email_007@coffee-garden.example>",
+  "in_reply_to": null,
+  "sender_email": "garden@coffee-garden.example",
+  "subject": "[커피정원] 발주 요청",
+  "body": "안녕하세요, 커피정원입니다.\n10월 14일 납품 부탁드립니다.\n\n- 원두 하우스블렌드 1kg 4봉\n- 냉동 망고 1kg 2 봉\n\n감사합니다.\n커피정원 드림",
+  "attachments": [],
+  "received_at": "2026-10-11T15:16:00"
+}

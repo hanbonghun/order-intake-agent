@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "name": "하늘카페",
+    "type": "cafe",
+    "email": "order@haneul-cafe.example",
+    "default_address": "서울특별시 마포구 월드컵로12길 34, 1층"
+  },
+  {
+    "id": 2,
+    "name": "모퉁이커피",
+    "type": "cafe",
+    "email": "corner.coffee@mail.example",
+    "default_address": "서울특별시 성동구 서울숲2길 18"
+  },
+  {
+    "id": 3,
+    "name": "오늘의원두",
+    "type": "cafe",
+    "email": "today.beans@mail.example",
+    "default_address": "서울특별시 용산구 한강대로40길 7"
+  },
+  {
+    "id": 4,
+    "name": "숲속다방",
+    "type": "cafe",
+    "email": "supsok@dabang.example",
+    "default_address": "경기도 성남시 분당구 정자일로 95, 102호"
+  },
+  {
+    "id": 5,
+    "name": "콩볶는집",
+    "type": "cafe",
+    "email": "roastery@kongbokk.example",
+    "default_address": "서울특별시 종로구 북촌로5길 21"
+  },
+  {
+    "id": 6,
+    "name": "라운지17",
+    "type": "cafe",
+    "email": "lounge17@mail.example",
+    "default_address": "서울특별시 강남구 도산대로17길 9, 2층"
+  },
+  {
+    "id": 7,
+    "name": "커피정원",
+    "type": "cafe",
+    "email": "garden@coffee-garden.example",
+    "default_address": "경기도 고양시 일산동구 정발산로 31"
+  },
+  {
+    "id": 8,
+    "name": "달빛카페",
+    "type": "cafe",
+    "email": "moonlight.cafe@mail.example",
+    "default_address": "서울특별시 서대문구 연희로 88"
+  },
+  {
+    "id": 9,
+    "name": "한잔의여유",
+    "type": "cafe",
+    "email": "onecup@mail.example",
+    "default_address": null
+  },
+  {
+    "id": 10,
+    "name": "정원식당",
+    "type": "restaurant",
+    "email": "jungwon.kitchen@mail.example",
+    "default_address": "서울특별시 마포구 독막로 45"
+  },
+  {
+    "id": 11,
+    "name": "소담비스트로",
+    "type": "restaurant",
+    "email": "sodam.bistro@mail.example",
+    "default_address": "서울특별시 송파구 백제고분로 210"
+  },
+  {
+    "id": 12,
+    "name": "바다파스타",
+    "type": "restaurant",
+    "email": "bada.pasta@mail.example",
+    "default_address": "인천광역시 연수구 컨벤시아대로 165"
+  },
+  {
+    "id": 13,
+    "name": "온기브런치",
+    "type": "restaurant",
+    "email": "ongi.brunch@mail.example",
+    "default_address": "서울특별시 광진구 아차산로 312"
+  },
+  {
+    "id": 14,
+    "name": "밀밭베이커리",
+    "type": "bakery",
+    "email": "milbat.bakery@mail.example",
+    "default_address": "서울특별시 은평구 연서로 133"
+  },
+  {
+    "id": 15,
+    "name": "버터굽는날",
+    "type": "bakery",
+    "email": "butterday@mail.example",
+    "default_address": "경기도 수원시 영통구 광교중앙로 140"
+  }
+]

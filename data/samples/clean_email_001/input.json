@@ -1,0 +1,9 @@
+{
+  "message_id": "<clean_email_001@haneul-cafe.example>",
+  "in_reply_to": null,
+  "sender_email": "order@haneul-cafe.example",
+  "subject": "발주드립니다",
+  "body": "10/6까지 컵 1box, 그린티 파우더 1봉, 원두 하우스블렌드 1kg 5봉, 레몬 10 개 보내주세요.\n-하늘카페",
+  "attachments": [],
+  "received_at": "2026-10-05T17:07:00"
+}

@@ -1,0 +1,42 @@
+{
+  "case_id": "clean_email_005",
+  "category": "clean_email",
+  "description": "깨끗한 발주: 등록된 명칭·별칭, 단위·납기 명시",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 5,
+    "delivery_date": "2026-10-10",
+    "delivery_address": "서울특별시 종로구 북촌로5길 21",
+    "items": [
+      {
+        "sku": "COF-004",
+        "quantity": 3,
+        "unit": "봉",
+        "base_quantity": 3,
+        "raw_text": "원두 디카페인 블렌드 1kg"
+      },
+      {
+        "sku": "COF-003",
+        "quantity": 3,
+        "unit": "봉",
+        "base_quantity": 3,
+        "raw_text": "수프리모"
+      },
+      {
+        "sku": "COF-001",
+        "quantity": 8,
+        "unit": "봉",
+        "base_quantity": 8,
+        "raw_text": "하우스블렌드"
+      },
+      {
+        "sku": "SUP-003",
+        "quantity": 1,
+        "unit": "박스",
+        "base_quantity": 1000,
+        "raw_text": "종이 핫컵 13oz"
+      }
+    ]
+  }
+}

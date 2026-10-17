@@ -1,0 +1,29 @@
+services:
+  db:
+    image: pgvector/pgvector:pg17   # pg_trgm(contrib) + pgvector 사용 가능
+    environment:
+      POSTGRES_USER: intake
+      POSTGRES_PASSWORD: intake
+      POSTGRES_DB: intake
+    ports:
+      - "${DB_PORT:-5432}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U intake -d intake"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  app:
+    build: .
+    environment:
+      DATABASE_URL: postgresql://intake:intake@db:5432/intake
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  pgdata:

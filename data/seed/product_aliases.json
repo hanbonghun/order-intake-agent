@@ -1,0 +1,392 @@
+[
+  {
+    "sku": "DAI-001",
+    "customer_id": null,
+    "alias": "서울우유 1리터"
+  },
+  {
+    "sku": "DAI-001",
+    "customer_id": null,
+    "alias": "서울우유 흰우유 1L"
+  },
+  {
+    "sku": "DAI-001",
+    "customer_id": null,
+    "alias": "흰우유 1L"
+  },
+  {
+    "sku": "DAI-002",
+    "customer_id": null,
+    "alias": "저지방우유 1L"
+  },
+  {
+    "sku": "DAI-002",
+    "customer_id": null,
+    "alias": "서울우유 저지방"
+  },
+  {
+    "sku": "DAI-003",
+    "customer_id": null,
+    "alias": "매일우유 900"
+  },
+  {
+    "sku": "DAI-003",
+    "customer_id": null,
+    "alias": "매일 흰우유 900ml"
+  },
+  {
+    "sku": "DAI-004",
+    "customer_id": null,
+    "alias": "생크림 1L"
+  },
+  {
+    "sku": "DAI-004",
+    "customer_id": null,
+    "alias": "동물성 생크림"
+  },
+  {
+    "sku": "DAI-005",
+    "customer_id": null,
+    "alias": "휘핑크림 1L"
+  },
+  {
+    "sku": "DAI-005",
+    "customer_id": null,
+    "alias": "식물성 생크림"
+  },
+  {
+    "sku": "DAI-006",
+    "customer_id": null,
+    "alias": "연유"
+  },
+  {
+    "sku": "DAI-007",
+    "customer_id": null,
+    "alias": "무염버터"
+  },
+  {
+    "sku": "DAI-007",
+    "customer_id": null,
+    "alias": "버터 450g"
+  },
+  {
+    "sku": "DAI-008",
+    "customer_id": null,
+    "alias": "크림치즈"
+  },
+  {
+    "sku": "DAI-009",
+    "customer_id": null,
+    "alias": "오트밀크"
+  },
+  {
+    "sku": "DAI-009",
+    "customer_id": null,
+    "alias": "오트 바리스타"
+  },
+  {
+    "sku": "DAI-010",
+    "customer_id": null,
+    "alias": "아몬드밀크"
+  },
+  {
+    "sku": "DAI-010",
+    "customer_id": null,
+    "alias": "아몬드우유"
+  },
+  {
+    "sku": "COF-001",
+    "customer_id": null,
+    "alias": "하우스블렌드"
+  },
+  {
+    "sku": "COF-001",
+    "customer_id": null,
+    "alias": "하우스 원두"
+  },
+  {
+    "sku": "COF-002",
+    "customer_id": null,
+    "alias": "예가체프"
+  },
+  {
+    "sku": "COF-002",
+    "customer_id": null,
+    "alias": "에티오피아 원두"
+  },
+  {
+    "sku": "COF-003",
+    "customer_id": null,
+    "alias": "수프리모"
+  },
+  {
+    "sku": "COF-003",
+    "customer_id": null,
+    "alias": "콜롬비아 원두"
+  },
+  {
+    "sku": "COF-004",
+    "customer_id": null,
+    "alias": "디카페인 원두"
+  },
+  {
+    "sku": "COF-004",
+    "customer_id": null,
+    "alias": "디카페인"
+  },
+  {
+    "sku": "COF-005",
+    "customer_id": null,
+    "alias": "콜드브루"
+  },
+  {
+    "sku": "COF-005",
+    "customer_id": null,
+    "alias": "콜드브루 원액"
+  },
+  {
+    "sku": "SYR-001",
+    "customer_id": null,
+    "alias": "바닐라시럽"
+  },
+  {
+    "sku": "SYR-002",
+    "customer_id": null,
+    "alias": "카라멜시럽"
+  },
+  {
+    "sku": "SYR-002",
+    "customer_id": null,
+    "alias": "캬라멜 시럽"
+  },
+  {
+    "sku": "SYR-003",
+    "customer_id": null,
+    "alias": "헤이즐넛시럽"
+  },
+  {
+    "sku": "SYR-004",
+    "customer_id": null,
+    "alias": "카라멜소스"
+  },
+  {
+    "sku": "SYR-004",
+    "customer_id": null,
+    "alias": "캬라멜 소스"
+  },
+  {
+    "sku": "SYR-005",
+    "customer_id": null,
+    "alias": "초코소스"
+  },
+  {
+    "sku": "SYR-005",
+    "customer_id": null,
+    "alias": "초콜렛 소스"
+  },
+  {
+    "sku": "SYR-006",
+    "customer_id": null,
+    "alias": "사탕수수시럽"
+  },
+  {
+    "sku": "SYR-006",
+    "customer_id": null,
+    "alias": "원당시럽"
+  },
+  {
+    "sku": "PWD-001",
+    "customer_id": null,
+    "alias": "녹차파우더"
+  },
+  {
+    "sku": "PWD-001",
+    "customer_id": null,
+    "alias": "그린티 파우더"
+  },
+  {
+    "sku": "PWD-002",
+    "customer_id": null,
+    "alias": "초코파우더"
+  },
+  {
+    "sku": "PWD-003",
+    "customer_id": null,
+    "alias": "고구마파우더"
+  },
+  {
+    "sku": "PWD-004",
+    "customer_id": null,
+    "alias": "얼그레이 티백"
+  },
+  {
+    "sku": "PWD-004",
+    "customer_id": null,
+    "alias": "얼그레이"
+  },
+  {
+    "sku": "FRT-001",
+    "customer_id": null,
+    "alias": "생레몬"
+  },
+  {
+    "sku": "FRT-002",
+    "customer_id": null,
+    "alias": "생라임"
+  },
+  {
+    "sku": "FRT-003",
+    "customer_id": null,
+    "alias": "딸기 500g"
+  },
+  {
+    "sku": "FRT-003",
+    "customer_id": null,
+    "alias": "생딸기"
+  },
+  {
+    "sku": "FRT-004",
+    "customer_id": null,
+    "alias": "냉동딸기"
+  },
+  {
+    "sku": "FRT-005",
+    "customer_id": null,
+    "alias": "냉동블루베리"
+  },
+  {
+    "sku": "FRT-005",
+    "customer_id": null,
+    "alias": "블루베리 1kg"
+  },
+  {
+    "sku": "FRT-006",
+    "customer_id": null,
+    "alias": "냉동망고"
+  },
+  {
+    "sku": "BAK-001",
+    "customer_id": null,
+    "alias": "강력분"
+  },
+  {
+    "sku": "BAK-001",
+    "customer_id": null,
+    "alias": "강력밀가루"
+  },
+  {
+    "sku": "BAK-002",
+    "customer_id": null,
+    "alias": "박력분"
+  },
+  {
+    "sku": "BAK-002",
+    "customer_id": null,
+    "alias": "박력밀가루"
+  },
+  {
+    "sku": "BAK-003",
+    "customer_id": null,
+    "alias": "설탕 15kg"
+  },
+  {
+    "sku": "BAK-003",
+    "customer_id": null,
+    "alias": "백설탕"
+  },
+  {
+    "sku": "SUP-001",
+    "customer_id": null,
+    "alias": "아이스컵 16온스"
+  },
+  {
+    "sku": "SUP-001",
+    "customer_id": null,
+    "alias": "16oz 컵"
+  },
+  {
+    "sku": "SUP-002",
+    "customer_id": null,
+    "alias": "아이스컵 20온스"
+  },
+  {
+    "sku": "SUP-002",
+    "customer_id": null,
+    "alias": "20oz 컵"
+  },
+  {
+    "sku": "SUP-003",
+    "customer_id": null,
+    "alias": "핫컵 13온스"
+  },
+  {
+    "sku": "SUP-003",
+    "customer_id": null,
+    "alias": "13oz 핫컵"
+  },
+  {
+    "sku": "SUP-004",
+    "customer_id": null,
+    "alias": "돔리드"
+  },
+  {
+    "sku": "SUP-004",
+    "customer_id": null,
+    "alias": "돔뚜껑"
+  },
+  {
+    "sku": "SUP-005",
+    "customer_id": null,
+    "alias": "평리드"
+  },
+  {
+    "sku": "SUP-005",
+    "customer_id": null,
+    "alias": "평뚜껑"
+  },
+  {
+    "sku": "SUP-006",
+    "customer_id": null,
+    "alias": "일자빨대"
+  },
+  {
+    "sku": "SUP-006",
+    "customer_id": null,
+    "alias": "빨대"
+  },
+  {
+    "sku": "DAI-001",
+    "customer_id": 1,
+    "alias": "우유"
+  },
+  {
+    "sku": "SUP-001",
+    "customer_id": 1,
+    "alias": "컵"
+  },
+  {
+    "sku": "DAI-009",
+    "customer_id": 3,
+    "alias": "바리스타우유"
+  },
+  {
+    "sku": "DAI-002",
+    "customer_id": 6,
+    "alias": "우유"
+  },
+  {
+    "sku": "DAI-005",
+    "customer_id": 11,
+    "alias": "생크림"
+  },
+  {
+    "sku": "DAI-004",
+    "customer_id": 15,
+    "alias": "생크림"
+  },
+  {
+    "sku": "DAI-003",
+    "customer_id": 14,
+    "alias": "우유"
+  }
+]

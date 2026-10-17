@@ -1,0 +1,3740 @@
+[
+ {
+  "customer_id": 1,
+  "delivery_date": "2026-08-05",
+  "delivery_address": "서울특별시 마포구 월드컵로12길 34, 1층",
+  "items": [
+   {
+    "sku": "SYR-002",
+    "quantity": 1,
+    "unit": "병",
+    "base_quantity": 1
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 24
+   },
+   {
+    "sku": "DAI-004",
+    "quantity": 4,
+    "unit": "개",
+    "base_quantity": 4
+   }
+  ]
+ },
+ {
+  "customer_id": 1,
+  "delivery_date": "2026-08-10",
+  "delivery_address": "서울특별시 마포구 월드컵로12길 34, 1층",
+  "items": [
+   {
+    "sku": "SUP-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 12
+   },
+   {
+    "sku": "DAI-004",
+    "quantity": 2,
+    "unit": "개",
+    "base_quantity": 2
+   },
+   {
+    "sku": "PWD-001",
+    "quantity": 2,
+    "unit": "봉",
+    "base_quantity": 2
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 11,
+    "unit": "개",
+    "base_quantity": 11
+   }
+  ]
+ },
+ {
+  "customer_id": 1,
+  "delivery_date": "2026-08-19",
+  "delivery_address": "서울특별시 마포구 월드컵로12길 34, 1층",
+  "items": [
+   {
+    "sku": "SUP-001",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 12
+   },
+   {
+    "sku": "SUP-004",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   }
+  ]
+ },
+ {
+  "customer_id": 1,
+  "delivery_date": "2026-08-24",
+  "delivery_address": "서울특별시 마포구 월드컵로12길 34, 1층",
+  "items": [
+   {
+    "sku": "SYR-001",
+    "quantity": 1,
+    "unit": "병",
+    "base_quantity": 1
+   },
+   {
+    "sku": "SUP-004",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   },
+   {
+    "sku": "SUP-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "COF-001",
+    "quantity": 2,
+    "unit": "봉",
+    "base_quantity": 2
+   },
+   {
+    "sku": "DAI-004",
+    "quantity": 4,
+    "unit": "개",
+    "base_quantity": 4
+   }
+  ]
+ },
+ {
+  "customer_id": 1,
+  "delivery_date": "2026-09-02",
+  "delivery_address": "서울특별시 마포구 월드컵로12길 34, 1층",
+  "items": [
+   {
+    "sku": "SUP-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 29,
+    "unit": "개",
+    "base_quantity": 29
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 12
+   },
+   {
+    "sku": "SUP-004",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   },
+   {
+    "sku": "SYR-002",
+    "quantity": 2,
+    "unit": "병",
+    "base_quantity": 2
+   }
+  ]
+ },
+ {
+  "customer_id": 1,
+  "delivery_date": "2026-09-09",
+  "delivery_address": "서울특별시 마포구 월드컵로12길 34, 1층",
+  "items": [
+   {
+    "sku": "DAI-004",
+    "quantity": 2,
+    "unit": "개",
+    "base_quantity": 2
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 17,
+    "unit": "개",
+    "base_quantity": 17
+   },
+   {
+    "sku": "SYR-001",
+    "quantity": 1,
+    "unit": "병",
+    "base_quantity": 1
+   },
+   {
+    "sku": "COF-001",
+    "quantity": 4,
+    "unit": "봉",
+    "base_quantity": 4
+   }
+  ]
+ },
+ {
+  "customer_id": 1,
+  "delivery_date": "2026-09-18",
+  "delivery_address": "서울특별시 마포구 월드컵로12길 34, 1층",
+  "items": [
+   {
+    "sku": "FRT-001",
+    "quantity": 12,
+    "unit": "개",
+    "base_quantity": 12
+   },
+   {
+    "sku": "DAI-004",
+    "quantity": 2,
+    "unit": "개",
+    "base_quantity": 2
+   },
+   {
+    "sku": "SYR-001",
+    "quantity": 3,
+    "unit": "병",
+    "base_quantity": 3
+   },
+   {
+    "sku": "SUP-004",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   }
+  ]
+ },
+ {
+  "customer_id": 1,
+  "delivery_date": "2026-09-24",
+  "delivery_address": "서울특별시 마포구 월드컵로12길 34, 1층",
+  "items": [
+   {
+    "sku": "SYR-001",
+    "quantity": 3,
+    "unit": "병",
+    "base_quantity": 3
+   },
+   {
+    "sku": "DAI-004",
+    "quantity": 2,
+    "unit": "개",
+    "base_quantity": 2
+   },
+   {
+    "sku": "SUP-001",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 24
+   }
+  ]
+ },
+ {
+  "customer_id": 2,
+  "delivery_date": "2026-08-06",
+  "delivery_address": "서울특별시 성동구 서울숲2길 18",
+  "items": [
+   {
+    "sku": "DAI-009",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 24
+   },
+   {
+    "sku": "COF-001",
+    "quantity": 2,
+    "unit": "봉",
+    "base_quantity": 2
+   },
+   {
+    "sku": "COF-002",
+    "quantity": 1,
+    "unit": "봉",
+    "base_quantity": 1
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 3,
+    "unit": "박스",
+    "base_quantity": 36
+   },
+   {
+    "sku": "SYR-001",
+    "quantity": 3,
+    "unit": "병",
+    "base_quantity": 3
+   }
+  ]
+ },
+ {
+  "customer_id": 2,
+  "delivery_date": "2026-08-13",
+  "delivery_address": "서울특별시 성동구 서울숲2길 18",
+  "items": [
+   {
+    "sku": "DAI-009",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 12
+   },
+   {
+    "sku": "SUP-004",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 21,
+    "unit": "개",
+    "base_quantity": 21
+   },
+   {
+    "sku": "SUP-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "SYR-001",
+    "quantity": 3,
+    "unit": "병",
+    "base_quantity": 3
+   }
+  ]
+ },
+ {
+  "customer_id": 2,
+  "delivery_date": "2026-08-18",
+  "delivery_address": "서울특별시 성동구 서울숲2길 18",
+  "items": [
+   {
+    "sku": "DAI-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 12
+   },
+   {
+    "sku": "SUP-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "COF-002",
+    "quantity": 2,
+    "unit": "봉",
+    "base_quantity": 2
+   },
+   {
+    "sku": "SYR-001",
+    "quantity": 2,
+    "unit": "병",
+    "base_quantity": 2
+   }
+  ]
+ },
+ {
+  "customer_id": 2,
+  "delivery_date": "2026-08-26",
+  "delivery_address": "서울특별시 성동구 서울숲2길 18",
+  "items": [
+   {
+    "sku": "SYR-001",
+    "quantity": 3,
+    "unit": "병",
+    "base_quantity": 3
+   },
+   {
+    "sku": "DAI-009",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 24
+   },
+   {
+    "sku": "SUP-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   }
+  ]
+ },
+ {
+  "customer_id": 2,
+  "delivery_date": "2026-09-03",
+  "delivery_address": "서울특별시 성동구 서울숲2길 18",
+  "items": [
+   {
+    "sku": "SUP-004",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "COF-002",
+    "quantity": 1,
+    "unit": "봉",
+    "base_quantity": 1
+   },
+   {
+    "sku": "SYR-001",
+    "quantity": 1,
+    "unit": "병",
+    "base_quantity": 1
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 15,
+    "unit": "개",
+    "base_quantity": 15
+   },
+   {
+    "sku": "SUP-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   }
+  ]
+ },
+ {
+  "customer_id": 2,
+  "delivery_date": "2026-09-09",
+  "delivery_address": "서울특별시 성동구 서울숲2길 18",
+  "items": [
+   {
+    "sku": "SUP-001",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 24
+   },
+   {
+    "sku": "SUP-006",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 5000
+   },
+   {
+    "sku": "SUP-004",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "COF-001",
+    "quantity": 5,
+    "unit": "봉",
+    "base_quantity": 5
+   }
+  ]
+ },
+ {
+  "customer_id": 2,
+  "delivery_date": "2026-09-18",
+  "delivery_address": "서울특별시 성동구 서울숲2길 18",
+  "items": [
+   {
+    "sku": "FRT-001",
+    "quantity": 29,
+    "unit": "개",
+    "base_quantity": 29
+   },
+   {
+    "sku": "SYR-001",
+    "quantity": 3,
+    "unit": "병",
+    "base_quantity": 3
+   },
+   {
+    "sku": "SUP-006",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 5000
+   },
+   {
+    "sku": "SUP-004",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   }
+  ]
+ },
+ {
+  "customer_id": 2,
+  "delivery_date": "2026-09-27",
+  "delivery_address": "서울특별시 성동구 서울숲2길 18",
+  "items": [
+   {
+    "sku": "COF-002",
+    "quantity": 2,
+    "unit": "봉",
+    "base_quantity": 2
+   },
+   {
+    "sku": "SUP-006",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 5000
+   },
+   {
+    "sku": "SUP-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 12
+   }
+  ]
+ },
+ {
+  "customer_id": 3,
+  "delivery_date": "2026-08-04",
+  "delivery_address": "서울특별시 용산구 한강대로40길 7",
+  "items": [
+   {
+    "sku": "SYR-001",
+    "quantity": 1,
+    "unit": "병",
+    "base_quantity": 1
+   },
+   {
+    "sku": "COF-001",
+    "quantity": 2,
+    "unit": "봉",
+    "base_quantity": 2
+   },
+   {
+    "sku": "SYR-003",
+    "quantity": 1,
+    "unit": "병",
+    "base_quantity": 1
+   },
+   {
+    "sku": "SUP-004",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   }
+  ]
+ },
+ {
+  "customer_id": 3,
+  "delivery_date": "2026-08-13",
+  "delivery_address": "서울특별시 용산구 한강대로40길 7",
+  "items": [
+   {
+    "sku": "FRT-001",
+    "quantity": 16,
+    "unit": "개",
+    "base_quantity": 16
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 3,
+    "unit": "박스",
+    "base_quantity": 36
+   },
+   {
+    "sku": "COF-005",
+    "quantity": 3,
+    "unit": "병",
+    "base_quantity": 3
+   }
+  ]
+ },
+ {
+  "customer_id": 3,
+  "delivery_date": "2026-08-19",
+  "delivery_address": "서울특별시 용산구 한강대로40길 7",
+  "items": [
+   {
+    "sku": "SUP-004",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 13,
+    "unit": "개",
+    "base_quantity": 13
+   },
+   {
+    "sku": "SYR-003",
+    "quantity": 2,
+    "unit": "병",
+    "base_quantity": 2
+   },
+   {
+    "sku": "SYR-001",
+    "quantity": 2,
+    "unit": "병",
+    "base_quantity": 2
+   },
+   {
+    "sku": "SUP-001",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   }
+  ]
+ },
+ {
+  "customer_id": 3,
+  "delivery_date": "2026-08-27",
+  "delivery_address": "서울특별시 용산구 한강대로40길 7",
+  "items": [
+   {
+    "sku": "COF-001",
+    "quantity": 4,
+    "unit": "봉",
+    "base_quantity": 4
+   },
+   {
+    "sku": "SYR-001",
+    "quantity": 3,
+    "unit": "병",
+    "base_quantity": 3
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 24
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 25,
+    "unit": "개",
+    "base_quantity": 25
+   }
+  ]
+ },
+ {
+  "customer_id": 3,
+  "delivery_date": "2026-09-02",
+  "delivery_address": "서울특별시 용산구 한강대로40길 7",
+  "items": [
+   {
+    "sku": "DAI-001",
+    "quantity": 3,
+    "unit": "박스",
+    "base_quantity": 36
+   },
+   {
+    "sku": "SUP-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "SUP-004",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   },
+   {
+    "sku": "SYR-001",
+    "quantity": 3,
+    "unit": "병",
+    "base_quantity": 3
+   },
+   {
+    "sku": "COF-001",
+    "quantity": 2,
+    "unit": "봉",
+    "base_quantity": 2
+   }
+  ]
+ },
+ {
+  "customer_id": 3,
+  "delivery_date": "2026-09-09",
+  "delivery_address": "서울특별시 용산구 한강대로40길 7",
+  "items": [
+   {
+    "sku": "FRT-001",
+    "quantity": 27,
+    "unit": "개",
+    "base_quantity": 27
+   },
+   {
+    "sku": "SYR-001",
+    "quantity": 3,
+    "unit": "병",
+    "base_quantity": 3
+   },
+   {
+    "sku": "COF-005",
+    "quantity": 3,
+    "unit": "병",
+    "base_quantity": 3
+   },
+   {
+    "sku": "COF-001",
+    "quantity": 3,
+    "unit": "봉",
+    "base_quantity": 3
+   },
+   {
+    "sku": "SUP-004",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   }
+  ]
+ },
+ {
+  "customer_id": 3,
+  "delivery_date": "2026-09-15",
+  "delivery_address": "서울특별시 용산구 한강대로40길 7",
+  "items": [
+   {
+    "sku": "SUP-001",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   },
+   {
+    "sku": "SYR-003",
+    "quantity": 1,
+    "unit": "병",
+    "base_quantity": 1
+   },
+   {
+    "sku": "SUP-004",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "COF-005",
+    "quantity": 3,
+    "unit": "병",
+    "base_quantity": 3
+   }
+  ]
+ },
+ {
+  "customer_id": 3,
+  "delivery_date": "2026-09-23",
+  "delivery_address": "서울특별시 용산구 한강대로40길 7",
+  "items": [
+   {
+    "sku": "SUP-001",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 21,
+    "unit": "개",
+    "base_quantity": 21
+   },
+   {
+    "sku": "SYR-003",
+    "quantity": 1,
+    "unit": "병",
+    "base_quantity": 1
+   },
+   {
+    "sku": "COF-005",
+    "quantity": 2,
+    "unit": "병",
+    "base_quantity": 2
+   }
+  ]
+ },
+ {
+  "customer_id": 4,
+  "delivery_date": "2026-08-04",
+  "delivery_address": "경기도 성남시 분당구 정자일로 95, 102호",
+  "items": [
+   {
+    "sku": "SUP-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 25,
+    "unit": "개",
+    "base_quantity": 25
+   },
+   {
+    "sku": "COF-001",
+    "quantity": 4,
+    "unit": "봉",
+    "base_quantity": 4
+   },
+   {
+    "sku": "SUP-003",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   }
+  ]
+ },
+ {
+  "customer_id": 4,
+  "delivery_date": "2026-08-09",
+  "delivery_address": "경기도 성남시 분당구 정자일로 95, 102호",
+  "items": [
+   {
+    "sku": "SUP-001",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   },
+   {
+    "sku": "PWD-002",
+    "quantity": 1,
+    "unit": "봉",
+    "base_quantity": 1
+   },
+   {
+    "sku": "COF-001",
+    "quantity": 5,
+    "unit": "봉",
+    "base_quantity": 5
+   },
+   {
+    "sku": "SUP-003",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   }
+  ]
+ },
+ {
+  "customer_id": 4,
+  "delivery_date": "2026-08-17",
+  "delivery_address": "경기도 성남시 분당구 정자일로 95, 102호",
+  "items": [
+   {
+    "sku": "COF-001",
+    "quantity": 3,
+    "unit": "봉",
+    "base_quantity": 3
+   },
+   {
+    "sku": "SYR-001",
+    "quantity": 3,
+    "unit": "병",
+    "base_quantity": 3
+   },
+   {
+    "sku": "SUP-003",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   },
+   {
+    "sku": "PWD-003",
+    "quantity": 4,
+    "unit": "봉",
+    "base_quantity": 4
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 12
+   }
+  ]
+ },
+ {
+  "customer_id": 4,
+  "delivery_date": "2026-08-26",
+  "delivery_address": "경기도 성남시 분당구 정자일로 95, 102호",
+  "items": [
+   {
+    "sku": "PWD-002",
+    "quantity": 1,
+    "unit": "봉",
+    "base_quantity": 1
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 10,
+    "unit": "개",
+    "base_quantity": 10
+   },
+   {
+    "sku": "COF-001",
+    "quantity": 2,
+    "unit": "봉",
+    "base_quantity": 2
+   },
+   {
+    "sku": "SUP-004",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "SUP-003",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   }
+  ]
+ },
+ {
+  "customer_id": 4,
+  "delivery_date": "2026-09-03",
+  "delivery_address": "경기도 성남시 분당구 정자일로 95, 102호",
+  "items": [
+   {
+    "sku": "SUP-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 24
+   },
+   {
+    "sku": "SYR-001",
+    "quantity": 3,
+    "unit": "병",
+    "base_quantity": 3
+   }
+  ]
+ },
+ {
+  "customer_id": 4,
+  "delivery_date": "2026-09-09",
+  "delivery_address": "경기도 성남시 분당구 정자일로 95, 102호",
+  "items": [
+   {
+    "sku": "FRT-001",
+    "quantity": 11,
+    "unit": "개",
+    "base_quantity": 11
+   },
+   {
+    "sku": "SUP-004",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   },
+   {
+    "sku": "PWD-002",
+    "quantity": 2,
+    "unit": "봉",
+    "base_quantity": 2
+   },
+   {
+    "sku": "SUP-001",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   },
+   {
+    "sku": "COF-001",
+    "quantity": 3,
+    "unit": "봉",
+    "base_quantity": 3
+   }
+  ]
+ },
+ {
+  "customer_id": 4,
+  "delivery_date": "2026-09-18",
+  "delivery_address": "경기도 성남시 분당구 정자일로 95, 102호",
+  "items": [
+   {
+    "sku": "SUP-003",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 12
+   },
+   {
+    "sku": "PWD-003",
+    "quantity": 4,
+    "unit": "봉",
+    "base_quantity": 4
+   }
+  ]
+ },
+ {
+  "customer_id": 4,
+  "delivery_date": "2026-09-23",
+  "delivery_address": "경기도 성남시 분당구 정자일로 95, 102호",
+  "items": [
+   {
+    "sku": "SYR-001",
+    "quantity": 3,
+    "unit": "병",
+    "base_quantity": 3
+   },
+   {
+    "sku": "SUP-003",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "SUP-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   }
+  ]
+ },
+ {
+  "customer_id": 5,
+  "delivery_date": "2026-08-06",
+  "delivery_address": "서울특별시 종로구 북촌로5길 21",
+  "items": [
+   {
+    "sku": "DAI-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 12
+   },
+   {
+    "sku": "COF-001",
+    "quantity": 7,
+    "unit": "봉",
+    "base_quantity": 7
+   },
+   {
+    "sku": "COF-002",
+    "quantity": 2,
+    "unit": "봉",
+    "base_quantity": 2
+   }
+  ]
+ },
+ {
+  "customer_id": 5,
+  "delivery_date": "2026-08-11",
+  "delivery_address": "서울특별시 종로구 북촌로5길 21",
+  "items": [
+   {
+    "sku": "COF-004",
+    "quantity": 2,
+    "unit": "봉",
+    "base_quantity": 2
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 12
+   },
+   {
+    "sku": "COF-001",
+    "quantity": 10,
+    "unit": "봉",
+    "base_quantity": 10
+   },
+   {
+    "sku": "SUP-003",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "COF-002",
+    "quantity": 5,
+    "unit": "봉",
+    "base_quantity": 5
+   }
+  ]
+ },
+ {
+  "customer_id": 5,
+  "delivery_date": "2026-08-20",
+  "delivery_address": "서울특별시 종로구 북촌로5길 21",
+  "items": [
+   {
+    "sku": "COF-004",
+    "quantity": 3,
+    "unit": "봉",
+    "base_quantity": 3
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 12
+   },
+   {
+    "sku": "COF-002",
+    "quantity": 5,
+    "unit": "봉",
+    "base_quantity": 5
+   },
+   {
+    "sku": "COF-003",
+    "quantity": 3,
+    "unit": "봉",
+    "base_quantity": 3
+   },
+   {
+    "sku": "SUP-003",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   }
+  ]
+ },
+ {
+  "customer_id": 5,
+  "delivery_date": "2026-08-25",
+  "delivery_address": "서울특별시 종로구 북촌로5길 21",
+  "items": [
+   {
+    "sku": "COF-004",
+    "quantity": 1,
+    "unit": "봉",
+    "base_quantity": 1
+   },
+   {
+    "sku": "COF-003",
+    "quantity": 5,
+    "unit": "봉",
+    "base_quantity": 5
+   },
+   {
+    "sku": "COF-001",
+    "quantity": 5,
+    "unit": "봉",
+    "base_quantity": 5
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 12
+   }
+  ]
+ },
+ {
+  "customer_id": 5,
+  "delivery_date": "2026-09-01",
+  "delivery_address": "서울특별시 종로구 북촌로5길 21",
+  "items": [
+   {
+    "sku": "COF-002",
+    "quantity": 4,
+    "unit": "봉",
+    "base_quantity": 4
+   },
+   {
+    "sku": "COF-003",
+    "quantity": 3,
+    "unit": "봉",
+    "base_quantity": 3
+   },
+   {
+    "sku": "SUP-003",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   }
+  ]
+ },
+ {
+  "customer_id": 5,
+  "delivery_date": "2026-09-07",
+  "delivery_address": "서울특별시 종로구 북촌로5길 21",
+  "items": [
+   {
+    "sku": "COF-001",
+    "quantity": 6,
+    "unit": "봉",
+    "base_quantity": 6
+   },
+   {
+    "sku": "COF-004",
+    "quantity": 3,
+    "unit": "봉",
+    "base_quantity": 3
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 24
+   },
+   {
+    "sku": "SUP-003",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "COF-003",
+    "quantity": 4,
+    "unit": "봉",
+    "base_quantity": 4
+   }
+  ]
+ },
+ {
+  "customer_id": 5,
+  "delivery_date": "2026-09-15",
+  "delivery_address": "서울특별시 종로구 북촌로5길 21",
+  "items": [
+   {
+    "sku": "COF-003",
+    "quantity": 4,
+    "unit": "봉",
+    "base_quantity": 4
+   },
+   {
+    "sku": "SUP-003",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "COF-001",
+    "quantity": 7,
+    "unit": "봉",
+    "base_quantity": 7
+   }
+  ]
+ },
+ {
+  "customer_id": 5,
+  "delivery_date": "2026-09-24",
+  "delivery_address": "서울특별시 종로구 북촌로5길 21",
+  "items": [
+   {
+    "sku": "COF-004",
+    "quantity": 3,
+    "unit": "봉",
+    "base_quantity": 3
+   },
+   {
+    "sku": "COF-001",
+    "quantity": 9,
+    "unit": "봉",
+    "base_quantity": 9
+   },
+   {
+    "sku": "SUP-003",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "COF-002",
+    "quantity": 2,
+    "unit": "봉",
+    "base_quantity": 2
+   }
+  ]
+ },
+ {
+  "customer_id": 6,
+  "delivery_date": "2026-08-04",
+  "delivery_address": "서울특별시 강남구 도산대로17길 9, 2층",
+  "items": [
+   {
+    "sku": "COF-001",
+    "quantity": 2,
+    "unit": "봉",
+    "base_quantity": 2
+   },
+   {
+    "sku": "SUP-004",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "SYR-001",
+    "quantity": 2,
+    "unit": "병",
+    "base_quantity": 2
+   }
+  ]
+ },
+ {
+  "customer_id": 6,
+  "delivery_date": "2026-08-10",
+  "delivery_address": "서울특별시 강남구 도산대로17길 9, 2층",
+  "items": [
+   {
+    "sku": "SUP-004",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   },
+   {
+    "sku": "DAI-002",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 24
+   },
+   {
+    "sku": "COF-001",
+    "quantity": 2,
+    "unit": "봉",
+    "base_quantity": 2
+   },
+   {
+    "sku": "SYR-006",
+    "quantity": 2,
+    "unit": "병",
+    "base_quantity": 2
+   }
+  ]
+ },
+ {
+  "customer_id": 6,
+  "delivery_date": "2026-08-15",
+  "delivery_address": "서울특별시 강남구 도산대로17길 9, 2층",
+  "items": [
+   {
+    "sku": "SYR-001",
+    "quantity": 3,
+    "unit": "병",
+    "base_quantity": 3
+   },
+   {
+    "sku": "DAI-002",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 12
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 24
+   },
+   {
+    "sku": "SYR-006",
+    "quantity": 1,
+    "unit": "병",
+    "base_quantity": 1
+   },
+   {
+    "sku": "DAI-010",
+    "quantity": 8,
+    "unit": "개",
+    "base_quantity": 8
+   }
+  ]
+ },
+ {
+  "customer_id": 6,
+  "delivery_date": "2026-08-21",
+  "delivery_address": "서울특별시 강남구 도산대로17길 9, 2층",
+  "items": [
+   {
+    "sku": "SUP-004",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "COF-001",
+    "quantity": 4,
+    "unit": "봉",
+    "base_quantity": 4
+   },
+   {
+    "sku": "SUP-001",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   }
+  ]
+ },
+ {
+  "customer_id": 6,
+  "delivery_date": "2026-08-28",
+  "delivery_address": "서울특별시 강남구 도산대로17길 9, 2층",
+  "items": [
+   {
+    "sku": "SYR-001",
+    "quantity": 1,
+    "unit": "병",
+    "base_quantity": 1
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 12
+   },
+   {
+    "sku": "SUP-004",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 11,
+    "unit": "개",
+    "base_quantity": 11
+   },
+   {
+    "sku": "COF-001",
+    "quantity": 3,
+    "unit": "봉",
+    "base_quantity": 3
+   }
+  ]
+ },
+ {
+  "customer_id": 6,
+  "delivery_date": "2026-09-03",
+  "delivery_address": "서울특별시 강남구 도산대로17길 9, 2층",
+  "items": [
+   {
+    "sku": "SUP-004",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "SUP-001",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   },
+   {
+    "sku": "SYR-001",
+    "quantity": 2,
+    "unit": "병",
+    "base_quantity": 2
+   },
+   {
+    "sku": "DAI-010",
+    "quantity": 4,
+    "unit": "개",
+    "base_quantity": 4
+   }
+  ]
+ },
+ {
+  "customer_id": 6,
+  "delivery_date": "2026-09-10",
+  "delivery_address": "서울특별시 강남구 도산대로17길 9, 2층",
+  "items": [
+   {
+    "sku": "DAI-001",
+    "quantity": 3,
+    "unit": "박스",
+    "base_quantity": 36
+   },
+   {
+    "sku": "SYR-006",
+    "quantity": 3,
+    "unit": "병",
+    "base_quantity": 3
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 16,
+    "unit": "개",
+    "base_quantity": 16
+   }
+  ]
+ },
+ {
+  "customer_id": 6,
+  "delivery_date": "2026-09-19",
+  "delivery_address": "서울특별시 강남구 도산대로17길 9, 2층",
+  "items": [
+   {
+    "sku": "SUP-001",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   },
+   {
+    "sku": "DAI-010",
+    "quantity": 7,
+    "unit": "개",
+    "base_quantity": 7
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 3,
+    "unit": "박스",
+    "base_quantity": 36
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 22,
+    "unit": "개",
+    "base_quantity": 22
+   }
+  ]
+ },
+ {
+  "customer_id": 7,
+  "delivery_date": "2026-08-05",
+  "delivery_address": "경기도 고양시 일산동구 정발산로 31",
+  "items": [
+   {
+    "sku": "SUP-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "SUP-002",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 21,
+    "unit": "개",
+    "base_quantity": 21
+   },
+   {
+    "sku": "COF-001",
+    "quantity": 2,
+    "unit": "봉",
+    "base_quantity": 2
+   },
+   {
+    "sku": "FRT-005",
+    "quantity": 1,
+    "unit": "봉",
+    "base_quantity": 1
+   }
+  ]
+ },
+ {
+  "customer_id": 7,
+  "delivery_date": "2026-08-10",
+  "delivery_address": "경기도 고양시 일산동구 정발산로 31",
+  "items": [
+   {
+    "sku": "SUP-004",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "FRT-004",
+    "quantity": 2,
+    "unit": "봉",
+    "base_quantity": 2
+   },
+   {
+    "sku": "SYR-001",
+    "quantity": 3,
+    "unit": "병",
+    "base_quantity": 3
+   }
+  ]
+ },
+ {
+  "customer_id": 7,
+  "delivery_date": "2026-08-18",
+  "delivery_address": "경기도 고양시 일산동구 정발산로 31",
+  "items": [
+   {
+    "sku": "SUP-004",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "SUP-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "SUP-002",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 24
+   },
+   {
+    "sku": "FRT-006",
+    "quantity": 2,
+    "unit": "봉",
+    "base_quantity": 2
+   }
+  ]
+ },
+ {
+  "customer_id": 7,
+  "delivery_date": "2026-08-25",
+  "delivery_address": "경기도 고양시 일산동구 정발산로 31",
+  "items": [
+   {
+    "sku": "FRT-001",
+    "quantity": 11,
+    "unit": "개",
+    "base_quantity": 11
+   },
+   {
+    "sku": "FRT-006",
+    "quantity": 3,
+    "unit": "봉",
+    "base_quantity": 3
+   },
+   {
+    "sku": "SUP-002",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "COF-001",
+    "quantity": 4,
+    "unit": "봉",
+    "base_quantity": 4
+   }
+  ]
+ },
+ {
+  "customer_id": 7,
+  "delivery_date": "2026-08-31",
+  "delivery_address": "경기도 고양시 일산동구 정발산로 31",
+  "items": [
+   {
+    "sku": "FRT-001",
+    "quantity": 25,
+    "unit": "개",
+    "base_quantity": 25
+   },
+   {
+    "sku": "FRT-004",
+    "quantity": 3,
+    "unit": "봉",
+    "base_quantity": 3
+   },
+   {
+    "sku": "COF-001",
+    "quantity": 3,
+    "unit": "봉",
+    "base_quantity": 3
+   }
+  ]
+ },
+ {
+  "customer_id": 7,
+  "delivery_date": "2026-09-06",
+  "delivery_address": "경기도 고양시 일산동구 정발산로 31",
+  "items": [
+   {
+    "sku": "DAI-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 12
+   },
+   {
+    "sku": "COF-001",
+    "quantity": 5,
+    "unit": "봉",
+    "base_quantity": 5
+   },
+   {
+    "sku": "SUP-004",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "FRT-004",
+    "quantity": 3,
+    "unit": "봉",
+    "base_quantity": 3
+   },
+   {
+    "sku": "SUP-002",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   }
+  ]
+ },
+ {
+  "customer_id": 7,
+  "delivery_date": "2026-09-13",
+  "delivery_address": "경기도 고양시 일산동구 정발산로 31",
+  "items": [
+   {
+    "sku": "SUP-001",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   },
+   {
+    "sku": "COF-001",
+    "quantity": 4,
+    "unit": "봉",
+    "base_quantity": 4
+   },
+   {
+    "sku": "SYR-001",
+    "quantity": 3,
+    "unit": "병",
+    "base_quantity": 3
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 25,
+    "unit": "개",
+    "base_quantity": 25
+   }
+  ]
+ },
+ {
+  "customer_id": 7,
+  "delivery_date": "2026-09-19",
+  "delivery_address": "경기도 고양시 일산동구 정발산로 31",
+  "items": [
+   {
+    "sku": "SUP-002",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   },
+   {
+    "sku": "SYR-001",
+    "quantity": 3,
+    "unit": "병",
+    "base_quantity": 3
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 3,
+    "unit": "박스",
+    "base_quantity": 36
+   },
+   {
+    "sku": "FRT-004",
+    "quantity": 4,
+    "unit": "봉",
+    "base_quantity": 4
+   }
+  ]
+ },
+ {
+  "customer_id": 8,
+  "delivery_date": "2026-08-03",
+  "delivery_address": "서울특별시 서대문구 연희로 88",
+  "items": [
+   {
+    "sku": "SUP-001",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   },
+   {
+    "sku": "COF-001",
+    "quantity": 2,
+    "unit": "봉",
+    "base_quantity": 2
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 24
+   },
+   {
+    "sku": "SYR-004",
+    "quantity": 2,
+    "unit": "개",
+    "base_quantity": 2
+   },
+   {
+    "sku": "SYR-005",
+    "quantity": 1,
+    "unit": "개",
+    "base_quantity": 1
+   }
+  ]
+ },
+ {
+  "customer_id": 8,
+  "delivery_date": "2026-08-08",
+  "delivery_address": "서울특별시 서대문구 연희로 88",
+  "items": [
+   {
+    "sku": "DAI-005",
+    "quantity": 3,
+    "unit": "개",
+    "base_quantity": 3
+   },
+   {
+    "sku": "SUP-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "SYR-005",
+    "quantity": 1,
+    "unit": "개",
+    "base_quantity": 1
+   },
+   {
+    "sku": "SYR-001",
+    "quantity": 3,
+    "unit": "병",
+    "base_quantity": 3
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 3,
+    "unit": "박스",
+    "base_quantity": 36
+   }
+  ]
+ },
+ {
+  "customer_id": 8,
+  "delivery_date": "2026-08-13",
+  "delivery_address": "서울특별시 서대문구 연희로 88",
+  "items": [
+   {
+    "sku": "SYR-005",
+    "quantity": 1,
+    "unit": "개",
+    "base_quantity": 1
+   },
+   {
+    "sku": "SUP-004",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "SYR-004",
+    "quantity": 1,
+    "unit": "개",
+    "base_quantity": 1
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 3,
+    "unit": "박스",
+    "base_quantity": 36
+   },
+   {
+    "sku": "SYR-001",
+    "quantity": 3,
+    "unit": "병",
+    "base_quantity": 3
+   }
+  ]
+ },
+ {
+  "customer_id": 8,
+  "delivery_date": "2026-08-21",
+  "delivery_address": "서울특별시 서대문구 연희로 88",
+  "items": [
+   {
+    "sku": "SYR-004",
+    "quantity": 2,
+    "unit": "개",
+    "base_quantity": 2
+   },
+   {
+    "sku": "COF-001",
+    "quantity": 2,
+    "unit": "봉",
+    "base_quantity": 2
+   },
+   {
+    "sku": "SUP-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 12,
+    "unit": "개",
+    "base_quantity": 12
+   }
+  ]
+ },
+ {
+  "customer_id": 8,
+  "delivery_date": "2026-08-30",
+  "delivery_address": "서울특별시 서대문구 연희로 88",
+  "items": [
+   {
+    "sku": "FRT-001",
+    "quantity": 19,
+    "unit": "개",
+    "base_quantity": 19
+   },
+   {
+    "sku": "SUP-004",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "DAI-005",
+    "quantity": 2,
+    "unit": "개",
+    "base_quantity": 2
+   }
+  ]
+ },
+ {
+  "customer_id": 8,
+  "delivery_date": "2026-09-07",
+  "delivery_address": "서울특별시 서대문구 연희로 88",
+  "items": [
+   {
+    "sku": "SYR-005",
+    "quantity": 1,
+    "unit": "개",
+    "base_quantity": 1
+   },
+   {
+    "sku": "SUP-004",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 25,
+    "unit": "개",
+    "base_quantity": 25
+   }
+  ]
+ },
+ {
+  "customer_id": 8,
+  "delivery_date": "2026-09-14",
+  "delivery_address": "서울특별시 서대문구 연희로 88",
+  "items": [
+   {
+    "sku": "DAI-005",
+    "quantity": 2,
+    "unit": "개",
+    "base_quantity": 2
+   },
+   {
+    "sku": "SUP-004",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "SUP-001",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   },
+   {
+    "sku": "SYR-004",
+    "quantity": 1,
+    "unit": "개",
+    "base_quantity": 1
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 25,
+    "unit": "개",
+    "base_quantity": 25
+   }
+  ]
+ },
+ {
+  "customer_id": 8,
+  "delivery_date": "2026-09-19",
+  "delivery_address": "서울특별시 서대문구 연희로 88",
+  "items": [
+   {
+    "sku": "SYR-005",
+    "quantity": 2,
+    "unit": "개",
+    "base_quantity": 2
+   },
+   {
+    "sku": "COF-001",
+    "quantity": 4,
+    "unit": "봉",
+    "base_quantity": 4
+   },
+   {
+    "sku": "SYR-004",
+    "quantity": 2,
+    "unit": "개",
+    "base_quantity": 2
+   },
+   {
+    "sku": "SUP-004",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   }
+  ]
+ },
+ {
+  "customer_id": 9,
+  "delivery_date": "2026-08-03",
+  "delivery_address": "서울특별시 중구 을지로 100, 1층",
+  "items": [
+   {
+    "sku": "COF-001",
+    "quantity": 4,
+    "unit": "봉",
+    "base_quantity": 4
+   },
+   {
+    "sku": "FRT-002",
+    "quantity": 12,
+    "unit": "개",
+    "base_quantity": 12
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 29,
+    "unit": "개",
+    "base_quantity": 29
+   },
+   {
+    "sku": "SUP-004",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   },
+   {
+    "sku": "SYR-001",
+    "quantity": 1,
+    "unit": "병",
+    "base_quantity": 1
+   }
+  ]
+ },
+ {
+  "customer_id": 9,
+  "delivery_date": "2026-08-10",
+  "delivery_address": "서울특별시 중구 을지로 100, 1층",
+  "items": [
+   {
+    "sku": "FRT-002",
+    "quantity": 10,
+    "unit": "개",
+    "base_quantity": 10
+   },
+   {
+    "sku": "SUP-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "PWD-004",
+    "quantity": 1,
+    "unit": "개",
+    "base_quantity": 1
+   }
+  ]
+ },
+ {
+  "customer_id": 9,
+  "delivery_date": "2026-08-18",
+  "delivery_address": "서울특별시 중구 을지로 100, 1층",
+  "items": [
+   {
+    "sku": "FRT-002",
+    "quantity": 15,
+    "unit": "개",
+    "base_quantity": 15
+   },
+   {
+    "sku": "SUP-001",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   },
+   {
+    "sku": "SYR-001",
+    "quantity": 2,
+    "unit": "병",
+    "base_quantity": 2
+   },
+   {
+    "sku": "COF-001",
+    "quantity": 2,
+    "unit": "봉",
+    "base_quantity": 2
+   },
+   {
+    "sku": "PWD-004",
+    "quantity": 2,
+    "unit": "개",
+    "base_quantity": 2
+   }
+  ]
+ },
+ {
+  "customer_id": 9,
+  "delivery_date": "2026-08-23",
+  "delivery_address": "서울특별시 중구 을지로 100, 1층",
+  "items": [
+   {
+    "sku": "FRT-001",
+    "quantity": 16,
+    "unit": "개",
+    "base_quantity": 16
+   },
+   {
+    "sku": "PWD-004",
+    "quantity": 3,
+    "unit": "개",
+    "base_quantity": 3
+   },
+   {
+    "sku": "SUP-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 1000
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 3,
+    "unit": "박스",
+    "base_quantity": 36
+   }
+  ]
+ },
+ {
+  "customer_id": 9,
+  "delivery_date": "2026-08-30",
+  "delivery_address": "서울특별시 중구 을지로 100, 1층",
+  "items": [
+   {
+    "sku": "FRT-001",
+    "quantity": 28,
+    "unit": "개",
+    "base_quantity": 28
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 12
+   },
+   {
+    "sku": "SUP-001",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   },
+   {
+    "sku": "FRT-002",
+    "quantity": 16,
+    "unit": "개",
+    "base_quantity": 16
+   }
+  ]
+ },
+ {
+  "customer_id": 9,
+  "delivery_date": "2026-09-06",
+  "delivery_address": "서울특별시 중구 을지로 100, 1층",
+  "items": [
+   {
+    "sku": "SUP-004",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 3,
+    "unit": "박스",
+    "base_quantity": 36
+   },
+   {
+    "sku": "PWD-004",
+    "quantity": 1,
+    "unit": "개",
+    "base_quantity": 1
+   }
+  ]
+ },
+ {
+  "customer_id": 9,
+  "delivery_date": "2026-09-12",
+  "delivery_address": "서울특별시 중구 을지로 100, 1층",
+  "items": [
+   {
+    "sku": "PWD-004",
+    "quantity": 2,
+    "unit": "개",
+    "base_quantity": 2
+   },
+   {
+    "sku": "SUP-004",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   },
+   {
+    "sku": "SYR-001",
+    "quantity": 1,
+    "unit": "병",
+    "base_quantity": 1
+   },
+   {
+    "sku": "COF-001",
+    "quantity": 5,
+    "unit": "봉",
+    "base_quantity": 5
+   }
+  ]
+ },
+ {
+  "customer_id": 9,
+  "delivery_date": "2026-09-21",
+  "delivery_address": "서울특별시 중구 을지로 100, 1층",
+  "items": [
+   {
+    "sku": "SUP-001",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 2000
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 29,
+    "unit": "개",
+    "base_quantity": 29
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 12
+   },
+   {
+    "sku": "PWD-004",
+    "quantity": 3,
+    "unit": "개",
+    "base_quantity": 3
+   },
+   {
+    "sku": "FRT-002",
+    "quantity": 14,
+    "unit": "개",
+    "base_quantity": 14
+   }
+  ]
+ },
+ {
+  "customer_id": 10,
+  "delivery_date": "2026-08-03",
+  "delivery_address": "서울특별시 마포구 독막로 45",
+  "items": [
+   {
+    "sku": "DAI-007",
+    "quantity": 3,
+    "unit": "개",
+    "base_quantity": 3
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 24
+   },
+   {
+    "sku": "BAK-003",
+    "quantity": 1,
+    "unit": "포대",
+    "base_quantity": 1
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 40,
+    "unit": "개",
+    "base_quantity": 40
+   },
+   {
+    "sku": "DAI-004",
+    "quantity": 5,
+    "unit": "개",
+    "base_quantity": 5
+   }
+  ]
+ },
+ {
+  "customer_id": 10,
+  "delivery_date": "2026-08-11",
+  "delivery_address": "서울특별시 마포구 독막로 45",
+  "items": [
+   {
+    "sku": "DAI-007",
+    "quantity": 2,
+    "unit": "개",
+    "base_quantity": 2
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 40,
+    "unit": "개",
+    "base_quantity": 40
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 12
+   },
+   {
+    "sku": "BAK-003",
+    "quantity": 1,
+    "unit": "포대",
+    "base_quantity": 1
+   },
+   {
+    "sku": "DAI-004",
+    "quantity": 4,
+    "unit": "개",
+    "base_quantity": 4
+   }
+  ]
+ },
+ {
+  "customer_id": 10,
+  "delivery_date": "2026-08-20",
+  "delivery_address": "서울특별시 마포구 독막로 45",
+  "items": [
+   {
+    "sku": "DAI-001",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 24
+   },
+   {
+    "sku": "DAI-007",
+    "quantity": 3,
+    "unit": "개",
+    "base_quantity": 3
+   },
+   {
+    "sku": "BAK-003",
+    "quantity": 1,
+    "unit": "포대",
+    "base_quantity": 1
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 37,
+    "unit": "개",
+    "base_quantity": 37
+   }
+  ]
+ },
+ {
+  "customer_id": 10,
+  "delivery_date": "2026-08-26",
+  "delivery_address": "서울특별시 마포구 독막로 45",
+  "items": [
+   {
+    "sku": "DAI-004",
+    "quantity": 3,
+    "unit": "개",
+    "base_quantity": 3
+   },
+   {
+    "sku": "DAI-007",
+    "quantity": 3,
+    "unit": "개",
+    "base_quantity": 3
+   },
+   {
+    "sku": "BAK-003",
+    "quantity": 1,
+    "unit": "포대",
+    "base_quantity": 1
+   }
+  ]
+ },
+ {
+  "customer_id": 10,
+  "delivery_date": "2026-09-02",
+  "delivery_address": "서울특별시 마포구 독막로 45",
+  "items": [
+   {
+    "sku": "DAI-001",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 24
+   },
+   {
+    "sku": "DAI-007",
+    "quantity": 3,
+    "unit": "개",
+    "base_quantity": 3
+   },
+   {
+    "sku": "DAI-004",
+    "quantity": 4,
+    "unit": "개",
+    "base_quantity": 4
+   },
+   {
+    "sku": "BAK-003",
+    "quantity": 1,
+    "unit": "포대",
+    "base_quantity": 1
+   }
+  ]
+ },
+ {
+  "customer_id": 10,
+  "delivery_date": "2026-09-09",
+  "delivery_address": "서울특별시 마포구 독막로 45",
+  "items": [
+   {
+    "sku": "DAI-004",
+    "quantity": 4,
+    "unit": "개",
+    "base_quantity": 4
+   },
+   {
+    "sku": "BAK-003",
+    "quantity": 1,
+    "unit": "포대",
+    "base_quantity": 1
+   },
+   {
+    "sku": "DAI-007",
+    "quantity": 2,
+    "unit": "개",
+    "base_quantity": 2
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 28,
+    "unit": "개",
+    "base_quantity": 28
+   }
+  ]
+ },
+ {
+  "customer_id": 10,
+  "delivery_date": "2026-09-15",
+  "delivery_address": "서울특별시 마포구 독막로 45",
+  "items": [
+   {
+    "sku": "BAK-003",
+    "quantity": 1,
+    "unit": "포대",
+    "base_quantity": 1
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 12
+   },
+   {
+    "sku": "DAI-007",
+    "quantity": 2,
+    "unit": "개",
+    "base_quantity": 2
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 33,
+    "unit": "개",
+    "base_quantity": 33
+   }
+  ]
+ },
+ {
+  "customer_id": 10,
+  "delivery_date": "2026-09-23",
+  "delivery_address": "서울특별시 마포구 독막로 45",
+  "items": [
+   {
+    "sku": "BAK-003",
+    "quantity": 1,
+    "unit": "포대",
+    "base_quantity": 1
+   },
+   {
+    "sku": "DAI-004",
+    "quantity": 4,
+    "unit": "개",
+    "base_quantity": 4
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 12
+   },
+   {
+    "sku": "DAI-007",
+    "quantity": 2,
+    "unit": "개",
+    "base_quantity": 2
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 24,
+    "unit": "개",
+    "base_quantity": 24
+   }
+  ]
+ },
+ {
+  "customer_id": 11,
+  "delivery_date": "2026-08-03",
+  "delivery_address": "서울특별시 송파구 백제고분로 210",
+  "items": [
+   {
+    "sku": "FRT-001",
+    "quantity": 12,
+    "unit": "개",
+    "base_quantity": 12
+   },
+   {
+    "sku": "DAI-005",
+    "quantity": 4,
+    "unit": "개",
+    "base_quantity": 4
+   },
+   {
+    "sku": "FRT-002",
+    "quantity": 19,
+    "unit": "개",
+    "base_quantity": 19
+   },
+   {
+    "sku": "DAI-008",
+    "quantity": 1,
+    "unit": "개",
+    "base_quantity": 1
+   }
+  ]
+ },
+ {
+  "customer_id": 11,
+  "delivery_date": "2026-08-10",
+  "delivery_address": "서울특별시 송파구 백제고분로 210",
+  "items": [
+   {
+    "sku": "FRT-002",
+    "quantity": 11,
+    "unit": "개",
+    "base_quantity": 11
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 11,
+    "unit": "개",
+    "base_quantity": 11
+   },
+   {
+    "sku": "DAI-008",
+    "quantity": 1,
+    "unit": "개",
+    "base_quantity": 1
+   }
+  ]
+ },
+ {
+  "customer_id": 11,
+  "delivery_date": "2026-08-17",
+  "delivery_address": "서울특별시 송파구 백제고분로 210",
+  "items": [
+   {
+    "sku": "DAI-008",
+    "quantity": 1,
+    "unit": "개",
+    "base_quantity": 1
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 10,
+    "unit": "개",
+    "base_quantity": 10
+   },
+   {
+    "sku": "FRT-002",
+    "quantity": 18,
+    "unit": "개",
+    "base_quantity": 18
+   },
+   {
+    "sku": "DAI-005",
+    "quantity": 5,
+    "unit": "개",
+    "base_quantity": 5
+   }
+  ]
+ },
+ {
+  "customer_id": 11,
+  "delivery_date": "2026-08-25",
+  "delivery_address": "서울특별시 송파구 백제고분로 210",
+  "items": [
+   {
+    "sku": "FRT-002",
+    "quantity": 18,
+    "unit": "개",
+    "base_quantity": 18
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 13,
+    "unit": "개",
+    "base_quantity": 13
+   },
+   {
+    "sku": "DAI-005",
+    "quantity": 4,
+    "unit": "개",
+    "base_quantity": 4
+   },
+   {
+    "sku": "DAI-008",
+    "quantity": 1,
+    "unit": "개",
+    "base_quantity": 1
+   }
+  ]
+ },
+ {
+  "customer_id": 11,
+  "delivery_date": "2026-09-02",
+  "delivery_address": "서울특별시 송파구 백제고분로 210",
+  "items": [
+   {
+    "sku": "FRT-002",
+    "quantity": 17,
+    "unit": "개",
+    "base_quantity": 17
+   },
+   {
+    "sku": "DAI-005",
+    "quantity": 6,
+    "unit": "개",
+    "base_quantity": 6
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 11,
+    "unit": "개",
+    "base_quantity": 11
+   },
+   {
+    "sku": "DAI-008",
+    "quantity": 2,
+    "unit": "개",
+    "base_quantity": 2
+   }
+  ]
+ },
+ {
+  "customer_id": 11,
+  "delivery_date": "2026-09-08",
+  "delivery_address": "서울특별시 송파구 백제고분로 210",
+  "items": [
+   {
+    "sku": "FRT-001",
+    "quantity": 10,
+    "unit": "개",
+    "base_quantity": 10
+   },
+   {
+    "sku": "DAI-008",
+    "quantity": 2,
+    "unit": "개",
+    "base_quantity": 2
+   },
+   {
+    "sku": "DAI-005",
+    "quantity": 6,
+    "unit": "개",
+    "base_quantity": 6
+   },
+   {
+    "sku": "FRT-002",
+    "quantity": 15,
+    "unit": "개",
+    "base_quantity": 15
+   }
+  ]
+ },
+ {
+  "customer_id": 11,
+  "delivery_date": "2026-09-16",
+  "delivery_address": "서울특별시 송파구 백제고분로 210",
+  "items": [
+   {
+    "sku": "DAI-005",
+    "quantity": 4,
+    "unit": "개",
+    "base_quantity": 4
+   },
+   {
+    "sku": "DAI-008",
+    "quantity": 2,
+    "unit": "개",
+    "base_quantity": 2
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 13,
+    "unit": "개",
+    "base_quantity": 13
+   }
+  ]
+ },
+ {
+  "customer_id": 11,
+  "delivery_date": "2026-09-23",
+  "delivery_address": "서울특별시 송파구 백제고분로 210",
+  "items": [
+   {
+    "sku": "DAI-008",
+    "quantity": 2,
+    "unit": "개",
+    "base_quantity": 2
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 14,
+    "unit": "개",
+    "base_quantity": 14
+   },
+   {
+    "sku": "DAI-005",
+    "quantity": 3,
+    "unit": "개",
+    "base_quantity": 3
+   }
+  ]
+ },
+ {
+  "customer_id": 12,
+  "delivery_date": "2026-08-06",
+  "delivery_address": "인천광역시 연수구 컨벤시아대로 165",
+  "items": [
+   {
+    "sku": "DAI-007",
+    "quantity": 2,
+    "unit": "개",
+    "base_quantity": 2
+   },
+   {
+    "sku": "DAI-004",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 12
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 9,
+    "unit": "개",
+    "base_quantity": 9
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 21,
+    "unit": "개",
+    "base_quantity": 21
+   }
+  ]
+ },
+ {
+  "customer_id": 12,
+  "delivery_date": "2026-08-12",
+  "delivery_address": "인천광역시 연수구 컨벤시아대로 165",
+  "items": [
+   {
+    "sku": "DAI-007",
+    "quantity": 2,
+    "unit": "개",
+    "base_quantity": 2
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 7,
+    "unit": "개",
+    "base_quantity": 7
+   },
+   {
+    "sku": "DAI-004",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 12
+   }
+  ]
+ },
+ {
+  "customer_id": 12,
+  "delivery_date": "2026-08-20",
+  "delivery_address": "인천광역시 연수구 컨벤시아대로 165",
+  "items": [
+   {
+    "sku": "FRT-001",
+    "quantity": 49,
+    "unit": "개",
+    "base_quantity": 49
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 7,
+    "unit": "개",
+    "base_quantity": 7
+   },
+   {
+    "sku": "DAI-004",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 12
+   },
+   {
+    "sku": "DAI-007",
+    "quantity": 3,
+    "unit": "개",
+    "base_quantity": 3
+   }
+  ]
+ },
+ {
+  "customer_id": 12,
+  "delivery_date": "2026-08-26",
+  "delivery_address": "인천광역시 연수구 컨벤시아대로 165",
+  "items": [
+   {
+    "sku": "DAI-001",
+    "quantity": 8,
+    "unit": "개",
+    "base_quantity": 8
+   },
+   {
+    "sku": "DAI-004",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 12
+   },
+   {
+    "sku": "DAI-007",
+    "quantity": 5,
+    "unit": "개",
+    "base_quantity": 5
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 25,
+    "unit": "개",
+    "base_quantity": 25
+   }
+  ]
+ },
+ {
+  "customer_id": 12,
+  "delivery_date": "2026-08-31",
+  "delivery_address": "인천광역시 연수구 컨벤시아대로 165",
+  "items": [
+   {
+    "sku": "DAI-004",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 12
+   },
+   {
+    "sku": "DAI-007",
+    "quantity": 5,
+    "unit": "개",
+    "base_quantity": 5
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 6,
+    "unit": "개",
+    "base_quantity": 6
+   }
+  ]
+ },
+ {
+  "customer_id": 12,
+  "delivery_date": "2026-09-09",
+  "delivery_address": "인천광역시 연수구 컨벤시아대로 165",
+  "items": [
+   {
+    "sku": "DAI-001",
+    "quantity": 9,
+    "unit": "개",
+    "base_quantity": 9
+   },
+   {
+    "sku": "DAI-007",
+    "quantity": 2,
+    "unit": "개",
+    "base_quantity": 2
+   },
+   {
+    "sku": "FRT-001",
+    "quantity": 21,
+    "unit": "개",
+    "base_quantity": 21
+   }
+  ]
+ },
+ {
+  "customer_id": 12,
+  "delivery_date": "2026-09-17",
+  "delivery_address": "인천광역시 연수구 컨벤시아대로 165",
+  "items": [
+   {
+    "sku": "FRT-001",
+    "quantity": 26,
+    "unit": "개",
+    "base_quantity": 26
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 8,
+    "unit": "개",
+    "base_quantity": 8
+   },
+   {
+    "sku": "DAI-007",
+    "quantity": 4,
+    "unit": "개",
+    "base_quantity": 4
+   }
+  ]
+ },
+ {
+  "customer_id": 12,
+  "delivery_date": "2026-09-25",
+  "delivery_address": "인천광역시 연수구 컨벤시아대로 165",
+  "items": [
+   {
+    "sku": "DAI-001",
+    "quantity": 6,
+    "unit": "개",
+    "base_quantity": 6
+   },
+   {
+    "sku": "DAI-004",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 12
+   },
+   {
+    "sku": "DAI-007",
+    "quantity": 2,
+    "unit": "개",
+    "base_quantity": 2
+   }
+  ]
+ },
+ {
+  "customer_id": 13,
+  "delivery_date": "2026-08-03",
+  "delivery_address": "서울특별시 광진구 아차산로 312",
+  "items": [
+   {
+    "sku": "FRT-005",
+    "quantity": 1,
+    "unit": "봉",
+    "base_quantity": 1
+   },
+   {
+    "sku": "FRT-003",
+    "quantity": 4,
+    "unit": "팩",
+    "base_quantity": 4
+   },
+   {
+    "sku": "COF-001",
+    "quantity": 2,
+    "unit": "봉",
+    "base_quantity": 2
+   }
+  ]
+ },
+ {
+  "customer_id": 13,
+  "delivery_date": "2026-08-10",
+  "delivery_address": "서울특별시 광진구 아차산로 312",
+  "items": [
+   {
+    "sku": "COF-001",
+    "quantity": 2,
+    "unit": "봉",
+    "base_quantity": 2
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 24
+   },
+   {
+    "sku": "FRT-003",
+    "quantity": 2,
+    "unit": "팩",
+    "base_quantity": 2
+   },
+   {
+    "sku": "FRT-005",
+    "quantity": 1,
+    "unit": "봉",
+    "base_quantity": 1
+   }
+  ]
+ },
+ {
+  "customer_id": 13,
+  "delivery_date": "2026-08-15",
+  "delivery_address": "서울특별시 광진구 아차산로 312",
+  "items": [
+   {
+    "sku": "DAI-001",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 24
+   },
+   {
+    "sku": "DAI-008",
+    "quantity": 2,
+    "unit": "개",
+    "base_quantity": 2
+   },
+   {
+    "sku": "FRT-005",
+    "quantity": 2,
+    "unit": "봉",
+    "base_quantity": 2
+   }
+  ]
+ },
+ {
+  "customer_id": 13,
+  "delivery_date": "2026-08-23",
+  "delivery_address": "서울특별시 광진구 아차산로 312",
+  "items": [
+   {
+    "sku": "FRT-003",
+    "quantity": 4,
+    "unit": "팩",
+    "base_quantity": 4
+   },
+   {
+    "sku": "DAI-008",
+    "quantity": 1,
+    "unit": "개",
+    "base_quantity": 1
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 12
+   },
+   {
+    "sku": "FRT-005",
+    "quantity": 2,
+    "unit": "봉",
+    "base_quantity": 2
+   }
+  ]
+ },
+ {
+  "customer_id": 13,
+  "delivery_date": "2026-08-30",
+  "delivery_address": "서울특별시 광진구 아차산로 312",
+  "items": [
+   {
+    "sku": "FRT-005",
+    "quantity": 2,
+    "unit": "봉",
+    "base_quantity": 2
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 12
+   },
+   {
+    "sku": "COF-001",
+    "quantity": 1,
+    "unit": "봉",
+    "base_quantity": 1
+   },
+   {
+    "sku": "DAI-008",
+    "quantity": 2,
+    "unit": "개",
+    "base_quantity": 2
+   }
+  ]
+ },
+ {
+  "customer_id": 13,
+  "delivery_date": "2026-09-04",
+  "delivery_address": "서울특별시 광진구 아차산로 312",
+  "items": [
+   {
+    "sku": "DAI-001",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 24
+   },
+   {
+    "sku": "DAI-008",
+    "quantity": 1,
+    "unit": "개",
+    "base_quantity": 1
+   },
+   {
+    "sku": "FRT-005",
+    "quantity": 1,
+    "unit": "봉",
+    "base_quantity": 1
+   },
+   {
+    "sku": "FRT-003",
+    "quantity": 4,
+    "unit": "팩",
+    "base_quantity": 4
+   },
+   {
+    "sku": "COF-001",
+    "quantity": 1,
+    "unit": "봉",
+    "base_quantity": 1
+   }
+  ]
+ },
+ {
+  "customer_id": 13,
+  "delivery_date": "2026-09-10",
+  "delivery_address": "서울특별시 광진구 아차산로 312",
+  "items": [
+   {
+    "sku": "DAI-008",
+    "quantity": 2,
+    "unit": "개",
+    "base_quantity": 2
+   },
+   {
+    "sku": "COF-001",
+    "quantity": 1,
+    "unit": "봉",
+    "base_quantity": 1
+   },
+   {
+    "sku": "FRT-005",
+    "quantity": 1,
+    "unit": "봉",
+    "base_quantity": 1
+   }
+  ]
+ },
+ {
+  "customer_id": 13,
+  "delivery_date": "2026-09-16",
+  "delivery_address": "서울특별시 광진구 아차산로 312",
+  "items": [
+   {
+    "sku": "DAI-008",
+    "quantity": 2,
+    "unit": "개",
+    "base_quantity": 2
+   },
+   {
+    "sku": "FRT-003",
+    "quantity": 4,
+    "unit": "팩",
+    "base_quantity": 4
+   },
+   {
+    "sku": "FRT-005",
+    "quantity": 2,
+    "unit": "봉",
+    "base_quantity": 2
+   },
+   {
+    "sku": "DAI-001",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 24
+   }
+  ]
+ },
+ {
+  "customer_id": 14,
+  "delivery_date": "2026-08-05",
+  "delivery_address": "서울특별시 은평구 연서로 133",
+  "items": [
+   {
+    "sku": "BAK-003",
+    "quantity": 1,
+    "unit": "포대",
+    "base_quantity": 1
+   },
+   {
+    "sku": "BAK-002",
+    "quantity": 1,
+    "unit": "포대",
+    "base_quantity": 1
+   },
+   {
+    "sku": "DAI-007",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 20
+   },
+   {
+    "sku": "BAK-001",
+    "quantity": 3,
+    "unit": "포대",
+    "base_quantity": 3
+   },
+   {
+    "sku": "DAI-006",
+    "quantity": 8,
+    "unit": "개",
+    "base_quantity": 8
+   }
+  ]
+ },
+ {
+  "customer_id": 14,
+  "delivery_date": "2026-08-11",
+  "delivery_address": "서울특별시 은평구 연서로 133",
+  "items": [
+   {
+    "sku": "BAK-001",
+    "quantity": 4,
+    "unit": "포대",
+    "base_quantity": 4
+   },
+   {
+    "sku": "DAI-007",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 20
+   },
+   {
+    "sku": "BAK-003",
+    "quantity": 1,
+    "unit": "포대",
+    "base_quantity": 1
+   },
+   {
+    "sku": "DAI-006",
+    "quantity": 7,
+    "unit": "개",
+    "base_quantity": 7
+   }
+  ]
+ },
+ {
+  "customer_id": 14,
+  "delivery_date": "2026-08-16",
+  "delivery_address": "서울특별시 은평구 연서로 133",
+  "items": [
+   {
+    "sku": "BAK-001",
+    "quantity": 3,
+    "unit": "포대",
+    "base_quantity": 3
+   },
+   {
+    "sku": "DAI-007",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 20
+   },
+   {
+    "sku": "BAK-002",
+    "quantity": 1,
+    "unit": "포대",
+    "base_quantity": 1
+   }
+  ]
+ },
+ {
+  "customer_id": 14,
+  "delivery_date": "2026-08-23",
+  "delivery_address": "서울특별시 은평구 연서로 133",
+  "items": [
+   {
+    "sku": "BAK-001",
+    "quantity": 4,
+    "unit": "포대",
+    "base_quantity": 4
+   },
+   {
+    "sku": "DAI-006",
+    "quantity": 8,
+    "unit": "개",
+    "base_quantity": 8
+   },
+   {
+    "sku": "BAK-002",
+    "quantity": 1,
+    "unit": "포대",
+    "base_quantity": 1
+   }
+  ]
+ },
+ {
+  "customer_id": 14,
+  "delivery_date": "2026-08-28",
+  "delivery_address": "서울특별시 은평구 연서로 133",
+  "items": [
+   {
+    "sku": "DAI-003",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 24
+   },
+   {
+    "sku": "BAK-002",
+    "quantity": 3,
+    "unit": "포대",
+    "base_quantity": 3
+   },
+   {
+    "sku": "DAI-007",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 20
+   },
+   {
+    "sku": "BAK-003",
+    "quantity": 1,
+    "unit": "포대",
+    "base_quantity": 1
+   }
+  ]
+ },
+ {
+  "customer_id": 14,
+  "delivery_date": "2026-09-06",
+  "delivery_address": "서울특별시 은평구 연서로 133",
+  "items": [
+   {
+    "sku": "DAI-003",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 24
+   },
+   {
+    "sku": "BAK-003",
+    "quantity": 1,
+    "unit": "포대",
+    "base_quantity": 1
+   },
+   {
+    "sku": "BAK-002",
+    "quantity": 1,
+    "unit": "포대",
+    "base_quantity": 1
+   },
+   {
+    "sku": "BAK-001",
+    "quantity": 2,
+    "unit": "포대",
+    "base_quantity": 2
+   },
+   {
+    "sku": "DAI-007",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 20
+   }
+  ]
+ },
+ {
+  "customer_id": 14,
+  "delivery_date": "2026-09-11",
+  "delivery_address": "서울특별시 은평구 연서로 133",
+  "items": [
+   {
+    "sku": "DAI-006",
+    "quantity": 6,
+    "unit": "개",
+    "base_quantity": 6
+   },
+   {
+    "sku": "BAK-002",
+    "quantity": 1,
+    "unit": "포대",
+    "base_quantity": 1
+   },
+   {
+    "sku": "BAK-001",
+    "quantity": 4,
+    "unit": "포대",
+    "base_quantity": 4
+   },
+   {
+    "sku": "DAI-003",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 24
+   },
+   {
+    "sku": "BAK-003",
+    "quantity": 1,
+    "unit": "포대",
+    "base_quantity": 1
+   }
+  ]
+ },
+ {
+  "customer_id": 14,
+  "delivery_date": "2026-09-17",
+  "delivery_address": "서울특별시 은평구 연서로 133",
+  "items": [
+   {
+    "sku": "DAI-007",
+    "quantity": 1,
+    "unit": "박스",
+    "base_quantity": 20
+   },
+   {
+    "sku": "DAI-003",
+    "quantity": 2,
+    "unit": "박스",
+    "base_quantity": 24
+   },
+   {
+    "sku": "DAI-006",
+    "quantity": 4,
+    "unit": "개",
+    "base_quantity": 4
+   }
+  ]
+ },
+ {
+  "customer_id": 15,
+  "delivery_date": "2026-08-04",
+  "delivery_address": "경기도 수원시 영통구 광교중앙로 140",
+  "items": [
+   {
+    "sku": "FRT-003",
+    "quantity": 3,
+    "unit": "팩",
+    "base_quantity": 3
+   },
+   {
+    "sku": "BAK-001",
+    "quantity": 2,
+    "unit": "포대",
+    "base_quantity": 2
+   },
+   {
+    "sku": "DAI-007",
+    "quantity": 15,
+    "unit": "개",
+    "base_quantity": 15
+   },
+   {
+    "sku": "DAI-008",
+    "quantity": 3,
+    "unit": "개",
+    "base_quantity": 3
+   },
+   {
+    "sku": "DAI-004",
+    "quantity": 7,
+    "unit": "개",
+    "base_quantity": 7
+   }
+  ]
+ },
+ {
+  "customer_id": 15,
+  "delivery_date": "2026-08-09",
+  "delivery_address": "경기도 수원시 영통구 광교중앙로 140",
+  "items": [
+   {
+    "sku": "BAK-003",
+    "quantity": 1,
+    "unit": "포대",
+    "base_quantity": 1
+   },
+   {
+    "sku": "FRT-003",
+    "quantity": 2,
+    "unit": "팩",
+    "base_quantity": 2
+   },
+   {
+    "sku": "DAI-004",
+    "quantity": 6,
+    "unit": "개",
+    "base_quantity": 6
+   },
+   {
+    "sku": "DAI-007",
+    "quantity": 15,
+    "unit": "개",
+    "base_quantity": 15
+   }
+  ]
+ },
+ {
+  "customer_id": 15,
+  "delivery_date": "2026-08-15",
+  "delivery_address": "경기도 수원시 영통구 광교중앙로 140",
+  "items": [
+   {
+    "sku": "BAK-003",
+    "quantity": 1,
+    "unit": "포대",
+    "base_quantity": 1
+   },
+   {
+    "sku": "DAI-008",
+    "quantity": 2,
+    "unit": "개",
+    "base_quantity": 2
+   },
+   {
+    "sku": "DAI-007",
+    "quantity": 11,
+    "unit": "개",
+    "base_quantity": 11
+   },
+   {
+    "sku": "BAK-001",
+    "quantity": 1,
+    "unit": "포대",
+    "base_quantity": 1
+   }
+  ]
+ },
+ {
+  "customer_id": 15,
+  "delivery_date": "2026-08-20",
+  "delivery_address": "경기도 수원시 영통구 광교중앙로 140",
+  "items": [
+   {
+    "sku": "FRT-003",
+    "quantity": 2,
+    "unit": "팩",
+    "base_quantity": 2
+   },
+   {
+    "sku": "DAI-004",
+    "quantity": 4,
+    "unit": "개",
+    "base_quantity": 4
+   },
+   {
+    "sku": "DAI-008",
+    "quantity": 2,
+    "unit": "개",
+    "base_quantity": 2
+   },
+   {
+    "sku": "BAK-001",
+    "quantity": 3,
+    "unit": "포대",
+    "base_quantity": 3
+   }
+  ]
+ },
+ {
+  "customer_id": 15,
+  "delivery_date": "2026-08-26",
+  "delivery_address": "경기도 수원시 영통구 광교중앙로 140",
+  "items": [
+   {
+    "sku": "DAI-008",
+    "quantity": 2,
+    "unit": "개",
+    "base_quantity": 2
+   },
+   {
+    "sku": "BAK-001",
+    "quantity": 2,
+    "unit": "포대",
+    "base_quantity": 2
+   },
+   {
+    "sku": "DAI-004",
+    "quantity": 6,
+    "unit": "개",
+    "base_quantity": 6
+   },
+   {
+    "sku": "BAK-003",
+    "quantity": 1,
+    "unit": "포대",
+    "base_quantity": 1
+   },
+   {
+    "sku": "FRT-003",
+    "quantity": 4,
+    "unit": "팩",
+    "base_quantity": 4
+   }
+  ]
+ },
+ {
+  "customer_id": 15,
+  "delivery_date": "2026-09-01",
+  "delivery_address": "경기도 수원시 영통구 광교중앙로 140",
+  "items": [
+   {
+    "sku": "BAK-001",
+    "quantity": 1,
+    "unit": "포대",
+    "base_quantity": 1
+   },
+   {
+    "sku": "DAI-008",
+    "quantity": 3,
+    "unit": "개",
+    "base_quantity": 3
+   },
+   {
+    "sku": "FRT-003",
+    "quantity": 2,
+    "unit": "팩",
+    "base_quantity": 2
+   }
+  ]
+ },
+ {
+  "customer_id": 15,
+  "delivery_date": "2026-09-06",
+  "delivery_address": "경기도 수원시 영통구 광교중앙로 140",
+  "items": [
+   {
+    "sku": "DAI-004",
+    "quantity": 8,
+    "unit": "개",
+    "base_quantity": 8
+   },
+   {
+    "sku": "BAK-001",
+    "quantity": 3,
+    "unit": "포대",
+    "base_quantity": 3
+   },
+   {
+    "sku": "DAI-008",
+    "quantity": 2,
+    "unit": "개",
+    "base_quantity": 2
+   },
+   {
+    "sku": "FRT-003",
+    "quantity": 4,
+    "unit": "팩",
+    "base_quantity": 4
+   }
+  ]
+ },
+ {
+  "customer_id": 15,
+  "delivery_date": "2026-09-12",
+  "delivery_address": "경기도 수원시 영통구 광교중앙로 140",
+  "items": [
+   {
+    "sku": "DAI-008",
+    "quantity": 4,
+    "unit": "개",
+    "base_quantity": 4
+   },
+   {
+    "sku": "FRT-003",
+    "quantity": 2,
+    "unit": "팩",
+    "base_quantity": 2
+   },
+   {
+    "sku": "DAI-007",
+    "quantity": 5,
+    "unit": "개",
+    "base_quantity": 5
+   },
+   {
+    "sku": "BAK-003",
+    "quantity": 1,
+    "unit": "포대",
+    "base_quantity": 1
+   },
+   {
+    "sku": "BAK-001",
+    "quantity": 3,
+    "unit": "포대",
+    "base_quantity": 3
+   }
+  ]
+ }
+]

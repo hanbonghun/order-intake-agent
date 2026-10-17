@@ -1,0 +1,42 @@
+{
+  "case_id": "clean_email_001",
+  "category": "clean_email",
+  "description": "깨끗한 발주: 등록된 명칭·별칭, 단위·납기 명시",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 1,
+    "delivery_date": "2026-10-06",
+    "delivery_address": "서울특별시 마포구 월드컵로12길 34, 1층",
+    "items": [
+      {
+        "sku": "SUP-001",
+        "quantity": 1,
+        "unit": "박스",
+        "base_quantity": 1000,
+        "raw_text": "컵"
+      },
+      {
+        "sku": "PWD-001",
+        "quantity": 1,
+        "unit": "봉",
+        "base_quantity": 1,
+        "raw_text": "그린티 파우더"
+      },
+      {
+        "sku": "COF-001",
+        "quantity": 5,
+        "unit": "봉",
+        "base_quantity": 5,
+        "raw_text": "원두 하우스블렌드 1kg"
+      },
+      {
+        "sku": "FRT-001",
+        "quantity": 10,
+        "unit": "개",
+        "base_quantity": 10,
+        "raw_text": "레몬"
+      }
+    ]
+  }
+}

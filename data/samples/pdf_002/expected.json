@@ -1,0 +1,42 @@
+{
+  "case_id": "pdf_002",
+  "category": "pdf",
+  "description": "깨끗한 발주: 등록된 명칭·별칭, 단위·납기 명시",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 2,
+    "delivery_date": "2026-10-14",
+    "delivery_address": "서울특별시 성동구 서울숲2길 18",
+    "items": [
+      {
+        "sku": "SUP-006",
+        "quantity": 1,
+        "unit": "박스",
+        "base_quantity": 5000,
+        "raw_text": "일자 빨대 개별포장"
+      },
+      {
+        "sku": "DAI-001",
+        "quantity": 1,
+        "unit": "박스",
+        "base_quantity": 12,
+        "raw_text": "서울우유 1L"
+      },
+      {
+        "sku": "FRT-001",
+        "quantity": 13,
+        "unit": "개",
+        "base_quantity": 13,
+        "raw_text": "레몬"
+      },
+      {
+        "sku": "SUP-004",
+        "quantity": 1,
+        "unit": "박스",
+        "base_quantity": 1000,
+        "raw_text": "아이스컵 돔리드 92파이"
+      }
+    ]
+  }
+}

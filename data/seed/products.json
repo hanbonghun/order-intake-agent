@@ -1,0 +1,362 @@
+[
+  {
+    "sku": "DAI-001",
+    "name": "서울우유 1L",
+    "category": "dairy",
+    "base_unit": "개",
+    "units_per_box": 12,
+    "price": 2900,
+    "stock": 600
+  },
+  {
+    "sku": "DAI-002",
+    "name": "서울우유 저지방 1L",
+    "category": "dairy",
+    "base_unit": "개",
+    "units_per_box": 12,
+    "price": 3000,
+    "stock": 240
+  },
+  {
+    "sku": "DAI-003",
+    "name": "매일우유 900ml",
+    "category": "dairy",
+    "base_unit": "개",
+    "units_per_box": 12,
+    "price": 2600,
+    "stock": 240
+  },
+  {
+    "sku": "DAI-004",
+    "name": "동물성 생크림 1L",
+    "category": "dairy",
+    "base_unit": "개",
+    "units_per_box": 12,
+    "price": 7800,
+    "stock": 120
+  },
+  {
+    "sku": "DAI-005",
+    "name": "식물성 휘핑크림 1L",
+    "category": "dairy",
+    "base_unit": "개",
+    "units_per_box": 12,
+    "price": 4500,
+    "stock": 120
+  },
+  {
+    "sku": "DAI-006",
+    "name": "연유 500g",
+    "category": "dairy",
+    "base_unit": "개",
+    "units_per_box": 24,
+    "price": 3200,
+    "stock": 96
+  },
+  {
+    "sku": "DAI-007",
+    "name": "무염버터 450g",
+    "category": "dairy",
+    "base_unit": "개",
+    "units_per_box": 20,
+    "price": 9800,
+    "stock": 60
+  },
+  {
+    "sku": "DAI-008",
+    "name": "크림치즈 1kg",
+    "category": "dairy",
+    "base_unit": "개",
+    "units_per_box": 10,
+    "price": 14500,
+    "stock": 40
+  },
+  {
+    "sku": "DAI-009",
+    "name": "오트밀크 바리스타 1L",
+    "category": "dairy",
+    "base_unit": "개",
+    "units_per_box": 12,
+    "price": 4200,
+    "stock": 144
+  },
+  {
+    "sku": "DAI-010",
+    "name": "아몬드밀크 950ml",
+    "category": "dairy",
+    "base_unit": "개",
+    "units_per_box": 12,
+    "price": 3600,
+    "stock": 96
+  },
+  {
+    "sku": "COF-001",
+    "name": "원두 하우스블렌드 1kg",
+    "category": "coffee",
+    "base_unit": "봉",
+    "units_per_box": null,
+    "price": 24000,
+    "stock": 200
+  },
+  {
+    "sku": "COF-002",
+    "name": "원두 에티오피아 예가체프 1kg",
+    "category": "coffee",
+    "base_unit": "봉",
+    "units_per_box": null,
+    "price": 32000,
+    "stock": 60
+  },
+  {
+    "sku": "COF-003",
+    "name": "원두 콜롬비아 수프리모 1kg",
+    "category": "coffee",
+    "base_unit": "봉",
+    "units_per_box": null,
+    "price": 28000,
+    "stock": 60
+  },
+  {
+    "sku": "COF-004",
+    "name": "원두 디카페인 블렌드 1kg",
+    "category": "coffee",
+    "base_unit": "봉",
+    "units_per_box": null,
+    "price": 30000,
+    "stock": 40
+  },
+  {
+    "sku": "COF-005",
+    "name": "콜드브루 원액 1L",
+    "category": "coffee",
+    "base_unit": "병",
+    "units_per_box": 6,
+    "price": 15000,
+    "stock": 60
+  },
+  {
+    "sku": "SYR-001",
+    "name": "바닐라 시럽 1L",
+    "category": "syrup",
+    "base_unit": "병",
+    "units_per_box": 6,
+    "price": 11000,
+    "stock": 90
+  },
+  {
+    "sku": "SYR-002",
+    "name": "카라멜 시럽 1L",
+    "category": "syrup",
+    "base_unit": "병",
+    "units_per_box": 6,
+    "price": 11000,
+    "stock": 4
+  },
+  {
+    "sku": "SYR-003",
+    "name": "헤이즐넛 시럽 1L",
+    "category": "syrup",
+    "base_unit": "병",
+    "units_per_box": 6,
+    "price": 11000,
+    "stock": 48
+  },
+  {
+    "sku": "SYR-004",
+    "name": "카라멜 소스 1.9kg",
+    "category": "syrup",
+    "base_unit": "개",
+    "units_per_box": 6,
+    "price": 16000,
+    "stock": 30
+  },
+  {
+    "sku": "SYR-005",
+    "name": "초콜릿 소스 1.9kg",
+    "category": "syrup",
+    "base_unit": "개",
+    "units_per_box": 6,
+    "price": 15000,
+    "stock": 30
+  },
+  {
+    "sku": "SYR-006",
+    "name": "사탕수수 시럽 1L",
+    "category": "syrup",
+    "base_unit": "병",
+    "units_per_box": 6,
+    "price": 7500,
+    "stock": 90
+  },
+  {
+    "sku": "PWD-001",
+    "name": "녹차 라떼 파우더 1kg",
+    "category": "powder",
+    "base_unit": "봉",
+    "units_per_box": 10,
+    "price": 18000,
+    "stock": 50
+  },
+  {
+    "sku": "PWD-002",
+    "name": "초코 라떼 파우더 1kg",
+    "category": "powder",
+    "base_unit": "봉",
+    "units_per_box": 10,
+    "price": 16000,
+    "stock": 50
+  },
+  {
+    "sku": "PWD-003",
+    "name": "고구마 라떼 파우더 1kg",
+    "category": "powder",
+    "base_unit": "봉",
+    "units_per_box": 10,
+    "price": 17000,
+    "stock": 30
+  },
+  {
+    "sku": "PWD-004",
+    "name": "얼그레이 티백 100개입",
+    "category": "powder",
+    "base_unit": "개",
+    "units_per_box": null,
+    "price": 12000,
+    "stock": 40
+  },
+  {
+    "sku": "FRT-001",
+    "name": "레몬",
+    "category": "fruit",
+    "base_unit": "개",
+    "units_per_box": 100,
+    "price": 600,
+    "stock": 1000
+  },
+  {
+    "sku": "FRT-002",
+    "name": "라임",
+    "category": "fruit",
+    "base_unit": "개",
+    "units_per_box": null,
+    "price": 900,
+    "stock": 200
+  },
+  {
+    "sku": "FRT-003",
+    "name": "생딸기 500g",
+    "category": "fruit",
+    "base_unit": "팩",
+    "units_per_box": 8,
+    "price": 9000,
+    "stock": 40
+  },
+  {
+    "sku": "FRT-004",
+    "name": "냉동 딸기 1kg",
+    "category": "fruit",
+    "base_unit": "봉",
+    "units_per_box": 10,
+    "price": 8500,
+    "stock": 100
+  },
+  {
+    "sku": "FRT-005",
+    "name": "냉동 블루베리 1kg",
+    "category": "fruit",
+    "base_unit": "봉",
+    "units_per_box": 10,
+    "price": 12000,
+    "stock": 80
+  },
+  {
+    "sku": "FRT-006",
+    "name": "냉동 망고 1kg",
+    "category": "fruit",
+    "base_unit": "봉",
+    "units_per_box": 10,
+    "price": 9500,
+    "stock": 80
+  },
+  {
+    "sku": "BAK-001",
+    "name": "강력분 20kg",
+    "category": "bakery",
+    "base_unit": "포대",
+    "units_per_box": null,
+    "price": 32000,
+    "stock": 40
+  },
+  {
+    "sku": "BAK-002",
+    "name": "박력분 20kg",
+    "category": "bakery",
+    "base_unit": "포대",
+    "units_per_box": null,
+    "price": 30000,
+    "stock": 40
+  },
+  {
+    "sku": "BAK-003",
+    "name": "백설탕 15kg",
+    "category": "bakery",
+    "base_unit": "포대",
+    "units_per_box": null,
+    "price": 28000,
+    "stock": 40
+  },
+  {
+    "sku": "SUP-001",
+    "name": "PET 아이스컵 16oz",
+    "category": "supplies",
+    "base_unit": "개",
+    "units_per_box": 1000,
+    "price": 70,
+    "stock": 20000
+  },
+  {
+    "sku": "SUP-002",
+    "name": "PET 아이스컵 20oz",
+    "category": "supplies",
+    "base_unit": "개",
+    "units_per_box": 1000,
+    "price": 85,
+    "stock": 10000
+  },
+  {
+    "sku": "SUP-003",
+    "name": "종이 핫컵 13oz",
+    "category": "supplies",
+    "base_unit": "개",
+    "units_per_box": 1000,
+    "price": 75,
+    "stock": 10000
+  },
+  {
+    "sku": "SUP-004",
+    "name": "아이스컵 돔리드 92파이",
+    "category": "supplies",
+    "base_unit": "개",
+    "units_per_box": 1000,
+    "price": 30,
+    "stock": 20000
+  },
+  {
+    "sku": "SUP-005",
+    "name": "아이스컵 평리드 92파이",
+    "category": "supplies",
+    "base_unit": "개",
+    "units_per_box": 1000,
+    "price": 25,
+    "stock": 10000
+  },
+  {
+    "sku": "SUP-006",
+    "name": "일자 빨대 개별포장",
+    "category": "supplies",
+    "base_unit": "개",
+    "units_per_box": 5000,
+    "price": 12,
+    "stock": 50000
+  }
+]

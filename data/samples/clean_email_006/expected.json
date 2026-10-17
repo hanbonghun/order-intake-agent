@@ -1,0 +1,28 @@
+{
+  "case_id": "clean_email_006",
+  "category": "clean_email",
+  "description": "깨끗한 발주: 등록된 명칭·별칭, 단위·납기 명시",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 6,
+    "delivery_date": "2026-10-12",
+    "delivery_address": "서울특별시 강남구 도산대로17길 9, 2층",
+    "items": [
+      {
+        "sku": "DAI-001",
+        "quantity": 1,
+        "unit": "박스",
+        "base_quantity": 12,
+        "raw_text": "흰우유 1L"
+      },
+      {
+        "sku": "COF-001",
+        "quantity": 3,
+        "unit": "봉",
+        "base_quantity": 3,
+        "raw_text": "하우스블렌드"
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "case_id": "clean_email_015",
+  "category": "clean_email",
+  "description": "깨끗한 발주: 등록된 명칭·별칭, 단위·납기 명시",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 15,
+    "delivery_date": "2026-10-12",
+    "delivery_address": "경기도 수원시 영통구 광교중앙로 140",
+    "items": [
+      {
+        "sku": "FRT-003",
+        "quantity": 4,
+        "unit": "팩",
+        "base_quantity": 4,
+        "raw_text": "생딸기 500g"
+      },
+      {
+        "sku": "BAK-003",
+        "quantity": 1,
+        "unit": "포대",
+        "base_quantity": 1,
+        "raw_text": "백설탕"
+      },
+      {
+        "sku": "BAK-001",
+        "quantity": 3,
+        "unit": "포대",
+        "base_quantity": 3,
+        "raw_text": "강력밀가루"
+      }
+    ]
+  }
+}

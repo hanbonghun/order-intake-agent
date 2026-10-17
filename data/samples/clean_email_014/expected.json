@@ -1,0 +1,49 @@
+{
+  "case_id": "clean_email_014",
+  "category": "clean_email",
+  "description": "깨끗한 발주: 등록된 명칭·별칭, 단위·납기 명시",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 14,
+    "delivery_date": "2026-10-10",
+    "delivery_address": "서울특별시 은평구 연서로 133",
+    "items": [
+      {
+        "sku": "BAK-003",
+        "quantity": 2,
+        "unit": "포대",
+        "base_quantity": 2,
+        "raw_text": "백설탕 15kg"
+      },
+      {
+        "sku": "DAI-007",
+        "quantity": 1,
+        "unit": "박스",
+        "base_quantity": 20,
+        "raw_text": "버터 450g"
+      },
+      {
+        "sku": "DAI-003",
+        "quantity": 1,
+        "unit": "박스",
+        "base_quantity": 12,
+        "raw_text": "우유"
+      },
+      {
+        "sku": "BAK-001",
+        "quantity": 3,
+        "unit": "포대",
+        "base_quantity": 3,
+        "raw_text": "강력분 20kg"
+      },
+      {
+        "sku": "DAI-006",
+        "quantity": 4,
+        "unit": "개",
+        "base_quantity": 4,
+        "raw_text": "연유"
+      }
+    ]
+  }
+}

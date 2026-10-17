@@ -1,0 +1,11 @@
+{
+  "message_id": "<pdf_006@mail.example>",
+  "in_reply_to": null,
+  "sender_email": "lounge17@mail.example",
+  "subject": "발주서 송부",
+  "body": "발주서 송부드립니다.\n감사합니다.",
+  "attachments": [
+    "order.pdf"
+  ],
+  "received_at": "2026-10-05T12:50:00"
+}

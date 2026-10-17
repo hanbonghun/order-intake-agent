@@ -1,0 +1,28 @@
+{
+  "case_id": "clean_email_011",
+  "category": "clean_email",
+  "description": "깨끗한 발주: 등록된 명칭·별칭, 단위·납기 명시",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 11,
+    "delivery_date": "2026-10-07",
+    "delivery_address": "서울특별시 송파구 백제고분로 210",
+    "items": [
+      {
+        "sku": "FRT-001",
+        "quantity": 13,
+        "unit": "개",
+        "base_quantity": 13,
+        "raw_text": "레몬"
+      },
+      {
+        "sku": "DAI-008",
+        "quantity": 1,
+        "unit": "개",
+        "base_quantity": 1,
+        "raw_text": "크림치즈"
+      }
+    ]
+  }
+}

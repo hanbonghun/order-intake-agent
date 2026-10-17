@@ -1,0 +1,35 @@
+{
+  "case_id": "excel_005",
+  "category": "excel",
+  "description": "깨끗한 발주: 등록된 명칭·별칭, 단위·납기 명시",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 15,
+    "delivery_date": "2026-10-17",
+    "delivery_address": "경기도 수원시 영통구 광교중앙로 140",
+    "items": [
+      {
+        "sku": "BAK-003",
+        "quantity": 1,
+        "unit": "포대",
+        "base_quantity": 1,
+        "raw_text": "설탕 15kg"
+      },
+      {
+        "sku": "DAI-007",
+        "quantity": 10,
+        "unit": "개",
+        "base_quantity": 10,
+        "raw_text": "버터 450g"
+      },
+      {
+        "sku": "BAK-001",
+        "quantity": 2,
+        "unit": "포대",
+        "base_quantity": 2,
+        "raw_text": "강력분"
+      }
+    ]
+  }
+}

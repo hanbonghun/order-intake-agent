@@ -1,0 +1,28 @@
+{
+  "case_id": "clean_email_008",
+  "category": "clean_email",
+  "description": "깨끗한 발주: 등록된 명칭·별칭, 단위·납기 명시",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 8,
+    "delivery_date": "2026-10-13",
+    "delivery_address": "서울특별시 서대문구 연희로 88",
+    "items": [
+      {
+        "sku": "SUP-004",
+        "quantity": 1,
+        "unit": "박스",
+        "base_quantity": 1000,
+        "raw_text": "아이스컵 돔리드 92파이"
+      },
+      {
+        "sku": "SUP-001",
+        "quantity": 1,
+        "unit": "박스",
+        "base_quantity": 1000,
+        "raw_text": "16oz 컵"
+      }
+    ]
+  }
+}
