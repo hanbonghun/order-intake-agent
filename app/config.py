@@ -14,6 +14,8 @@ class Settings(BaseSettings):
     # 비용 계산용 단가 (USD / 100만 토큰). 제공사 가격표 값을 넣는다. 미설정이면 비용 미집계
     llm_price_input_per_mtok: float | None = None
     llm_price_output_per_mtok: float | None = None
+    llm_small_price_input_per_mtok: float | None = None
+    llm_small_price_output_per_mtok: float | None = None
 
     ollama_base_url: str = "http://localhost:11434"
     openai_api_key: str | None = None

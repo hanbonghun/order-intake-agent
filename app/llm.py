@@ -31,12 +31,16 @@ def get_chat_model(size: Size = "default") -> BaseChatModel:
     raise ValueError(f"지원하지 않는 LLM 제공사: {settings.llm_provider}")
 
 
-def estimate_cost(input_tokens: int, output_tokens: int) -> float | None:
+def estimate_cost(size: Size, input_tokens: int, output_tokens: int) -> float | None:
     if settings.llm_provider == "ollama":
         return 0.0
-    if settings.llm_price_input_per_mtok is None or settings.llm_price_output_per_mtok is None:
+    if size == "small":
+        price_in, price_out = settings.llm_small_price_input_per_mtok, settings.llm_small_price_output_per_mtok
+    else:
+        price_in, price_out = settings.llm_price_input_per_mtok, settings.llm_price_output_per_mtok
+    if price_in is None or price_out is None:
         return None
-    return (input_tokens * settings.llm_price_input_per_mtok + output_tokens * settings.llm_price_output_per_mtok) / 1_000_000
+    return (input_tokens * price_in + output_tokens * price_out) / 1_000_000
 
 
 def invoke_structured(schema: type[T], messages: list, node: str, size: Size = "default") -> tuple[T, dict]:
@@ -52,5 +56,5 @@ def invoke_structured(schema: type[T], messages: list, node: str, size: Size = "
         "model": f"{settings.llm_provider}:{model_name(size)}",
         "input_tokens": input_tokens,
         "output_tokens": output_tokens,
-        "cost_usd": estimate_cost(input_tokens, output_tokens),
+        "cost_usd": estimate_cost(size, input_tokens, output_tokens),
     }

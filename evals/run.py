@@ -52,7 +52,12 @@ def run(runner_name: str, tag: str, categories: list[str] | None, limit: int | N
         })
         print(f"  {case.case_id:<20}{'ok' if scored[-1]['score']['decision_ok'] and scored[-1]['score']['order_exact'] else 'fail':<6}"
               f"{meta['latency_ms'] / 1000:.1f}s" + (f"  {error}" if error else ""), flush=True)
+        # 중간에 멈춰도 결과가 남도록 케이스마다 저장
+        save_report(tag, runner_name, git, scored)
+    return save_report(tag, runner_name, git, scored)
 
+
+def save_report(tag: str, runner_name: str, git: dict, scored: list[dict]) -> dict:
     report = {
         "tag": tag,
         "runner": runner_name,
