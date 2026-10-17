@@ -24,6 +24,16 @@ class Settings(BaseSettings):
     attachments_dir: str = "data/attachments"   # 수신 첨부 저장 위치 (S3 등으로 교체 가능)
     outbound_domain: str = "sinseon-market.example"  # 우리가 보내는 메일의 Message-ID 도메인
 
+    # 실제 메일 연동 (Gmail: IMAP 수신 + SMTP 발신, 앱 비밀번호)
+    mail_address: str | None = None
+    mail_app_password: str | None = None
+    mail_imap_host: str = "imap.gmail.com"
+    mail_smtp_host: str = "smtp.gmail.com"
+    mail_poll_seconds: int = 30
+    mail_send_enabled: bool = False          # 기본은 발신 안 함 (초안만 저장)
+    mail_send_allowlist: str = ""            # 쉼표 구분. 여기 있는 주소로만 발신 (테스트 중 오발송 방지)
+    mail_trusted_authserv: str = "mx.google.com"  # 이 서버가 붙인 Authentication-Results만 신뢰
+
     ollama_base_url: str = "http://localhost:11434"
     openai_api_key: str | None = None
 

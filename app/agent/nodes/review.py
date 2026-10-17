@@ -29,7 +29,7 @@ def human_review(state: OrderState) -> dict:
     if resolution.get("customer_id"):            # 거래처 식별 실패 건을 검토자가 지정
         customer_id = resolution["customer_id"]
         updates |= {"customer_id": customer_id, "customer_match": "verified"}
-    elif resolution.get("verify_sender") and state.get("customer_match") == "name":
+    elif resolution.get("verify_sender") and state.get("customer_match") in ("name", "unauthenticated"):
         updates["customer_match"] = "verified"
     for field in ("delivery_date", "delivery_address"):
         if resolution.get(field):

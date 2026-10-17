@@ -142,3 +142,23 @@ def parse_eml(raw: bytes) -> ParsedEmail:
         received_at=received_at,
         attachments=attachments,
     )
+
+
+def sender_authenticated(raw: bytes, trusted_authserv: str) -> Optional[bool]:
+    """신뢰하는 수신 서버가 붙인 Authentication-Results로 발신자 인증 여부를 판단한다.
+
+    True: DMARC pass, 또는 DMARC 결과가 없을 때 SPF·DKIM 중 하나 pass
+    False: 신뢰 서버의 헤더가 있는데 위 조건을 만족하지 않음 (위조 의심)
+    None: 신뢰 서버의 헤더가 없음 (로컬·평가 환경)
+    보낸 사람도 같은 이름의 헤더를 넣을 수 있으므로 authserv-id가 일치하는 헤더만 본다.
+    """
+    msg = BytesParser(policy=policy.default).parsebytes(raw, headersonly=True)
+    for header in msg.get_all("Authentication-Results", []):
+        text = " ".join(str(header).split())
+        if not text.lower().startswith(trusted_authserv.lower()):
+            continue
+        results = dict(re.findall(r"\b(spf|dkim|dmarc)=(\w+)", text.lower()))
+        if "dmarc" in results:
+            return results["dmarc"] == "pass"
+        return results.get("spf") == "pass" or results.get("dkim") == "pass"
+    return None

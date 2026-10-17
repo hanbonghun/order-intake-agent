@@ -54,7 +54,8 @@ class OrderState(TypedDict, total=False):
     classify_reason: str
     customer_name: Optional[str]        # 문서에 적힌 상호
     customer_id: Optional[int]
-    customer_match: Optional[Literal["email", "name", "verified"]]   # 거래처 식별 근거 (verified: 검토자 확인)
+    # 거래처 식별 근거. verified: 검토자 확인, unauthenticated: 등록 메일이지만 발신자 인증(SPF/DKIM/DMARC) 실패
+    customer_match: Optional[Literal["email", "name", "verified", "unauthenticated"]]
     delivery_date: Optional[str]        # YYYY-MM-DD
     delivery_address: Optional[str]
     extracted_items: list[ExtractedItem]

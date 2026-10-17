@@ -44,6 +44,7 @@ CREATE TABLE intake_documents (
     subject         TEXT,
     body            TEXT,
     attachment_path TEXT,
+    auth_ok         BOOLEAN,                        -- SPF/DKIM/DMARC 검증 결과 (NULL: 헤더 없음)
     status          VARCHAR(20) DEFAULT 'received',
         -- received / processing / awaiting_reply / needs_review / done / skipped / rejected / failed
     thread_id       VARCHAR(100),
@@ -82,5 +83,8 @@ CREATE TABLE outbound_messages (
     kind        VARCHAR(20) NOT NULL,      -- inquiry / confirmation
     subject     TEXT,
     body        TEXT,
+    to_address  VARCHAR(200),
+    sent_at     TIMESTAMP,                 -- NULL이면 미발신 (발신 꺼짐·허용 목록 밖·실패)
+    send_error  TEXT,
     created_at  TIMESTAMP DEFAULT now()
 );

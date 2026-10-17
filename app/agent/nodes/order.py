@@ -1,5 +1,6 @@
 from app.agent.state import OrderState
 from app.db.session import get_conn
+from app.services.intake import save_outbound
 from app.services.orders import OrderIn, OrderItemIn, create_order as submit_order, get_order
 
 
@@ -27,13 +28,15 @@ def draft_confirmation(state: OrderState) -> dict:
     """주문 확인 회신 초안. 정형 문구라 LLM 없이 템플릿으로 만든다."""
     with get_conn() as conn:
         order = get_order(conn, state["order_id"])
-    lines = "\n".join(
-        f"- {i['name']} {i['quantity']}{i['unit']} ({i['unit_price'] * i['base_quantity']:,}원)" for i in order["items"]
-    )
-    total = sum(i["unit_price"] * i["base_quantity"] for i in order["items"])
-    draft = (
-        f"안녕하세요, 신선마켓입니다.\n아래와 같이 주문이 접수되었습니다. (주문번호 {order['id']})\n\n"
-        f"납품일: {order['delivery_date']}\n배송지: {order['delivery_address']}\n\n{lines}\n\n"
-        f"합계: {total:,}원 (부가세 별도)\n감사합니다."
-    )
+        lines = "\n".join(
+            f"- {i['name']} {i['quantity']}{i['unit']} ({i['unit_price'] * i['base_quantity']:,}원)" for i in order["items"]
+        )
+        total = sum(i["unit_price"] * i["base_quantity"] for i in order["items"])
+        draft = (
+            f"안녕하세요, 신선마켓입니다.\n아래와 같이 주문이 접수되었습니다. (주문번호 {order['id']})\n\n"
+            f"납품일: {order['delivery_date']}\n배송지: {order['delivery_address']}\n\n{lines}\n\n"
+            f"합계: {total:,}원 (부가세 별도)\n감사합니다."
+        )
+        save_outbound(conn, state["document_id"], "confirmation", f"주문 접수 확인 (주문번호 {order['id']})", draft)
     return {"reply_draft": draft}
+

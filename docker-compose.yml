@@ -24,9 +24,28 @@ services:
       DATABASE_URL: postgresql://intake:intake@db:5432/intake   # env_file보다 우선
     ports:
       - "8000:8000"
+    volumes:
+      - attachments:/app/data/attachments
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # 실제 메일 연동 (선택): docker compose --profile mail up -d
+  poller:
+    build: .
+    profiles: ["mail"]
+    command: ["uv", "run", "--no-sync", "python", "-m", "app.mail.imap"]
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      DATABASE_URL: postgresql://intake:intake@db:5432/intake
+    volumes:
+      - attachments:/app/data/attachments
     depends_on:
       db:
         condition: service_healthy
 
 volumes:
   pgdata:
+  attachments:

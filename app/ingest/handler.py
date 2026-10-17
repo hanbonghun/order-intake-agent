@@ -6,7 +6,9 @@ from langgraph.types import Command
 
 from app.agent.runtime import get_graph
 from app.db.session import get_conn
-from app.ingest.email_parser import parse_eml, strip_quoted_reply
+from app.config import settings
+from app.ingest.email_parser import parse_eml, sender_authenticated, strip_quoted_reply
+from app.mail.smtp import send_pending
 from app.services import intake
 
 
@@ -45,6 +47,7 @@ def handle_email(raw: bytes, run_config: Optional[dict] = None) -> dict:
         "message_id": mail.message_id, "in_reply_to": mail.in_reply_to, "sender_email": mail.sender_email,
         "subject": mail.subject, "body": mail.body,
         "received_at": mail.received_at.isoformat() if mail.received_at else None,
+        "auth_ok": sender_authenticated(raw, settings.mail_trusted_authserv),
     }
     with get_conn() as conn:
         if (existing := intake.find_by_message_id(conn, mail.message_id)):
@@ -77,7 +80,11 @@ def handle_email(raw: bytes, run_config: Optional[dict] = None) -> dict:
         config = {"configurable": {"thread_id": thread_id}} | (run_config or {})
         graph.invoke({"document": document, "document_id": document_id}, config=config)
 
-    return _summary(document_id, thread_id, graph.get_state({"configurable": {"thread_id": thread_id}}))
+    summary = _summary(document_id, thread_id, graph.get_state({"configurable": {"thread_id": thread_id}}))
+    # 방금 받은 메일에 대한 답장으로 보낸다 (재질의 또는 주문 확인)
+    refs = list(dict.fromkeys([*mail.references, mail.message_id])) if mail.message_id else mail.references
+    summary["sent"] = send_pending(document_id, mail.message_id, refs)
+    return summary
 
 
 class ReviewNotPending(Exception):
@@ -96,4 +103,6 @@ def resolve_review(document_id: int, resolution: dict, run_config: Optional[dict
     if not snapshot.interrupts or snapshot.interrupts[0].value["type"] != "review":
         raise ReviewNotPending(f"그래프가 검토 대기 상태가 아님: {document_id}")
     graph.invoke(Command(resume=resolution), config=config | (run_config or {}))
-    return _summary(document_id, doc["thread_id"], graph.get_state(config))
+    summary = _summary(document_id, doc["thread_id"], graph.get_state(config))
+    summary["sent"] = send_pending(document_id, doc["message_id"], [doc["message_id"]] if doc["message_id"] else [])
+    return summary

@@ -50,3 +50,23 @@ def test_strip_quoted_reply_korean_gmail_style():
 def test_strip_quoted_reply_outlook_and_angle_quotes():
     assert strip_quoted_reply("빼주세요\n-----Original Message-----\nFrom: 신선마켓") == "빼주세요"
     assert strip_quoted_reply("박스로요\n> 이전 내용\n> 품목") == "박스로요"
+
+
+def _auth_eml(*headers: str) -> bytes:
+    msg = _eml()
+    for h in headers:
+        msg["Authentication-Results"] = h
+    msg.set_content("x")
+    return msg.as_bytes()
+
+
+def test_sender_auth_trusted_header_only():
+    from app.ingest.email_parser import sender_authenticated
+    ok = "mx.google.com; dkim=pass header.i=@haneul-cafe.example; spf=pass smtp.mailfrom=x; dmarc=pass (p=NONE)"
+    bad = "mx.google.com; dkim=fail; spf=softfail; dmarc=fail (p=QUARANTINE)"
+    forged = "evil.example; dkim=pass; spf=pass; dmarc=pass"
+    assert sender_authenticated(_auth_eml(ok), "mx.google.com") is True
+    assert sender_authenticated(_auth_eml(bad), "mx.google.com") is False
+    assert sender_authenticated(_auth_eml(forged), "mx.google.com") is None        # 신뢰하지 않는 서버의 헤더는 무시
+    assert sender_authenticated(_auth_eml(), "mx.google.com") is None
+    assert sender_authenticated(_auth_eml("mx.google.com; spf=pass"), "mx.google.com") is True   # DMARC 없으면 SPF/DKIM

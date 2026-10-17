@@ -21,6 +21,8 @@ def identify_customer(state: OrderState) -> dict:
 
     if row is None:
         return {"customer_id": None, "customer_match": None}
+    if match == "email" and state["document"].get("auth_ok") is False:
+        match = "unauthenticated"   # From 주소는 위조할 수 있다. 수신 서버의 인증 결과가 실패면 신뢰하지 않음
     return {
         "customer_id": row["id"],
         "customer_match": match,

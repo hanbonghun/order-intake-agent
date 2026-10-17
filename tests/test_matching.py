@@ -13,6 +13,13 @@ def test_box_variants():
         assert normalize_unit(raw, MILK) == "박스"
 
 
+def test_unit_with_option_label_or_particle():
+    assert normalize_unit("박스 (12개입)", MILK) == "박스"
+    assert normalize_unit("박스로요", MILK) == "박스"
+    assert normalize_unit("개로", MILK) == "개"
+    assert normalize_unit("봉으로요", BEANS) == "봉"
+
+
 def test_box_not_sold_for_product():
     assert normalize_unit("박스", BEANS) is None
 

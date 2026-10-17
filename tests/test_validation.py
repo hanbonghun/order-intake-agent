@@ -48,3 +48,9 @@ def test_mixed_issues_inquire_first_then_review_after_limit():
     issues = _issues(items=items)
     assert decide(issues, inquiry_count=0) == "inquire"
     assert decide(issues, inquiry_count=2) == "review"
+
+
+def test_unauthenticated_sender_goes_to_review():
+    issues = _issues(customer_match="unauthenticated")
+    assert [i.code for i in issues] == ["sender_auth_failed"]
+    assert decide(issues) == "review"

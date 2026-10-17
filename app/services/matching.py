@@ -17,7 +17,9 @@ def normalize_unit(raw_unit: Optional[str], product: dict) -> Optional[str]:
     """원문 단위를 '박스' 또는 상품의 base_unit으로 바꾼다. 해석할 수 없으면 None."""
     if not raw_unit:
         return None
-    unit = raw_unit.strip().lower()
+    # "박스 (24개입)", "박스로요"처럼 선택지 설명·조사가 붙은 표기도 받는다 (재질의 회신 해석 결과에서 발생)
+    unit = re.sub(r"\(.*?\)|\s+", "", raw_unit).lower()
+    unit = re.sub(r"(으로|로)?(요|용)?$", "", unit) or unit
     if unit in BOX_UNITS:
         return "박스" if product["units_per_box"] else None
     if UNIT_SYNONYMS.get(unit, unit) == product["base_unit"].lower():
