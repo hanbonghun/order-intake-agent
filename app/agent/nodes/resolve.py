@@ -10,8 +10,9 @@ from app.agent.state import ExtractedItem, MatchedItem, OrderState
 from app.db.session import get_conn
 from app.services import matching
 
-MARGIN_MIN = 0.15            # 이력 근거가 없을 때 1·2위 점수 차 최소값 (평가로 조정)
-HISTORY_CONFLICT_GAP = 0.15  # 선택한 상품과 점수가 이만큼 가까운 다른 이력 상품이 있으면 애매로 본다
+# 임계값은 품목 매칭 벤치마크(evals/policy_sweep.py)로 정했다. 근거: docs/eval-log.md "임계값 실험"
+MARGIN_MIN = 0.15            # 이력 근거가 없을 때 1·2위 점수 차 최소값 (가장 가까운 오확정 사례 0.071)
+HISTORY_CONFLICT_GAP = 0.1   # 선택한 상품과 점수가 이만큼 가까운 다른 이력 상품이 있으면 애매로 본다 (0.15 → 0.1)
 
 
 @cache
@@ -19,13 +20,14 @@ def _resolver():
     return build_resolver()
 
 
-def compute_signals(sku: str, candidates: list[dict], history_skus: set[str]) -> dict:
+def compute_signals(sku: str, candidates: list[dict], history_skus: set[str],
+                    rival_gap: float = HISTORY_CONFLICT_GAP) -> dict:
     scores = {c["sku"]: c["score"] for c in candidates}
     top1 = candidates[0]["score"] if candidates else 0.0
     second = candidates[1]["score"] if len(candidates) > 1 else 0.0
     chosen = scores.get(sku, 0.0)
     rivals = [c for c in candidates if c["sku"] != sku and c["sku"] in history_skus
-              and c["score"] >= chosen - HISTORY_CONFLICT_GAP]
+              and c["score"] >= chosen - rival_gap]
     return {
         "in_candidates": sku in scores,
         "in_history": sku in history_skus,
@@ -36,13 +38,13 @@ def compute_signals(sku: str, candidates: list[dict], history_skus: set[str]) ->
     }
 
 
-def accept(signals: dict) -> str:
-    """confirmed / unclear_product(거래처 확인) / ambiguous(내부 검토)"""
+def accept(signals: dict, margin_min: float = MARGIN_MIN) -> str:
+    """confirmed / unclear_product(거래처 확인) / ambiguous(내부 검토). 임계값 실험을 위해 margin_min을 인자로 받는다."""
     if not signals["in_candidates"]:
         return "ambiguous"
     if signals["history_rivals"]:
         return "unclear_product"
-    if signals["in_history"] or (signals["agrees_with_top1"] and signals["margin"] >= MARGIN_MIN):
+    if signals["in_history"] or (signals["agrees_with_top1"] and signals["margin"] >= margin_min):
         return "confirmed"
     return "ambiguous"
 

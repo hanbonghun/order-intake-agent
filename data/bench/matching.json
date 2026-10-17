@@ -1,0 +1,905 @@
+[
+ {
+  "id": "variant_hist-001",
+  "kind": "variant_hist",
+  "customer_id": 1,
+  "expression": "서울 흰우유 1리터",
+  "gold": "DAI-001"
+ },
+ {
+  "id": "variant_nohist-002",
+  "kind": "variant_nohist",
+  "customer_id": 11,
+  "expression": "서울 흰우유 1리터",
+  "gold": "DAI-001"
+ },
+ {
+  "id": "variant_hist-003",
+  "kind": "variant_hist",
+  "customer_id": 1,
+  "expression": "서울우유1000ml",
+  "gold": "DAI-001"
+ },
+ {
+  "id": "variant_nohist-004",
+  "kind": "variant_nohist",
+  "customer_id": 11,
+  "expression": "서울우유1000ml",
+  "gold": "DAI-001"
+ },
+ {
+  "id": "variant_hist-005",
+  "kind": "variant_hist",
+  "customer_id": 6,
+  "expression": "저지방 서울우유",
+  "gold": "DAI-002"
+ },
+ {
+  "id": "variant_nohist-006",
+  "kind": "variant_nohist",
+  "customer_id": 1,
+  "expression": "저지방 서울우유",
+  "gold": "DAI-002"
+ },
+ {
+  "id": "variant_hist-007",
+  "kind": "variant_hist",
+  "customer_id": 6,
+  "expression": "로우팻 우유 1L",
+  "gold": "DAI-002"
+ },
+ {
+  "id": "variant_nohist-008",
+  "kind": "variant_nohist",
+  "customer_id": 1,
+  "expression": "로우팻 우유 1L",
+  "gold": "DAI-002"
+ },
+ {
+  "id": "variant_hist-009",
+  "kind": "variant_hist",
+  "customer_id": 14,
+  "expression": "매일 우유 900미리",
+  "gold": "DAI-003"
+ },
+ {
+  "id": "variant_nohist-010",
+  "kind": "variant_nohist",
+  "customer_id": 1,
+  "expression": "매일 우유 900미리",
+  "gold": "DAI-003"
+ },
+ {
+  "id": "variant_hist-011",
+  "kind": "variant_hist",
+  "customer_id": 1,
+  "expression": "동물성크림 1리터",
+  "gold": "DAI-004"
+ },
+ {
+  "id": "variant_nohist-012",
+  "kind": "variant_nohist",
+  "customer_id": 2,
+  "expression": "동물성크림 1리터",
+  "gold": "DAI-004"
+ },
+ {
+  "id": "variant_hist-013",
+  "kind": "variant_hist",
+  "customer_id": 1,
+  "expression": "생크림 동물성",
+  "gold": "DAI-004"
+ },
+ {
+  "id": "variant_nohist-014",
+  "kind": "variant_nohist",
+  "customer_id": 2,
+  "expression": "생크림 동물성",
+  "gold": "DAI-004"
+ },
+ {
+  "id": "variant_hist-015",
+  "kind": "variant_hist",
+  "customer_id": 8,
+  "expression": "휘핑 크림 식물성",
+  "gold": "DAI-005"
+ },
+ {
+  "id": "variant_nohist-016",
+  "kind": "variant_nohist",
+  "customer_id": 1,
+  "expression": "휘핑 크림 식물성",
+  "gold": "DAI-005"
+ },
+ {
+  "id": "variant_hist-017",
+  "kind": "variant_hist",
+  "customer_id": 8,
+  "expression": "식물성휘핑",
+  "gold": "DAI-005"
+ },
+ {
+  "id": "variant_nohist-018",
+  "kind": "variant_nohist",
+  "customer_id": 1,
+  "expression": "식물성휘핑",
+  "gold": "DAI-005"
+ },
+ {
+  "id": "variant_hist-019",
+  "kind": "variant_hist",
+  "customer_id": 14,
+  "expression": "연유 500그램",
+  "gold": "DAI-006"
+ },
+ {
+  "id": "variant_nohist-020",
+  "kind": "variant_nohist",
+  "customer_id": 1,
+  "expression": "연유 500그램",
+  "gold": "DAI-006"
+ },
+ {
+  "id": "variant_hist-021",
+  "kind": "variant_hist",
+  "customer_id": 10,
+  "expression": "버터 무염 450",
+  "gold": "DAI-007"
+ },
+ {
+  "id": "variant_nohist-022",
+  "kind": "variant_nohist",
+  "customer_id": 1,
+  "expression": "버터 무염 450",
+  "gold": "DAI-007"
+ },
+ {
+  "id": "variant_hist-023",
+  "kind": "variant_hist",
+  "customer_id": 11,
+  "expression": "크림 치즈 1키로",
+  "gold": "DAI-008"
+ },
+ {
+  "id": "variant_nohist-024",
+  "kind": "variant_nohist",
+  "customer_id": 1,
+  "expression": "크림 치즈 1키로",
+  "gold": "DAI-008"
+ },
+ {
+  "id": "variant_hist-025",
+  "kind": "variant_hist",
+  "customer_id": 2,
+  "expression": "오틀리 바리스타",
+  "gold": "DAI-009"
+ },
+ {
+  "id": "variant_nohist-026",
+  "kind": "variant_nohist",
+  "customer_id": 1,
+  "expression": "오틀리 바리스타",
+  "gold": "DAI-009"
+ },
+ {
+  "id": "variant_hist-027",
+  "kind": "variant_hist",
+  "customer_id": 2,
+  "expression": "귀리우유 바리스타용",
+  "gold": "DAI-009"
+ },
+ {
+  "id": "variant_nohist-028",
+  "kind": "variant_nohist",
+  "customer_id": 1,
+  "expression": "귀리우유 바리스타용",
+  "gold": "DAI-009"
+ },
+ {
+  "id": "variant_hist-029",
+  "kind": "variant_hist",
+  "customer_id": 1,
+  "expression": "하우스 블랜드",
+  "gold": "COF-001"
+ },
+ {
+  "id": "variant_nohist-030",
+  "kind": "variant_nohist",
+  "customer_id": 10,
+  "expression": "하우스 블랜드",
+  "gold": "COF-001"
+ },
+ {
+  "id": "variant_hist-031",
+  "kind": "variant_hist",
+  "customer_id": 1,
+  "expression": "하우스블렌드 원두 1키로",
+  "gold": "COF-001"
+ },
+ {
+  "id": "variant_nohist-032",
+  "kind": "variant_nohist",
+  "customer_id": 10,
+  "expression": "하우스블렌드 원두 1키로",
+  "gold": "COF-001"
+ },
+ {
+  "id": "variant_hist-033",
+  "kind": "variant_hist",
+  "customer_id": 2,
+  "expression": "예가체프 원두",
+  "gold": "COF-002"
+ },
+ {
+  "id": "variant_nohist-034",
+  "kind": "variant_nohist",
+  "customer_id": 1,
+  "expression": "예가체프 원두",
+  "gold": "COF-002"
+ },
+ {
+  "id": "variant_hist-035",
+  "kind": "variant_hist",
+  "customer_id": 2,
+  "expression": "에디오피아 예가체프",
+  "gold": "COF-002"
+ },
+ {
+  "id": "variant_nohist-036",
+  "kind": "variant_nohist",
+  "customer_id": 1,
+  "expression": "에디오피아 예가체프",
+  "gold": "COF-002"
+ },
+ {
+  "id": "variant_hist-037",
+  "kind": "variant_hist",
+  "customer_id": 5,
+  "expression": "콜롬비아 수프리모 원두",
+  "gold": "COF-003"
+ },
+ {
+  "id": "variant_nohist-038",
+  "kind": "variant_nohist",
+  "customer_id": 1,
+  "expression": "콜롬비아 수프리모 원두",
+  "gold": "COF-003"
+ },
+ {
+  "id": "variant_hist-039",
+  "kind": "variant_hist",
+  "customer_id": 5,
+  "expression": "디카페인 블랜드",
+  "gold": "COF-004"
+ },
+ {
+  "id": "variant_nohist-040",
+  "kind": "variant_nohist",
+  "customer_id": 1,
+  "expression": "디카페인 블랜드",
+  "gold": "COF-004"
+ },
+ {
+  "id": "variant_hist-041",
+  "kind": "variant_hist",
+  "customer_id": 1,
+  "expression": "바닐나 시럽",
+  "gold": "SYR-001"
+ },
+ {
+  "id": "variant_nohist-042",
+  "kind": "variant_nohist",
+  "customer_id": 5,
+  "expression": "바닐나 시럽",
+  "gold": "SYR-001"
+ },
+ {
+  "id": "variant_hist-043",
+  "kind": "variant_hist",
+  "customer_id": 1,
+  "expression": "바닐라 시롭",
+  "gold": "SYR-001"
+ },
+ {
+  "id": "variant_nohist-044",
+  "kind": "variant_nohist",
+  "customer_id": 5,
+  "expression": "바닐라 시롭",
+  "gold": "SYR-001"
+ },
+ {
+  "id": "variant_hist-045",
+  "kind": "variant_hist",
+  "customer_id": 1,
+  "expression": "카라맬 시럽",
+  "gold": "SYR-002"
+ },
+ {
+  "id": "variant_nohist-046",
+  "kind": "variant_nohist",
+  "customer_id": 2,
+  "expression": "카라맬 시럽",
+  "gold": "SYR-002"
+ },
+ {
+  "id": "variant_hist-047",
+  "kind": "variant_hist",
+  "customer_id": 3,
+  "expression": "헤이즐럿 시럽",
+  "gold": "SYR-003"
+ },
+ {
+  "id": "variant_nohist-048",
+  "kind": "variant_nohist",
+  "customer_id": 1,
+  "expression": "헤이즐럿 시럽",
+  "gold": "SYR-003"
+ },
+ {
+  "id": "variant_hist-049",
+  "kind": "variant_hist",
+  "customer_id": 3,
+  "expression": "헤즐넛시럽",
+  "gold": "SYR-003"
+ },
+ {
+  "id": "variant_nohist-050",
+  "kind": "variant_nohist",
+  "customer_id": 1,
+  "expression": "헤즐넛시럽",
+  "gold": "SYR-003"
+ },
+ {
+  "id": "variant_hist-051",
+  "kind": "variant_hist",
+  "customer_id": 8,
+  "expression": "카라멜 소스 큰거",
+  "gold": "SYR-004"
+ },
+ {
+  "id": "variant_nohist-052",
+  "kind": "variant_nohist",
+  "customer_id": 1,
+  "expression": "카라멜 소스 큰거",
+  "gold": "SYR-004"
+ },
+ {
+  "id": "variant_hist-053",
+  "kind": "variant_hist",
+  "customer_id": 8,
+  "expression": "초콜렛소스 1.9",
+  "gold": "SYR-005"
+ },
+ {
+  "id": "variant_nohist-054",
+  "kind": "variant_nohist",
+  "customer_id": 1,
+  "expression": "초콜렛소스 1.9",
+  "gold": "SYR-005"
+ },
+ {
+  "id": "variant_hist-055",
+  "kind": "variant_hist",
+  "customer_id": 6,
+  "expression": "사탕수수 원당 시럽",
+  "gold": "SYR-006"
+ },
+ {
+  "id": "variant_nohist-056",
+  "kind": "variant_nohist",
+  "customer_id": 1,
+  "expression": "사탕수수 원당 시럽",
+  "gold": "SYR-006"
+ },
+ {
+  "id": "variant_hist-057",
+  "kind": "variant_hist",
+  "customer_id": 1,
+  "expression": "녹차라떼 파우더",
+  "gold": "PWD-001"
+ },
+ {
+  "id": "variant_nohist-058",
+  "kind": "variant_nohist",
+  "customer_id": 2,
+  "expression": "녹차라떼 파우더",
+  "gold": "PWD-001"
+ },
+ {
+  "id": "variant_hist-059",
+  "kind": "variant_hist",
+  "customer_id": 1,
+  "expression": "그린티라떼 가루",
+  "gold": "PWD-001"
+ },
+ {
+  "id": "variant_nohist-060",
+  "kind": "variant_nohist",
+  "customer_id": 2,
+  "expression": "그린티라떼 가루",
+  "gold": "PWD-001"
+ },
+ {
+  "id": "variant_hist-061",
+  "kind": "variant_hist",
+  "customer_id": 4,
+  "expression": "초코라떼 파우더",
+  "gold": "PWD-002"
+ },
+ {
+  "id": "variant_nohist-062",
+  "kind": "variant_nohist",
+  "customer_id": 1,
+  "expression": "초코라떼 파우더",
+  "gold": "PWD-002"
+ },
+ {
+  "id": "variant_hist-063",
+  "kind": "variant_hist",
+  "customer_id": 4,
+  "expression": "고구마라떼 가루",
+  "gold": "PWD-003"
+ },
+ {
+  "id": "variant_nohist-064",
+  "kind": "variant_nohist",
+  "customer_id": 1,
+  "expression": "고구마라떼 가루",
+  "gold": "PWD-003"
+ },
+ {
+  "id": "variant_hist-065",
+  "kind": "variant_hist",
+  "customer_id": 1,
+  "expression": "레몬 낱개",
+  "gold": "FRT-001"
+ },
+ {
+  "id": "variant_nohist-066",
+  "kind": "variant_nohist",
+  "customer_id": 5,
+  "expression": "레몬 낱개",
+  "gold": "FRT-001"
+ },
+ {
+  "id": "variant_hist-067",
+  "kind": "variant_hist",
+  "customer_id": 13,
+  "expression": "딸기 생과 500g",
+  "gold": "FRT-003"
+ },
+ {
+  "id": "variant_nohist-068",
+  "kind": "variant_nohist",
+  "customer_id": 1,
+  "expression": "딸기 생과 500g",
+  "gold": "FRT-003"
+ },
+ {
+  "id": "variant_hist-069",
+  "kind": "variant_hist",
+  "customer_id": 7,
+  "expression": "딸기 냉동",
+  "gold": "FRT-004"
+ },
+ {
+  "id": "variant_nohist-070",
+  "kind": "variant_nohist",
+  "customer_id": 1,
+  "expression": "딸기 냉동",
+  "gold": "FRT-004"
+ },
+ {
+  "id": "variant_hist-071",
+  "kind": "variant_hist",
+  "customer_id": 7,
+  "expression": "블루베리 냉동 1키로",
+  "gold": "FRT-005"
+ },
+ {
+  "id": "variant_nohist-072",
+  "kind": "variant_nohist",
+  "customer_id": 1,
+  "expression": "블루베리 냉동 1키로",
+  "gold": "FRT-005"
+ },
+ {
+  "id": "variant_hist-073",
+  "kind": "variant_hist",
+  "customer_id": 7,
+  "expression": "망고 냉동",
+  "gold": "FRT-006"
+ },
+ {
+  "id": "variant_nohist-074",
+  "kind": "variant_nohist",
+  "customer_id": 1,
+  "expression": "망고 냉동",
+  "gold": "FRT-006"
+ },
+ {
+  "id": "variant_hist-075",
+  "kind": "variant_hist",
+  "customer_id": 14,
+  "expression": "강력 밀가루 20키로",
+  "gold": "BAK-001"
+ },
+ {
+  "id": "variant_nohist-076",
+  "kind": "variant_nohist",
+  "customer_id": 1,
+  "expression": "강력 밀가루 20키로",
+  "gold": "BAK-001"
+ },
+ {
+  "id": "variant_hist-077",
+  "kind": "variant_hist",
+  "customer_id": 10,
+  "expression": "흰설탕 15kg",
+  "gold": "BAK-003"
+ },
+ {
+  "id": "variant_nohist-078",
+  "kind": "variant_nohist",
+  "customer_id": 1,
+  "expression": "흰설탕 15kg",
+  "gold": "BAK-003"
+ },
+ {
+  "id": "variant_hist-079",
+  "kind": "variant_hist",
+  "customer_id": 1,
+  "expression": "16온스 아이스컵",
+  "gold": "SUP-001"
+ },
+ {
+  "id": "variant_nohist-080",
+  "kind": "variant_nohist",
+  "customer_id": 5,
+  "expression": "16온스 아이스컵",
+  "gold": "SUP-001"
+ },
+ {
+  "id": "variant_hist-081",
+  "kind": "variant_hist",
+  "customer_id": 1,
+  "expression": "PET컵 16oz",
+  "gold": "SUP-001"
+ },
+ {
+  "id": "variant_nohist-082",
+  "kind": "variant_nohist",
+  "customer_id": 5,
+  "expression": "PET컵 16oz",
+  "gold": "SUP-001"
+ },
+ {
+  "id": "variant_hist-083",
+  "kind": "variant_hist",
+  "customer_id": 7,
+  "expression": "20온스 PET 컵",
+  "gold": "SUP-002"
+ },
+ {
+  "id": "variant_nohist-084",
+  "kind": "variant_nohist",
+  "customer_id": 1,
+  "expression": "20온스 PET 컵",
+  "gold": "SUP-002"
+ },
+ {
+  "id": "variant_hist-085",
+  "kind": "variant_hist",
+  "customer_id": 4,
+  "expression": "13온스 종이컵",
+  "gold": "SUP-003"
+ },
+ {
+  "id": "variant_nohist-086",
+  "kind": "variant_nohist",
+  "customer_id": 1,
+  "expression": "13온스 종이컵",
+  "gold": "SUP-003"
+ },
+ {
+  "id": "variant_hist-087",
+  "kind": "variant_hist",
+  "customer_id": 1,
+  "expression": "돔 뚜껑 92",
+  "gold": "SUP-004"
+ },
+ {
+  "id": "variant_nohist-088",
+  "kind": "variant_nohist",
+  "customer_id": 5,
+  "expression": "돔 뚜껑 92",
+  "gold": "SUP-004"
+ },
+ {
+  "id": "variant_nohist-089",
+  "kind": "variant_nohist",
+  "customer_id": 1,
+  "expression": "평 뚜껑 92",
+  "gold": "SUP-005"
+ },
+ {
+  "id": "variant_hist-090",
+  "kind": "variant_hist",
+  "customer_id": 2,
+  "expression": "개별포장 일자 빨대",
+  "gold": "SUP-006"
+ },
+ {
+  "id": "variant_nohist-091",
+  "kind": "variant_nohist",
+  "customer_id": 1,
+  "expression": "개별포장 일자 빨대",
+  "gold": "SUP-006"
+ },
+ {
+  "id": "generic-092",
+  "kind": "generic",
+  "customer_id": 2,
+  "expression": "우유",
+  "gold": "DAI-001"
+ },
+ {
+  "id": "generic-093",
+  "kind": "generic",
+  "customer_id": 3,
+  "expression": "우유",
+  "gold": "DAI-001"
+ },
+ {
+  "id": "generic-094",
+  "kind": "generic",
+  "customer_id": 4,
+  "expression": "우유",
+  "gold": "DAI-001"
+ },
+ {
+  "id": "generic-095",
+  "kind": "generic",
+  "customer_id": 11,
+  "expression": "우유",
+  "gold": "ask"
+ },
+ {
+  "id": "generic-096",
+  "kind": "generic",
+  "customer_id": 15,
+  "expression": "우유",
+  "gold": "ask"
+ },
+ {
+  "id": "generic-097",
+  "kind": "generic",
+  "customer_id": 1,
+  "expression": "시럽",
+  "gold": "ask"
+ },
+ {
+  "id": "generic-098",
+  "kind": "generic",
+  "customer_id": 2,
+  "expression": "시럽",
+  "gold": "SYR-001"
+ },
+ {
+  "id": "generic-099",
+  "kind": "generic",
+  "customer_id": 3,
+  "expression": "시럽",
+  "gold": "ask"
+ },
+ {
+  "id": "generic-100",
+  "kind": "generic",
+  "customer_id": 4,
+  "expression": "시럽",
+  "gold": "SYR-001"
+ },
+ {
+  "id": "generic-101",
+  "kind": "generic",
+  "customer_id": 7,
+  "expression": "시럽",
+  "gold": "SYR-001"
+ },
+ {
+  "id": "generic-102",
+  "kind": "generic",
+  "customer_id": 1,
+  "expression": "원두",
+  "gold": "COF-001"
+ },
+ {
+  "id": "generic-103",
+  "kind": "generic",
+  "customer_id": 2,
+  "expression": "원두",
+  "gold": "ask"
+ },
+ {
+  "id": "generic-104",
+  "kind": "generic",
+  "customer_id": 3,
+  "expression": "원두",
+  "gold": "COF-001"
+ },
+ {
+  "id": "generic-105",
+  "kind": "generic",
+  "customer_id": 4,
+  "expression": "원두",
+  "gold": "COF-001"
+ },
+ {
+  "id": "generic-106",
+  "kind": "generic",
+  "customer_id": 5,
+  "expression": "원두",
+  "gold": "ask"
+ },
+ {
+  "id": "generic-107",
+  "kind": "generic",
+  "customer_id": 1,
+  "expression": "라떼 파우더",
+  "gold": "PWD-001"
+ },
+ {
+  "id": "generic-108",
+  "kind": "generic",
+  "customer_id": 2,
+  "expression": "라떼 파우더",
+  "gold": "ask"
+ },
+ {
+  "id": "generic-109",
+  "kind": "generic",
+  "customer_id": 3,
+  "expression": "라떼 파우더",
+  "gold": "ask"
+ },
+ {
+  "id": "generic-110",
+  "kind": "generic",
+  "customer_id": 1,
+  "expression": "생크림",
+  "gold": "DAI-004"
+ },
+ {
+  "id": "generic-111",
+  "kind": "generic",
+  "customer_id": 2,
+  "expression": "생크림",
+  "gold": "ask"
+ },
+ {
+  "id": "generic-112",
+  "kind": "generic",
+  "customer_id": 3,
+  "expression": "생크림",
+  "gold": "ask"
+ },
+ {
+  "id": "generic-113",
+  "kind": "generic",
+  "customer_id": 8,
+  "expression": "생크림",
+  "gold": "DAI-005"
+ },
+ {
+  "id": "generic-114",
+  "kind": "generic",
+  "customer_id": 10,
+  "expression": "생크림",
+  "gold": "DAI-004"
+ },
+ {
+  "id": "generic-115",
+  "kind": "generic",
+  "customer_id": 1,
+  "expression": "아이스컵",
+  "gold": "SUP-001"
+ },
+ {
+  "id": "generic-116",
+  "kind": "generic",
+  "customer_id": 2,
+  "expression": "아이스컵",
+  "gold": "SUP-001"
+ },
+ {
+  "id": "generic-117",
+  "kind": "generic",
+  "customer_id": 3,
+  "expression": "아이스컵",
+  "gold": "SUP-001"
+ },
+ {
+  "id": "generic-118",
+  "kind": "generic",
+  "customer_id": 5,
+  "expression": "아이스컵",
+  "gold": "ask"
+ },
+ {
+  "id": "generic-119",
+  "kind": "generic",
+  "customer_id": 7,
+  "expression": "아이스컵",
+  "gold": "ask"
+ },
+ {
+  "id": "generic-120",
+  "kind": "generic",
+  "customer_id": 1,
+  "expression": "소스",
+  "gold": "ask"
+ },
+ {
+  "id": "generic-121",
+  "kind": "generic",
+  "customer_id": 2,
+  "expression": "소스",
+  "gold": "ask"
+ },
+ {
+  "id": "not_carried-122",
+  "kind": "not_carried",
+  "customer_id": 1,
+  "expression": "코카콜라 1.5L",
+  "gold": "not_carried"
+ },
+ {
+  "id": "not_carried-123",
+  "kind": "not_carried",
+  "customer_id": 1,
+  "expression": "오렌지 주스 1L",
+  "gold": "not_carried"
+ },
+ {
+  "id": "not_carried-124",
+  "kind": "not_carried",
+  "customer_id": 1,
+  "expression": "생수 2L",
+  "gold": "not_carried"
+ },
+ {
+  "id": "not_carried-125",
+  "kind": "not_carried",
+  "customer_id": 1,
+  "expression": "키친타월",
+  "gold": "not_carried"
+ },
+ {
+  "id": "not_carried-126",
+  "kind": "not_carried",
+  "customer_id": 1,
+  "expression": "꽃소금 1kg",
+  "gold": "not_carried"
+ },
+ {
+  "id": "not_carried-127",
+  "kind": "not_carried",
+  "customer_id": 1,
+  "expression": "토마토 소스",
+  "gold": "not_carried"
+ },
+ {
+  "id": "not_carried-128",
+  "kind": "not_carried",
+  "customer_id": 1,
+  "expression": "계란 한 판",
+  "gold": "not_carried"
+ },
+ {
+  "id": "not_carried-129",
+  "kind": "not_carried",
+  "customer_id": 1,
+  "expression": "탄산수 500ml",
+  "gold": "not_carried"
+ }
+]
