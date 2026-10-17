@@ -3,7 +3,7 @@
 이메일·PDF·엑셀로 들어오는 B2B 발주를 읽고, 상품을 매칭하고, 주문을 등록하는 LangGraph 에이전트.
 정보가 부족하면 거래처에 되묻고 회신을 받아 이어서 처리하며, 내부 판단이 필요한 건은 사람에게 넘긴다.
 
-![실제 Gmail 시연: PDF 발주 → 재질의 → 회신 → 주문 확인](docs/images/gmail_thread.png)
+<p align="center"><img src="docs/images/gmail_thread.png" alt="실제 Gmail 시연: PDF 발주 → 재질의 → 회신 → 주문 확인" width="440"></p>
 
 <sub>실제 Gmail 계정으로 시연한 스레드. 거래처가 PDF 발주서를 보내자 에이전트가 애매한 품목("시럽")을 선택지와 함께 되묻고, "바닐라"라는 회신을 받아 같은 스레드에서 주문을 확정했다. (개인 정보는 화면 표시만 가상 정보로 바꿨다)</sub>
 
