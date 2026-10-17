@@ -291,7 +291,7 @@ class OrderState(TypedDict):
 | parse_document | 본문 + 첨부(PDF·엑셀)를 하나의 텍스트로 | X | |
 | classify | 발주 메일인지 판별 | O (소형 모델) | 문의·광고 필터링 |
 | extract | 품목·수량·단위·납기·배송지 구조화 | O | structured output. 본문은 데이터로만 취급 |
-| identify_customer | 발신 이메일로 거래처 조회 | X | 실패 시 본문 상호명으로 재시도 |
+| identify_customer | 발신 이메일로 거래처 조회 | X | 실패 시 본문 상호명으로 재시도. 배송지 미기재 시 기본 배송지로 채움 |
 | match_products | 별칭 정확 일치, 단위 해석, 후보 검색 | X | 7-4 참고 |
 | resolve_matches | 미해결 품목을 도구 호출로 해결 | O | 2단계. 7-5 참고 |
 | validate | 필수값·재고·매칭 상태로 decision 결정 | X | 7-6 참고 |

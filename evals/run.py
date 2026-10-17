@@ -2,6 +2,7 @@
 
     uv run python -m evals.run --runner oracle --tag oracle
     uv run python -m evals.run --runner dummy --tag v0 --category clean_email pdf
+    uv run python -m evals.run --runner graph --tag v1 --limit 5
     uv run python -m evals.run --compare v0 v1
 """
 import argparse
@@ -28,11 +29,10 @@ def git_info() -> dict:
         return {"commit": None, "dirty": None}
 
 
-def run(runner_name: str, tag: str, categories: list[str] | None) -> dict:
+def run(runner_name: str, tag: str, categories: list[str] | None, limit: int | None = None) -> dict:
     runner = RUNNERS[runner_name]
     scored = []
-    for case in load_cases(categories=categories):
-        # TODO(graph runner): 케이스마다 DB를 시드 상태로 초기화, 재질의 시나리오는 interrupt 시점에 case.reply로 재개
+    for case in load_cases(categories=categories)[:limit]:
         started = time.perf_counter()
         try:
             result, error = runner(case), None
@@ -49,6 +49,8 @@ def run(runner_name: str, tag: str, categories: list[str] | None) -> dict:
             "meta": meta,
             "error": error,
         })
+        print(f"  {case.case_id:<20}{'ok' if scored[-1]['score']['decision_ok'] and scored[-1]['score']['order_exact'] else 'fail':<6}"
+              f"{meta['latency_ms'] / 1000:.1f}s" + (f"  {error}" if error else ""), flush=True)
 
     report = {
         "tag": tag,
@@ -99,13 +101,14 @@ def main():
     parser.add_argument("--runner", choices=sorted(RUNNERS), default="dummy")
     parser.add_argument("--tag", default=None)
     parser.add_argument("--category", nargs="*", default=None)
+    parser.add_argument("--limit", type=int, default=None, help="앞에서부터 N건만 실행")
     parser.add_argument("--compare", nargs="+", metavar="TAG")
     args = parser.parse_args()
 
     if args.compare:
         compare(args.compare)
         return
-    report = run(args.runner, args.tag or args.runner, args.category)
+    report = run(args.runner, args.tag or args.runner, args.category, args.limit)
     print_report(report)
 
 

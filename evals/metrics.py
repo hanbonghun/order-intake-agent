@@ -79,6 +79,8 @@ def aggregate(scored: list[dict]) -> dict:
 
     latencies = [s["meta"]["latency_ms"] for s in scored if s.get("meta", {}).get("latency_ms") is not None]
     costs = [s["meta"]["cost_usd"] for s in scored if s.get("meta", {}).get("cost_usd") is not None]
+    tokens = [s["meta"]["input_tokens"] + s["meta"]["output_tokens"] for s in scored if "input_tokens" in s.get("meta", {})]
+    metrics["avg_total_tokens"] = round(sum(tokens) / len(tokens), 1) if tokens else None
     metrics["avg_latency_ms"] = round(sum(latencies) / len(latencies), 1) if latencies else None
     metrics["avg_cost_usd"] = round(sum(costs) / len(costs), 6) if costs else None
     return metrics
