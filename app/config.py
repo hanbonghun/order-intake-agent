@@ -33,6 +33,8 @@ class Settings(BaseSettings):
     mail_send_enabled: bool = False          # 기본은 발신 안 함 (초안만 저장)
     mail_send_allowlist: str = ""            # 쉼표 구분. 여기 있는 주소로만 발신 (테스트 중 오발송 방지)
     mail_trusted_authserv: str = "mx.google.com"  # 이 서버가 붙인 Authentication-Results만 신뢰
+    mail_process_backlog: bool = False       # False: 폴러 시작 이후 도착한 메일만 처리 (기존 안 읽은 메일은 손대지 않음)
+    mail_accept_from: str = ""               # 쉼표 구분. 설정하면 이 발신자의 메일만 처리 (데모용)
 
     ollama_base_url: str = "http://localhost:11434"
     openai_api_key: str | None = None
