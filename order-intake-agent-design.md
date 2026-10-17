@@ -244,6 +244,7 @@ ItemStatus = Literal[
     "confirmed",       # SKU·단위 확정
     "ambiguous",       # 후보가 여럿 (내부 판단 필요)
     "unit_unclear",    # 단위 불명확, 거래처 이력도 없음 (거래처에 질문)
+    "quantity_missing",# 수량 미기재 (거래처에 질문)
     "not_found",       # 맞는 상품 없음 (거래처에 질문)
     "out_of_stock",    # 확정됐지만 재고 부족 (내부 판단 필요)
 ]
@@ -300,11 +301,11 @@ class OrderState(TypedDict):
 | merge_reply | 회신에서 누락값·품목 수정사항 추출 | O | 2단계. structured output |
 | human_review | `interrupt()`로 검토 대기, 결과 반영 | X | 2단계. 승인 매칭은 거래처 별칭으로 저장 |
 | create_order | 주문 API 호출 | X | `Idempotency-Key: doc-{document_id}` |
-| draft_confirmation | 주문 확인 회신 초안 | O | |
+| draft_confirmation | 주문 확인 회신 초안 | X | 정형 문구라 템플릿으로 충분 (LLM 비용 절감) |
 
 ### 7-4. 결정적 매칭 (`match_products`)
 
-1. **거래처 별칭 정확 일치**: `product_aliases`에서 `customer_id = 해당 거래처`를 먼저 찾고, 없으면 공용 별칭(`customer_id IS NULL`)과 정식 명칭을 찾는다. 일치하면 `confirmed`
+1. **거래처 별칭 정확 일치** (공백·대소문자 차이는 무시): `product_aliases`에서 `customer_id = 해당 거래처`를 먼저 찾고, 없으면 공용 별칭(`customer_id IS NULL`)과 정식 명칭을 찾는다. 일치하면 `confirmed`
 2. **후보 검색**: 정식 명칭 + 별칭 대상 trgm(필요 시 임베딩 하이브리드)으로 상위 5개 후보와 신호를 수집
 3. **단위 해석**
    - 원문에 단위가 있으면 그대로 환산
@@ -346,9 +347,9 @@ class OrderState(TypedDict):
 
 | 문제 | resolvable_by |
 |---|---|
-| 납기일 누락 | customer |
+| 납기일 누락, 수신일 이전 납기일 | customer |
 | 배송지 누락 | (거래처 `default_address`로 대체, 없으면 customer) |
-| `unit_unclear`, `not_found` | customer |
+| `unit_unclear`, `quantity_missing`, `not_found` | customer |
 | 거래처 식별 실패 | internal |
 | `ambiguous` (후보 간 판단) | internal |
 | `out_of_stock` | internal (부분 출고·대체품은 담당자가 결정) |
