@@ -1,4 +1,7 @@
-"""IMAP 폴러: 받은편지함의 읽지 않은 메일을 가져와 수신 처리(handle_email)에 넘긴다.
+"""IMAP 폴러: 받은편지함의 새 메일을 가져와 수신 처리(handle_email)에 넘긴다.
+
+처리 여부는 메일의 읽음 표시가 아니라 DB에 저장한 UID 커서로 판단한다.
+같은 메일함을 사람이 함께 보면 Gmail 화면에서 메일이 먼저 읽음 처리될 수 있기 때문이다.
 
     uv run python -m app.mail.imap           # 계속 폴링
     uv run python -m app.mail.imap --once    # 한 번만
@@ -6,60 +9,84 @@
 import argparse
 import imaplib
 import logging
+import re
 import time
-from datetime import datetime, timezone
 from email.utils import parseaddr
 
 from app.config import settings
+from app.db.session import get_conn
 from app.ingest.handler import handle_email
 
 log = logging.getLogger("imap")
+MAILBOX = "INBOX"
 
 
 def _accepted_senders() -> set[str]:
     return {a.strip().lower() for a in settings.mail_accept_from.split(",") if a.strip()}
 
 
-def _eligible(imap, uid: bytes, since: datetime | None) -> bool:
-    """본문을 읽기 전에 헤더·도착 시각만 보고 처리 대상인지 판단한다.
-    대상이 아닌 메일은 본문을 가져오지도, 읽음 표시하지도 않는다 (개인 메일함에 연결된 경우의 안전장치)."""
-    _, data = imap.uid("fetch", uid, "(INTERNALDATE BODY.PEEK[HEADER.FIELDS (FROM)])")
-    meta = b" ".join(p[0] if isinstance(p, tuple) else p for p in data if p)
-    if since is not None:
-        arrived = imaplib.Internaldate2tuple(meta)
-        if arrived is None or datetime.fromtimestamp(time.mktime(arrived), timezone.utc) < since:
-            return False
+def _load_cursor(uidvalidity: int, current_max: int) -> int:
+    """마지막으로 처리한 UID. 처음이거나 메일함이 재설정(UIDVALIDITY 변경)되면 새로 정한다:
+    MAIL_PROCESS_BACKLOG=false면 지금 있는 메일은 건너뛰고(현재 최대 UID), true면 처음부터(0)."""
+    with get_conn() as conn:
+        conn.execute("CREATE TABLE IF NOT EXISTS mail_cursor "
+                     "(mailbox TEXT PRIMARY KEY, uidvalidity BIGINT NOT NULL, last_uid BIGINT NOT NULL)")
+        row = conn.execute("SELECT uidvalidity, last_uid FROM mail_cursor WHERE mailbox = %s", (MAILBOX,)).fetchone()
+        if row and row["uidvalidity"] == uidvalidity:
+            return row["last_uid"]
+        start = 0 if settings.mail_process_backlog else current_max
+        _save_cursor(conn, uidvalidity, start)
+        log.info("커서 초기화: UID %s 이후부터 처리", start)
+        return start
+
+
+def _save_cursor(conn, uidvalidity: int, last_uid: int) -> None:
+    conn.execute(
+        """
+        INSERT INTO mail_cursor (mailbox, uidvalidity, last_uid) VALUES (%s, %s, %s)
+        ON CONFLICT (mailbox) DO UPDATE SET uidvalidity = EXCLUDED.uidvalidity, last_uid = EXCLUDED.last_uid
+        """,
+        (MAILBOX, uidvalidity, last_uid),
+    )
+
+
+def _sender_allowed(imap, uid: bytes) -> bool:
+    """발신자 제한이 있으면 본문을 읽기 전에 From 헤더만 보고 거른다."""
     accept = _accepted_senders()
-    if accept:
-        header = next((p[1] for p in data if isinstance(p, tuple)), b"").decode(errors="replace")
-        if parseaddr(header.split(":", 1)[-1].strip())[1].lower() not in accept:
-            return False
-    return True
+    if not accept:
+        return True
+    _, data = imap.uid("fetch", uid, "(BODY.PEEK[HEADER.FIELDS (FROM)])")
+    header = next((p[1] for p in data if isinstance(p, tuple)), b"").decode(errors="replace")
+    return parseaddr(header.split(":", 1)[-1].strip())[1].lower() in accept
 
 
-def poll_once(since: datetime | None = None) -> list[dict]:
-    """처리 대상인 안 읽은 메일을 처리한다. 가져올 때는 읽음 표시를 하지 않고(BODY.PEEK), 처리 후에 표시한다.
-    처리 중 오류가 나도 읽음 표시해 같은 메일을 무한히 재시도하지 않게 한다 (문서 상태로 추적)."""
+def poll_once() -> list[dict]:
+    """커서 이후 도착한 메일을 UID 순서대로 처리한다. 처리 중 오류가 나도 커서를 넘겨
+    같은 메일을 무한히 재시도하지 않는다 (문서 상태로 추적). 중복 처리는 Message-ID로 한 번 더 막는다."""
     results = []
     with imaplib.IMAP4_SSL(settings.mail_imap_host) as imap:
         imap.login(settings.mail_address, settings.mail_app_password)
-        imap.select("INBOX")
-        months = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()   # IMAP 날짜는 영문 월 (로케일 무관)
-        criteria = f"(UNSEEN SINCE {since.day:02d}-{months[since.month - 1]}-{since.year})" if since else "UNSEEN"
-        _, data = imap.uid("search", None, criteria)   # 서버에서 날짜(일 단위)로 먼저 거르고, 시각은 _eligible에서
-        for uid in data[0].split():
-            if not _eligible(imap, uid, since):
-                continue
-            _, msg_data = imap.uid("fetch", uid, "(BODY.PEEK[])")
-            raw = next(part[1] for part in msg_data if isinstance(part, tuple))
-            try:
-                result = handle_email(raw)
-                log.info("처리: uid=%s → %s", uid.decode(), {k: result.get(k) for k in ("document_id", "status", "order_id")})
-            except Exception as e:   # 한 메일 실패가 폴러를 멈추지 않게
-                log.exception("처리 실패: uid=%s", uid.decode())
-                result = {"error": f"{type(e).__name__}: {e}"}
-            imap.uid("store", uid, "+FLAGS", "(\\Seen)")
-            results.append({"uid": uid.decode()} | result)
+        imap.select(MAILBOX)
+        uidvalidity = int(re.search(rb"\d+", imap.response("UIDVALIDITY")[1][0]).group())
+        _, data = imap.uid("search", None, "ALL")
+        all_uids = [int(u) for u in data[0].split()]
+        last = _load_cursor(uidvalidity, max(all_uids, default=0))
+
+        for uid in (u for u in all_uids if u > last):
+            buid = str(uid).encode()
+            if _sender_allowed(imap, buid):
+                _, msg_data = imap.uid("fetch", buid, "(BODY.PEEK[])")
+                raw = next(part[1] for part in msg_data if isinstance(part, tuple))
+                try:
+                    result = handle_email(raw)
+                    log.info("처리: uid=%s → %s", uid, {k: result.get(k) for k in ("document_id", "status", "order_id")})
+                except Exception as e:   # 한 메일 실패가 폴러를 멈추지 않게
+                    log.exception("처리 실패: uid=%s", uid)
+                    result = {"error": f"{type(e).__name__}: {e}"}
+                imap.uid("store", buid, "+FLAGS", "(\\Seen)")   # 사람이 볼 때 처리됐음을 알 수 있게 (판단 기준은 아님)
+                results.append({"uid": uid} | result)
+            with get_conn() as conn:
+                _save_cursor(conn, uidvalidity, uid)
     return results
 
 
@@ -70,12 +97,11 @@ def main():
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(name)s %(message)s")
     if not (settings.mail_address and settings.mail_app_password):
         raise SystemExit("MAIL_ADDRESS, MAIL_APP_PASSWORD를 .env에 설정하세요")
-    since = None if settings.mail_process_backlog else datetime.now(timezone.utc)
-    log.info("폴링 시작: %s, 발신자 제한 %s", "기존 안 읽은 메일 포함" if since is None else f"{since:%H:%M:%S} 이후 도착분만",
+    log.info("폴링 시작 (기존 메일 %s, 발신자 제한 %s)", "포함" if settings.mail_process_backlog else "제외",
              f"{len(_accepted_senders())}개 주소" if _accepted_senders() else "없음")
     while True:
         try:
-            for r in poll_once(since):
+            for r in poll_once():
                 print(r, flush=True)
         except (imaplib.IMAP4.error, OSError):
             log.exception("IMAP 연결 실패, 다음 주기에 재시도")
