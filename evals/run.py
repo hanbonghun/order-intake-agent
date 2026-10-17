@@ -31,6 +31,7 @@ def git_info() -> dict:
 
 def run(runner_name: str, tag: str, categories: list[str] | None, limit: int | None = None) -> dict:
     runner = RUNNERS[runner_name]
+    git = git_info()  # 실행 도중 커밋이 바뀔 수 있으므로 시작 시점에 기록
     scored = []
     for case in load_cases(categories=categories)[:limit]:
         started = time.perf_counter()
@@ -56,7 +57,7 @@ def run(runner_name: str, tag: str, categories: list[str] | None, limit: int | N
         "tag": tag,
         "runner": runner_name,
         "created_at": datetime.now().isoformat(timespec="seconds"),
-        "git": git_info(),
+        "git": git,
         "metrics": aggregate(scored),
         "by_category": by_category(scored),
         "cases": scored,
