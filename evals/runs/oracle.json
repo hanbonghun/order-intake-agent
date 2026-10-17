@@ -1,0 +1,2725 @@
+{
+  "tag": "oracle",
+  "runner": "oracle",
+  "created_at": "2026-10-17T18:08:43",
+  "git": {
+    "commit": "9bada24",
+    "dirty": false
+  },
+  "metrics": {
+    "cases": 30,
+    "classification_accuracy": 1.0,
+    "decision_accuracy": 1.0,
+    "field_accuracy.customer_id": 1.0,
+    "field_accuracy.delivery_date": 1.0,
+    "field_accuracy.delivery_address": 1.0,
+    "line_item_recall": 1.0,
+    "line_item_precision": 1.0,
+    "order_exact_rate": 1.0,
+    "auto_process_rate": 1.0,
+    "misregistration_rate": 0.0,
+    "misregistration_count": 0,
+    "avg_latency_ms": 0.0,
+    "avg_cost_usd": null
+  },
+  "by_category": {
+    "clean_email": {
+      "cases": 15,
+      "classification_accuracy": 1.0,
+      "decision_accuracy": 1.0,
+      "field_accuracy.customer_id": 1.0,
+      "field_accuracy.delivery_date": 1.0,
+      "field_accuracy.delivery_address": 1.0,
+      "line_item_recall": 1.0,
+      "line_item_precision": 1.0,
+      "order_exact_rate": 1.0,
+      "auto_process_rate": 1.0,
+      "misregistration_rate": 0.0,
+      "misregistration_count": 0,
+      "avg_latency_ms": 0.0,
+      "avg_cost_usd": null
+    },
+    "excel": {
+      "cases": 5,
+      "classification_accuracy": 1.0,
+      "decision_accuracy": 1.0,
+      "field_accuracy.customer_id": 1.0,
+      "field_accuracy.delivery_date": 1.0,
+      "field_accuracy.delivery_address": 1.0,
+      "line_item_recall": 1.0,
+      "line_item_precision": 1.0,
+      "order_exact_rate": 1.0,
+      "auto_process_rate": 1.0,
+      "misregistration_rate": 0.0,
+      "misregistration_count": 0,
+      "avg_latency_ms": 0.0,
+      "avg_cost_usd": null
+    },
+    "pdf": {
+      "cases": 10,
+      "classification_accuracy": 1.0,
+      "decision_accuracy": 1.0,
+      "field_accuracy.customer_id": 1.0,
+      "field_accuracy.delivery_date": 1.0,
+      "field_accuracy.delivery_address": 1.0,
+      "line_item_recall": 1.0,
+      "line_item_precision": 1.0,
+      "order_exact_rate": 1.0,
+      "auto_process_rate": 1.0,
+      "misregistration_rate": 0.0,
+      "misregistration_count": 0,
+      "avg_latency_ms": 0.0,
+      "avg_cost_usd": null
+    }
+  },
+  "cases": [
+    {
+      "case_id": "clean_email_001",
+      "category": "clean_email",
+      "expected": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 1,
+        "delivery_date": "2026-10-06",
+        "delivery_address": "서울특별시 마포구 월드컵로12길 34, 1층",
+        "items": [
+          {
+            "sku": "SUP-001",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 1000,
+            "raw_text": "컵"
+          },
+          {
+            "sku": "PWD-001",
+            "quantity": 1,
+            "unit": "봉",
+            "base_quantity": 1,
+            "raw_text": "그린티 파우더"
+          },
+          {
+            "sku": "COF-001",
+            "quantity": 5,
+            "unit": "봉",
+            "base_quantity": 5,
+            "raw_text": "원두 하우스블렌드 1kg"
+          },
+          {
+            "sku": "FRT-001",
+            "quantity": 10,
+            "unit": "개",
+            "base_quantity": 10,
+            "raw_text": "레몬"
+          }
+        ]
+      },
+      "result": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 1,
+        "delivery_date": "2026-10-06",
+        "delivery_address": "서울특별시 마포구 월드컵로12길 34, 1층",
+        "items": [
+          {
+            "sku": "SUP-001",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 1000,
+            "raw_text": "컵"
+          },
+          {
+            "sku": "PWD-001",
+            "quantity": 1,
+            "unit": "봉",
+            "base_quantity": 1,
+            "raw_text": "그린티 파우더"
+          },
+          {
+            "sku": "COF-001",
+            "quantity": 5,
+            "unit": "봉",
+            "base_quantity": 5,
+            "raw_text": "원두 하우스블렌드 1kg"
+          },
+          {
+            "sku": "FRT-001",
+            "quantity": 10,
+            "unit": "개",
+            "base_quantity": 10,
+            "raw_text": "레몬"
+          }
+        ]
+      },
+      "score": {
+        "classification_ok": true,
+        "decision_ok": true,
+        "fields": {
+          "customer_id": true,
+          "delivery_date": true,
+          "delivery_address": true
+        },
+        "items_expected": 4,
+        "items_predicted": 4,
+        "items_correct": 4,
+        "order_exact": true,
+        "created": true,
+        "misregistered": false,
+        "missing_items": [],
+        "extra_items": []
+      },
+      "meta": {
+        "latency_ms": 0.0
+      },
+      "error": null
+    },
+    {
+      "case_id": "clean_email_002",
+      "category": "clean_email",
+      "expected": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 2,
+        "delivery_date": "2026-10-08",
+        "delivery_address": "서울특별시 성동구 서울숲2길 18",
+        "items": [
+          {
+            "sku": "SYR-001",
+            "quantity": 2,
+            "unit": "병",
+            "base_quantity": 2,
+            "raw_text": "바닐라 시럽 1L"
+          },
+          {
+            "sku": "COF-002",
+            "quantity": 1,
+            "unit": "봉",
+            "base_quantity": 1,
+            "raw_text": "원두 에티오피아 예가체프 1kg"
+          }
+        ]
+      },
+      "result": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 2,
+        "delivery_date": "2026-10-08",
+        "delivery_address": "서울특별시 성동구 서울숲2길 18",
+        "items": [
+          {
+            "sku": "SYR-001",
+            "quantity": 2,
+            "unit": "병",
+            "base_quantity": 2,
+            "raw_text": "바닐라 시럽 1L"
+          },
+          {
+            "sku": "COF-002",
+            "quantity": 1,
+            "unit": "봉",
+            "base_quantity": 1,
+            "raw_text": "원두 에티오피아 예가체프 1kg"
+          }
+        ]
+      },
+      "score": {
+        "classification_ok": true,
+        "decision_ok": true,
+        "fields": {
+          "customer_id": true,
+          "delivery_date": true,
+          "delivery_address": true
+        },
+        "items_expected": 2,
+        "items_predicted": 2,
+        "items_correct": 2,
+        "order_exact": true,
+        "created": true,
+        "misregistered": false,
+        "missing_items": [],
+        "extra_items": []
+      },
+      "meta": {
+        "latency_ms": 0.0
+      },
+      "error": null
+    },
+    {
+      "case_id": "clean_email_003",
+      "category": "clean_email",
+      "expected": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 3,
+        "delivery_date": "2026-10-09",
+        "delivery_address": "서울특별시 용산구 한강대로40길 7",
+        "items": [
+          {
+            "sku": "DAI-001",
+            "quantity": 2,
+            "unit": "박스",
+            "base_quantity": 24,
+            "raw_text": "서울우유 1L"
+          },
+          {
+            "sku": "COF-005",
+            "quantity": 4,
+            "unit": "병",
+            "base_quantity": 4,
+            "raw_text": "콜드브루 원액 1L"
+          },
+          {
+            "sku": "SUP-004",
+            "quantity": 2,
+            "unit": "박스",
+            "base_quantity": 2000,
+            "raw_text": "돔뚜껑"
+          },
+          {
+            "sku": "SYR-003",
+            "quantity": 1,
+            "unit": "병",
+            "base_quantity": 1,
+            "raw_text": "헤이즐넛 시럽 1L"
+          }
+        ]
+      },
+      "result": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 3,
+        "delivery_date": "2026-10-09",
+        "delivery_address": "서울특별시 용산구 한강대로40길 7",
+        "items": [
+          {
+            "sku": "DAI-001",
+            "quantity": 2,
+            "unit": "박스",
+            "base_quantity": 24,
+            "raw_text": "서울우유 1L"
+          },
+          {
+            "sku": "COF-005",
+            "quantity": 4,
+            "unit": "병",
+            "base_quantity": 4,
+            "raw_text": "콜드브루 원액 1L"
+          },
+          {
+            "sku": "SUP-004",
+            "quantity": 2,
+            "unit": "박스",
+            "base_quantity": 2000,
+            "raw_text": "돔뚜껑"
+          },
+          {
+            "sku": "SYR-003",
+            "quantity": 1,
+            "unit": "병",
+            "base_quantity": 1,
+            "raw_text": "헤이즐넛 시럽 1L"
+          }
+        ]
+      },
+      "score": {
+        "classification_ok": true,
+        "decision_ok": true,
+        "fields": {
+          "customer_id": true,
+          "delivery_date": true,
+          "delivery_address": true
+        },
+        "items_expected": 4,
+        "items_predicted": 4,
+        "items_correct": 4,
+        "order_exact": true,
+        "created": true,
+        "misregistered": false,
+        "missing_items": [],
+        "extra_items": []
+      },
+      "meta": {
+        "latency_ms": 0.0
+      },
+      "error": null
+    },
+    {
+      "case_id": "clean_email_004",
+      "category": "clean_email",
+      "expected": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 4,
+        "delivery_date": "2026-10-10",
+        "delivery_address": "경기도 성남시 분당구 정자일로 95, 102호",
+        "items": [
+          {
+            "sku": "FRT-001",
+            "quantity": 18,
+            "unit": "개",
+            "base_quantity": 18,
+            "raw_text": "레몬"
+          },
+          {
+            "sku": "SUP-003",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 1000,
+            "raw_text": "13oz 핫컵"
+          },
+          {
+            "sku": "COF-001",
+            "quantity": 3,
+            "unit": "봉",
+            "base_quantity": 3,
+            "raw_text": "원두 하우스블렌드 1kg"
+          }
+        ]
+      },
+      "result": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 4,
+        "delivery_date": "2026-10-10",
+        "delivery_address": "경기도 성남시 분당구 정자일로 95, 102호",
+        "items": [
+          {
+            "sku": "FRT-001",
+            "quantity": 18,
+            "unit": "개",
+            "base_quantity": 18,
+            "raw_text": "레몬"
+          },
+          {
+            "sku": "SUP-003",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 1000,
+            "raw_text": "13oz 핫컵"
+          },
+          {
+            "sku": "COF-001",
+            "quantity": 3,
+            "unit": "봉",
+            "base_quantity": 3,
+            "raw_text": "원두 하우스블렌드 1kg"
+          }
+        ]
+      },
+      "score": {
+        "classification_ok": true,
+        "decision_ok": true,
+        "fields": {
+          "customer_id": true,
+          "delivery_date": true,
+          "delivery_address": true
+        },
+        "items_expected": 3,
+        "items_predicted": 3,
+        "items_correct": 3,
+        "order_exact": true,
+        "created": true,
+        "misregistered": false,
+        "missing_items": [],
+        "extra_items": []
+      },
+      "meta": {
+        "latency_ms": 0.0
+      },
+      "error": null
+    },
+    {
+      "case_id": "clean_email_005",
+      "category": "clean_email",
+      "expected": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 5,
+        "delivery_date": "2026-10-10",
+        "delivery_address": "서울특별시 종로구 북촌로5길 21",
+        "items": [
+          {
+            "sku": "COF-004",
+            "quantity": 3,
+            "unit": "봉",
+            "base_quantity": 3,
+            "raw_text": "원두 디카페인 블렌드 1kg"
+          },
+          {
+            "sku": "COF-003",
+            "quantity": 3,
+            "unit": "봉",
+            "base_quantity": 3,
+            "raw_text": "수프리모"
+          },
+          {
+            "sku": "COF-001",
+            "quantity": 8,
+            "unit": "봉",
+            "base_quantity": 8,
+            "raw_text": "하우스블렌드"
+          },
+          {
+            "sku": "SUP-003",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 1000,
+            "raw_text": "종이 핫컵 13oz"
+          }
+        ]
+      },
+      "result": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 5,
+        "delivery_date": "2026-10-10",
+        "delivery_address": "서울특별시 종로구 북촌로5길 21",
+        "items": [
+          {
+            "sku": "COF-004",
+            "quantity": 3,
+            "unit": "봉",
+            "base_quantity": 3,
+            "raw_text": "원두 디카페인 블렌드 1kg"
+          },
+          {
+            "sku": "COF-003",
+            "quantity": 3,
+            "unit": "봉",
+            "base_quantity": 3,
+            "raw_text": "수프리모"
+          },
+          {
+            "sku": "COF-001",
+            "quantity": 8,
+            "unit": "봉",
+            "base_quantity": 8,
+            "raw_text": "하우스블렌드"
+          },
+          {
+            "sku": "SUP-003",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 1000,
+            "raw_text": "종이 핫컵 13oz"
+          }
+        ]
+      },
+      "score": {
+        "classification_ok": true,
+        "decision_ok": true,
+        "fields": {
+          "customer_id": true,
+          "delivery_date": true,
+          "delivery_address": true
+        },
+        "items_expected": 4,
+        "items_predicted": 4,
+        "items_correct": 4,
+        "order_exact": true,
+        "created": true,
+        "misregistered": false,
+        "missing_items": [],
+        "extra_items": []
+      },
+      "meta": {
+        "latency_ms": 0.0
+      },
+      "error": null
+    },
+    {
+      "case_id": "clean_email_006",
+      "category": "clean_email",
+      "expected": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 6,
+        "delivery_date": "2026-10-12",
+        "delivery_address": "서울특별시 강남구 도산대로17길 9, 2층",
+        "items": [
+          {
+            "sku": "DAI-001",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 12,
+            "raw_text": "흰우유 1L"
+          },
+          {
+            "sku": "COF-001",
+            "quantity": 3,
+            "unit": "봉",
+            "base_quantity": 3,
+            "raw_text": "하우스블렌드"
+          }
+        ]
+      },
+      "result": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 6,
+        "delivery_date": "2026-10-12",
+        "delivery_address": "서울특별시 강남구 도산대로17길 9, 2층",
+        "items": [
+          {
+            "sku": "DAI-001",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 12,
+            "raw_text": "흰우유 1L"
+          },
+          {
+            "sku": "COF-001",
+            "quantity": 3,
+            "unit": "봉",
+            "base_quantity": 3,
+            "raw_text": "하우스블렌드"
+          }
+        ]
+      },
+      "score": {
+        "classification_ok": true,
+        "decision_ok": true,
+        "fields": {
+          "customer_id": true,
+          "delivery_date": true,
+          "delivery_address": true
+        },
+        "items_expected": 2,
+        "items_predicted": 2,
+        "items_correct": 2,
+        "order_exact": true,
+        "created": true,
+        "misregistered": false,
+        "missing_items": [],
+        "extra_items": []
+      },
+      "meta": {
+        "latency_ms": 0.0
+      },
+      "error": null
+    },
+    {
+      "case_id": "clean_email_007",
+      "category": "clean_email",
+      "expected": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 7,
+        "delivery_date": "2026-10-14",
+        "delivery_address": "경기도 고양시 일산동구 정발산로 31",
+        "items": [
+          {
+            "sku": "COF-001",
+            "quantity": 4,
+            "unit": "봉",
+            "base_quantity": 4,
+            "raw_text": "원두 하우스블렌드 1kg"
+          },
+          {
+            "sku": "FRT-006",
+            "quantity": 2,
+            "unit": "봉",
+            "base_quantity": 2,
+            "raw_text": "냉동 망고 1kg"
+          }
+        ]
+      },
+      "result": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 7,
+        "delivery_date": "2026-10-14",
+        "delivery_address": "경기도 고양시 일산동구 정발산로 31",
+        "items": [
+          {
+            "sku": "COF-001",
+            "quantity": 4,
+            "unit": "봉",
+            "base_quantity": 4,
+            "raw_text": "원두 하우스블렌드 1kg"
+          },
+          {
+            "sku": "FRT-006",
+            "quantity": 2,
+            "unit": "봉",
+            "base_quantity": 2,
+            "raw_text": "냉동 망고 1kg"
+          }
+        ]
+      },
+      "score": {
+        "classification_ok": true,
+        "decision_ok": true,
+        "fields": {
+          "customer_id": true,
+          "delivery_date": true,
+          "delivery_address": true
+        },
+        "items_expected": 2,
+        "items_predicted": 2,
+        "items_correct": 2,
+        "order_exact": true,
+        "created": true,
+        "misregistered": false,
+        "missing_items": [],
+        "extra_items": []
+      },
+      "meta": {
+        "latency_ms": 0.0
+      },
+      "error": null
+    },
+    {
+      "case_id": "clean_email_008",
+      "category": "clean_email",
+      "expected": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 8,
+        "delivery_date": "2026-10-13",
+        "delivery_address": "서울특별시 서대문구 연희로 88",
+        "items": [
+          {
+            "sku": "SUP-004",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 1000,
+            "raw_text": "아이스컵 돔리드 92파이"
+          },
+          {
+            "sku": "SUP-001",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 1000,
+            "raw_text": "16oz 컵"
+          }
+        ]
+      },
+      "result": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 8,
+        "delivery_date": "2026-10-13",
+        "delivery_address": "서울특별시 서대문구 연희로 88",
+        "items": [
+          {
+            "sku": "SUP-004",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 1000,
+            "raw_text": "아이스컵 돔리드 92파이"
+          },
+          {
+            "sku": "SUP-001",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 1000,
+            "raw_text": "16oz 컵"
+          }
+        ]
+      },
+      "score": {
+        "classification_ok": true,
+        "decision_ok": true,
+        "fields": {
+          "customer_id": true,
+          "delivery_date": true,
+          "delivery_address": true
+        },
+        "items_expected": 2,
+        "items_predicted": 2,
+        "items_correct": 2,
+        "order_exact": true,
+        "created": true,
+        "misregistered": false,
+        "missing_items": [],
+        "extra_items": []
+      },
+      "meta": {
+        "latency_ms": 0.0
+      },
+      "error": null
+    },
+    {
+      "case_id": "clean_email_009",
+      "category": "clean_email",
+      "expected": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 9,
+        "delivery_date": "2026-10-15",
+        "delivery_address": "서울특별시 중구 을지로 100, 1층",
+        "items": [
+          {
+            "sku": "SUP-001",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 1000,
+            "raw_text": "PET 아이스컵 16oz"
+          },
+          {
+            "sku": "DAI-001",
+            "quantity": 3,
+            "unit": "박스",
+            "base_quantity": 36,
+            "raw_text": "서울우유 1리터"
+          },
+          {
+            "sku": "COF-001",
+            "quantity": 2,
+            "unit": "봉",
+            "base_quantity": 2,
+            "raw_text": "하우스 원두"
+          },
+          {
+            "sku": "SUP-004",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 1000,
+            "raw_text": "아이스컵 돔리드 92파이"
+          }
+        ]
+      },
+      "result": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 9,
+        "delivery_date": "2026-10-15",
+        "delivery_address": "서울특별시 중구 을지로 100, 1층",
+        "items": [
+          {
+            "sku": "SUP-001",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 1000,
+            "raw_text": "PET 아이스컵 16oz"
+          },
+          {
+            "sku": "DAI-001",
+            "quantity": 3,
+            "unit": "박스",
+            "base_quantity": 36,
+            "raw_text": "서울우유 1리터"
+          },
+          {
+            "sku": "COF-001",
+            "quantity": 2,
+            "unit": "봉",
+            "base_quantity": 2,
+            "raw_text": "하우스 원두"
+          },
+          {
+            "sku": "SUP-004",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 1000,
+            "raw_text": "아이스컵 돔리드 92파이"
+          }
+        ]
+      },
+      "score": {
+        "classification_ok": true,
+        "decision_ok": true,
+        "fields": {
+          "customer_id": true,
+          "delivery_date": true,
+          "delivery_address": true
+        },
+        "items_expected": 4,
+        "items_predicted": 4,
+        "items_correct": 4,
+        "order_exact": true,
+        "created": true,
+        "misregistered": false,
+        "missing_items": [],
+        "extra_items": []
+      },
+      "meta": {
+        "latency_ms": 0.0
+      },
+      "error": null
+    },
+    {
+      "case_id": "clean_email_010",
+      "category": "clean_email",
+      "expected": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 10,
+        "delivery_date": "2026-10-17",
+        "delivery_address": "서울특별시 마포구 독막로 45",
+        "items": [
+          {
+            "sku": "DAI-004",
+            "quantity": 3,
+            "unit": "개",
+            "base_quantity": 3,
+            "raw_text": "동물성 생크림"
+          },
+          {
+            "sku": "DAI-007",
+            "quantity": 4,
+            "unit": "개",
+            "base_quantity": 4,
+            "raw_text": "무염버터 450g"
+          },
+          {
+            "sku": "DAI-001",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 12,
+            "raw_text": "서울우유 1L"
+          },
+          {
+            "sku": "FRT-001",
+            "quantity": 22,
+            "unit": "개",
+            "base_quantity": 22,
+            "raw_text": "레몬"
+          },
+          {
+            "sku": "BAK-003",
+            "quantity": 1,
+            "unit": "포대",
+            "base_quantity": 1,
+            "raw_text": "백설탕 15kg"
+          }
+        ]
+      },
+      "result": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 10,
+        "delivery_date": "2026-10-17",
+        "delivery_address": "서울특별시 마포구 독막로 45",
+        "items": [
+          {
+            "sku": "DAI-004",
+            "quantity": 3,
+            "unit": "개",
+            "base_quantity": 3,
+            "raw_text": "동물성 생크림"
+          },
+          {
+            "sku": "DAI-007",
+            "quantity": 4,
+            "unit": "개",
+            "base_quantity": 4,
+            "raw_text": "무염버터 450g"
+          },
+          {
+            "sku": "DAI-001",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 12,
+            "raw_text": "서울우유 1L"
+          },
+          {
+            "sku": "FRT-001",
+            "quantity": 22,
+            "unit": "개",
+            "base_quantity": 22,
+            "raw_text": "레몬"
+          },
+          {
+            "sku": "BAK-003",
+            "quantity": 1,
+            "unit": "포대",
+            "base_quantity": 1,
+            "raw_text": "백설탕 15kg"
+          }
+        ]
+      },
+      "score": {
+        "classification_ok": true,
+        "decision_ok": true,
+        "fields": {
+          "customer_id": true,
+          "delivery_date": true,
+          "delivery_address": true
+        },
+        "items_expected": 5,
+        "items_predicted": 5,
+        "items_correct": 5,
+        "order_exact": true,
+        "created": true,
+        "misregistered": false,
+        "missing_items": [],
+        "extra_items": []
+      },
+      "meta": {
+        "latency_ms": 0.0
+      },
+      "error": null
+    },
+    {
+      "case_id": "clean_email_011",
+      "category": "clean_email",
+      "expected": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 11,
+        "delivery_date": "2026-10-07",
+        "delivery_address": "서울특별시 송파구 백제고분로 210",
+        "items": [
+          {
+            "sku": "FRT-001",
+            "quantity": 13,
+            "unit": "개",
+            "base_quantity": 13,
+            "raw_text": "레몬"
+          },
+          {
+            "sku": "DAI-008",
+            "quantity": 1,
+            "unit": "개",
+            "base_quantity": 1,
+            "raw_text": "크림치즈"
+          }
+        ]
+      },
+      "result": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 11,
+        "delivery_date": "2026-10-07",
+        "delivery_address": "서울특별시 송파구 백제고분로 210",
+        "items": [
+          {
+            "sku": "FRT-001",
+            "quantity": 13,
+            "unit": "개",
+            "base_quantity": 13,
+            "raw_text": "레몬"
+          },
+          {
+            "sku": "DAI-008",
+            "quantity": 1,
+            "unit": "개",
+            "base_quantity": 1,
+            "raw_text": "크림치즈"
+          }
+        ]
+      },
+      "score": {
+        "classification_ok": true,
+        "decision_ok": true,
+        "fields": {
+          "customer_id": true,
+          "delivery_date": true,
+          "delivery_address": true
+        },
+        "items_expected": 2,
+        "items_predicted": 2,
+        "items_correct": 2,
+        "order_exact": true,
+        "created": true,
+        "misregistered": false,
+        "missing_items": [],
+        "extra_items": []
+      },
+      "meta": {
+        "latency_ms": 0.0
+      },
+      "error": null
+    },
+    {
+      "case_id": "clean_email_012",
+      "category": "clean_email",
+      "expected": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 12,
+        "delivery_date": "2026-10-09",
+        "delivery_address": "인천광역시 연수구 컨벤시아대로 165",
+        "items": [
+          {
+            "sku": "DAI-004",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 12,
+            "raw_text": "동물성 생크림 1L"
+          },
+          {
+            "sku": "DAI-001",
+            "quantity": 7,
+            "unit": "개",
+            "base_quantity": 7,
+            "raw_text": "서울우유 1L"
+          },
+          {
+            "sku": "DAI-007",
+            "quantity": 5,
+            "unit": "개",
+            "base_quantity": 5,
+            "raw_text": "무염버터 450g"
+          },
+          {
+            "sku": "FRT-001",
+            "quantity": 33,
+            "unit": "개",
+            "base_quantity": 33,
+            "raw_text": "레몬"
+          }
+        ]
+      },
+      "result": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 12,
+        "delivery_date": "2026-10-09",
+        "delivery_address": "인천광역시 연수구 컨벤시아대로 165",
+        "items": [
+          {
+            "sku": "DAI-004",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 12,
+            "raw_text": "동물성 생크림 1L"
+          },
+          {
+            "sku": "DAI-001",
+            "quantity": 7,
+            "unit": "개",
+            "base_quantity": 7,
+            "raw_text": "서울우유 1L"
+          },
+          {
+            "sku": "DAI-007",
+            "quantity": 5,
+            "unit": "개",
+            "base_quantity": 5,
+            "raw_text": "무염버터 450g"
+          },
+          {
+            "sku": "FRT-001",
+            "quantity": 33,
+            "unit": "개",
+            "base_quantity": 33,
+            "raw_text": "레몬"
+          }
+        ]
+      },
+      "score": {
+        "classification_ok": true,
+        "decision_ok": true,
+        "fields": {
+          "customer_id": true,
+          "delivery_date": true,
+          "delivery_address": true
+        },
+        "items_expected": 4,
+        "items_predicted": 4,
+        "items_correct": 4,
+        "order_exact": true,
+        "created": true,
+        "misregistered": false,
+        "missing_items": [],
+        "extra_items": []
+      },
+      "meta": {
+        "latency_ms": 0.0
+      },
+      "error": null
+    },
+    {
+      "case_id": "clean_email_013",
+      "category": "clean_email",
+      "expected": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 13,
+        "delivery_date": "2026-10-08",
+        "delivery_address": "서울특별시 광진구 아차산로 312",
+        "items": [
+          {
+            "sku": "FRT-003",
+            "quantity": 5,
+            "unit": "팩",
+            "base_quantity": 5,
+            "raw_text": "딸기 500g"
+          },
+          {
+            "sku": "COF-001",
+            "quantity": 2,
+            "unit": "봉",
+            "base_quantity": 2,
+            "raw_text": "원두 하우스블렌드 1kg"
+          }
+        ]
+      },
+      "result": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 13,
+        "delivery_date": "2026-10-08",
+        "delivery_address": "서울특별시 광진구 아차산로 312",
+        "items": [
+          {
+            "sku": "FRT-003",
+            "quantity": 5,
+            "unit": "팩",
+            "base_quantity": 5,
+            "raw_text": "딸기 500g"
+          },
+          {
+            "sku": "COF-001",
+            "quantity": 2,
+            "unit": "봉",
+            "base_quantity": 2,
+            "raw_text": "원두 하우스블렌드 1kg"
+          }
+        ]
+      },
+      "score": {
+        "classification_ok": true,
+        "decision_ok": true,
+        "fields": {
+          "customer_id": true,
+          "delivery_date": true,
+          "delivery_address": true
+        },
+        "items_expected": 2,
+        "items_predicted": 2,
+        "items_correct": 2,
+        "order_exact": true,
+        "created": true,
+        "misregistered": false,
+        "missing_items": [],
+        "extra_items": []
+      },
+      "meta": {
+        "latency_ms": 0.0
+      },
+      "error": null
+    },
+    {
+      "case_id": "clean_email_014",
+      "category": "clean_email",
+      "expected": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 14,
+        "delivery_date": "2026-10-10",
+        "delivery_address": "서울특별시 은평구 연서로 133",
+        "items": [
+          {
+            "sku": "BAK-003",
+            "quantity": 2,
+            "unit": "포대",
+            "base_quantity": 2,
+            "raw_text": "백설탕 15kg"
+          },
+          {
+            "sku": "DAI-007",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 20,
+            "raw_text": "버터 450g"
+          },
+          {
+            "sku": "DAI-003",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 12,
+            "raw_text": "우유"
+          },
+          {
+            "sku": "BAK-001",
+            "quantity": 3,
+            "unit": "포대",
+            "base_quantity": 3,
+            "raw_text": "강력분 20kg"
+          },
+          {
+            "sku": "DAI-006",
+            "quantity": 4,
+            "unit": "개",
+            "base_quantity": 4,
+            "raw_text": "연유"
+          }
+        ]
+      },
+      "result": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 14,
+        "delivery_date": "2026-10-10",
+        "delivery_address": "서울특별시 은평구 연서로 133",
+        "items": [
+          {
+            "sku": "BAK-003",
+            "quantity": 2,
+            "unit": "포대",
+            "base_quantity": 2,
+            "raw_text": "백설탕 15kg"
+          },
+          {
+            "sku": "DAI-007",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 20,
+            "raw_text": "버터 450g"
+          },
+          {
+            "sku": "DAI-003",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 12,
+            "raw_text": "우유"
+          },
+          {
+            "sku": "BAK-001",
+            "quantity": 3,
+            "unit": "포대",
+            "base_quantity": 3,
+            "raw_text": "강력분 20kg"
+          },
+          {
+            "sku": "DAI-006",
+            "quantity": 4,
+            "unit": "개",
+            "base_quantity": 4,
+            "raw_text": "연유"
+          }
+        ]
+      },
+      "score": {
+        "classification_ok": true,
+        "decision_ok": true,
+        "fields": {
+          "customer_id": true,
+          "delivery_date": true,
+          "delivery_address": true
+        },
+        "items_expected": 5,
+        "items_predicted": 5,
+        "items_correct": 5,
+        "order_exact": true,
+        "created": true,
+        "misregistered": false,
+        "missing_items": [],
+        "extra_items": []
+      },
+      "meta": {
+        "latency_ms": 0.0
+      },
+      "error": null
+    },
+    {
+      "case_id": "clean_email_015",
+      "category": "clean_email",
+      "expected": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 15,
+        "delivery_date": "2026-10-12",
+        "delivery_address": "경기도 수원시 영통구 광교중앙로 140",
+        "items": [
+          {
+            "sku": "FRT-003",
+            "quantity": 4,
+            "unit": "팩",
+            "base_quantity": 4,
+            "raw_text": "생딸기 500g"
+          },
+          {
+            "sku": "BAK-003",
+            "quantity": 1,
+            "unit": "포대",
+            "base_quantity": 1,
+            "raw_text": "백설탕"
+          },
+          {
+            "sku": "BAK-001",
+            "quantity": 3,
+            "unit": "포대",
+            "base_quantity": 3,
+            "raw_text": "강력밀가루"
+          }
+        ]
+      },
+      "result": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 15,
+        "delivery_date": "2026-10-12",
+        "delivery_address": "경기도 수원시 영통구 광교중앙로 140",
+        "items": [
+          {
+            "sku": "FRT-003",
+            "quantity": 4,
+            "unit": "팩",
+            "base_quantity": 4,
+            "raw_text": "생딸기 500g"
+          },
+          {
+            "sku": "BAK-003",
+            "quantity": 1,
+            "unit": "포대",
+            "base_quantity": 1,
+            "raw_text": "백설탕"
+          },
+          {
+            "sku": "BAK-001",
+            "quantity": 3,
+            "unit": "포대",
+            "base_quantity": 3,
+            "raw_text": "강력밀가루"
+          }
+        ]
+      },
+      "score": {
+        "classification_ok": true,
+        "decision_ok": true,
+        "fields": {
+          "customer_id": true,
+          "delivery_date": true,
+          "delivery_address": true
+        },
+        "items_expected": 3,
+        "items_predicted": 3,
+        "items_correct": 3,
+        "order_exact": true,
+        "created": true,
+        "misregistered": false,
+        "missing_items": [],
+        "extra_items": []
+      },
+      "meta": {
+        "latency_ms": 0.0
+      },
+      "error": null
+    },
+    {
+      "case_id": "excel_001",
+      "category": "excel",
+      "expected": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 11,
+        "delivery_date": "2026-10-12",
+        "delivery_address": "서울특별시 송파구 백제고분로 210",
+        "items": [
+          {
+            "sku": "DAI-008",
+            "quantity": 1,
+            "unit": "개",
+            "base_quantity": 1,
+            "raw_text": "크림치즈 1kg"
+          },
+          {
+            "sku": "FRT-002",
+            "quantity": 18,
+            "unit": "개",
+            "base_quantity": 18,
+            "raw_text": "라임"
+          },
+          {
+            "sku": "FRT-001",
+            "quantity": 11,
+            "unit": "개",
+            "base_quantity": 11,
+            "raw_text": "레몬"
+          },
+          {
+            "sku": "DAI-005",
+            "quantity": 5,
+            "unit": "개",
+            "base_quantity": 5,
+            "raw_text": "식물성 휘핑크림 1L"
+          }
+        ]
+      },
+      "result": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 11,
+        "delivery_date": "2026-10-12",
+        "delivery_address": "서울특별시 송파구 백제고분로 210",
+        "items": [
+          {
+            "sku": "DAI-008",
+            "quantity": 1,
+            "unit": "개",
+            "base_quantity": 1,
+            "raw_text": "크림치즈 1kg"
+          },
+          {
+            "sku": "FRT-002",
+            "quantity": 18,
+            "unit": "개",
+            "base_quantity": 18,
+            "raw_text": "라임"
+          },
+          {
+            "sku": "FRT-001",
+            "quantity": 11,
+            "unit": "개",
+            "base_quantity": 11,
+            "raw_text": "레몬"
+          },
+          {
+            "sku": "DAI-005",
+            "quantity": 5,
+            "unit": "개",
+            "base_quantity": 5,
+            "raw_text": "식물성 휘핑크림 1L"
+          }
+        ]
+      },
+      "score": {
+        "classification_ok": true,
+        "decision_ok": true,
+        "fields": {
+          "customer_id": true,
+          "delivery_date": true,
+          "delivery_address": true
+        },
+        "items_expected": 4,
+        "items_predicted": 4,
+        "items_correct": 4,
+        "order_exact": true,
+        "created": true,
+        "misregistered": false,
+        "missing_items": [],
+        "extra_items": []
+      },
+      "meta": {
+        "latency_ms": 0.0
+      },
+      "error": null
+    },
+    {
+      "case_id": "excel_002",
+      "category": "excel",
+      "expected": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 12,
+        "delivery_date": "2026-10-12",
+        "delivery_address": "인천광역시 연수구 컨벤시아대로 165",
+        "items": [
+          {
+            "sku": "DAI-004",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 12,
+            "raw_text": "생크림 1L"
+          },
+          {
+            "sku": "DAI-007",
+            "quantity": 5,
+            "unit": "개",
+            "base_quantity": 5,
+            "raw_text": "무염버터"
+          },
+          {
+            "sku": "FRT-001",
+            "quantity": 27,
+            "unit": "개",
+            "base_quantity": 27,
+            "raw_text": "레몬"
+          }
+        ]
+      },
+      "result": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 12,
+        "delivery_date": "2026-10-12",
+        "delivery_address": "인천광역시 연수구 컨벤시아대로 165",
+        "items": [
+          {
+            "sku": "DAI-004",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 12,
+            "raw_text": "생크림 1L"
+          },
+          {
+            "sku": "DAI-007",
+            "quantity": 5,
+            "unit": "개",
+            "base_quantity": 5,
+            "raw_text": "무염버터"
+          },
+          {
+            "sku": "FRT-001",
+            "quantity": 27,
+            "unit": "개",
+            "base_quantity": 27,
+            "raw_text": "레몬"
+          }
+        ]
+      },
+      "score": {
+        "classification_ok": true,
+        "decision_ok": true,
+        "fields": {
+          "customer_id": true,
+          "delivery_date": true,
+          "delivery_address": true
+        },
+        "items_expected": 3,
+        "items_predicted": 3,
+        "items_correct": 3,
+        "order_exact": true,
+        "created": true,
+        "misregistered": false,
+        "missing_items": [],
+        "extra_items": []
+      },
+      "meta": {
+        "latency_ms": 0.0
+      },
+      "error": null
+    },
+    {
+      "case_id": "excel_003",
+      "category": "excel",
+      "expected": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 13,
+        "delivery_date": "2026-10-15",
+        "delivery_address": "서울특별시 광진구 아차산로 312",
+        "items": [
+          {
+            "sku": "DAI-001",
+            "quantity": 2,
+            "unit": "박스",
+            "base_quantity": 24,
+            "raw_text": "흰우유 1L"
+          },
+          {
+            "sku": "FRT-003",
+            "quantity": 4,
+            "unit": "팩",
+            "base_quantity": 4,
+            "raw_text": "딸기 500g"
+          },
+          {
+            "sku": "COF-001",
+            "quantity": 2,
+            "unit": "봉",
+            "base_quantity": 2,
+            "raw_text": "하우스 원두"
+          },
+          {
+            "sku": "DAI-008",
+            "quantity": 2,
+            "unit": "개",
+            "base_quantity": 2,
+            "raw_text": "크림치즈 1kg"
+          },
+          {
+            "sku": "FRT-005",
+            "quantity": 2,
+            "unit": "봉",
+            "base_quantity": 2,
+            "raw_text": "냉동블루베리"
+          }
+        ]
+      },
+      "result": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 13,
+        "delivery_date": "2026-10-15",
+        "delivery_address": "서울특별시 광진구 아차산로 312",
+        "items": [
+          {
+            "sku": "DAI-001",
+            "quantity": 2,
+            "unit": "박스",
+            "base_quantity": 24,
+            "raw_text": "흰우유 1L"
+          },
+          {
+            "sku": "FRT-003",
+            "quantity": 4,
+            "unit": "팩",
+            "base_quantity": 4,
+            "raw_text": "딸기 500g"
+          },
+          {
+            "sku": "COF-001",
+            "quantity": 2,
+            "unit": "봉",
+            "base_quantity": 2,
+            "raw_text": "하우스 원두"
+          },
+          {
+            "sku": "DAI-008",
+            "quantity": 2,
+            "unit": "개",
+            "base_quantity": 2,
+            "raw_text": "크림치즈 1kg"
+          },
+          {
+            "sku": "FRT-005",
+            "quantity": 2,
+            "unit": "봉",
+            "base_quantity": 2,
+            "raw_text": "냉동블루베리"
+          }
+        ]
+      },
+      "score": {
+        "classification_ok": true,
+        "decision_ok": true,
+        "fields": {
+          "customer_id": true,
+          "delivery_date": true,
+          "delivery_address": true
+        },
+        "items_expected": 5,
+        "items_predicted": 5,
+        "items_correct": 5,
+        "order_exact": true,
+        "created": true,
+        "misregistered": false,
+        "missing_items": [],
+        "extra_items": []
+      },
+      "meta": {
+        "latency_ms": 0.0
+      },
+      "error": null
+    },
+    {
+      "case_id": "excel_004",
+      "category": "excel",
+      "expected": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 14,
+        "delivery_date": "2026-10-16",
+        "delivery_address": "서울특별시 은평구 연서로 133",
+        "items": [
+          {
+            "sku": "BAK-003",
+            "quantity": 2,
+            "unit": "포대",
+            "base_quantity": 2,
+            "raw_text": "백설탕 15kg"
+          },
+          {
+            "sku": "DAI-007",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 20,
+            "raw_text": "무염버터 450g"
+          },
+          {
+            "sku": "BAK-001",
+            "quantity": 3,
+            "unit": "포대",
+            "base_quantity": 3,
+            "raw_text": "강력밀가루"
+          }
+        ]
+      },
+      "result": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 14,
+        "delivery_date": "2026-10-16",
+        "delivery_address": "서울특별시 은평구 연서로 133",
+        "items": [
+          {
+            "sku": "BAK-003",
+            "quantity": 2,
+            "unit": "포대",
+            "base_quantity": 2,
+            "raw_text": "백설탕 15kg"
+          },
+          {
+            "sku": "DAI-007",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 20,
+            "raw_text": "무염버터 450g"
+          },
+          {
+            "sku": "BAK-001",
+            "quantity": 3,
+            "unit": "포대",
+            "base_quantity": 3,
+            "raw_text": "강력밀가루"
+          }
+        ]
+      },
+      "score": {
+        "classification_ok": true,
+        "decision_ok": true,
+        "fields": {
+          "customer_id": true,
+          "delivery_date": true,
+          "delivery_address": true
+        },
+        "items_expected": 3,
+        "items_predicted": 3,
+        "items_correct": 3,
+        "order_exact": true,
+        "created": true,
+        "misregistered": false,
+        "missing_items": [],
+        "extra_items": []
+      },
+      "meta": {
+        "latency_ms": 0.0
+      },
+      "error": null
+    },
+    {
+      "case_id": "excel_005",
+      "category": "excel",
+      "expected": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 15,
+        "delivery_date": "2026-10-17",
+        "delivery_address": "경기도 수원시 영통구 광교중앙로 140",
+        "items": [
+          {
+            "sku": "BAK-003",
+            "quantity": 1,
+            "unit": "포대",
+            "base_quantity": 1,
+            "raw_text": "설탕 15kg"
+          },
+          {
+            "sku": "DAI-007",
+            "quantity": 10,
+            "unit": "개",
+            "base_quantity": 10,
+            "raw_text": "버터 450g"
+          },
+          {
+            "sku": "BAK-001",
+            "quantity": 2,
+            "unit": "포대",
+            "base_quantity": 2,
+            "raw_text": "강력분"
+          }
+        ]
+      },
+      "result": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 15,
+        "delivery_date": "2026-10-17",
+        "delivery_address": "경기도 수원시 영통구 광교중앙로 140",
+        "items": [
+          {
+            "sku": "BAK-003",
+            "quantity": 1,
+            "unit": "포대",
+            "base_quantity": 1,
+            "raw_text": "설탕 15kg"
+          },
+          {
+            "sku": "DAI-007",
+            "quantity": 10,
+            "unit": "개",
+            "base_quantity": 10,
+            "raw_text": "버터 450g"
+          },
+          {
+            "sku": "BAK-001",
+            "quantity": 2,
+            "unit": "포대",
+            "base_quantity": 2,
+            "raw_text": "강력분"
+          }
+        ]
+      },
+      "score": {
+        "classification_ok": true,
+        "decision_ok": true,
+        "fields": {
+          "customer_id": true,
+          "delivery_date": true,
+          "delivery_address": true
+        },
+        "items_expected": 3,
+        "items_predicted": 3,
+        "items_correct": 3,
+        "order_exact": true,
+        "created": true,
+        "misregistered": false,
+        "missing_items": [],
+        "extra_items": []
+      },
+      "meta": {
+        "latency_ms": 0.0
+      },
+      "error": null
+    },
+    {
+      "case_id": "pdf_001",
+      "category": "pdf",
+      "expected": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 1,
+        "delivery_date": "2026-10-12",
+        "delivery_address": "서울특별시 마포구 월드컵로12길 34, 1층",
+        "items": [
+          {
+            "sku": "DAI-004",
+            "quantity": 2,
+            "unit": "개",
+            "base_quantity": 2,
+            "raw_text": "생크림 1L"
+          },
+          {
+            "sku": "FRT-001",
+            "quantity": 29,
+            "unit": "개",
+            "base_quantity": 29,
+            "raw_text": "레몬"
+          },
+          {
+            "sku": "SYR-002",
+            "quantity": 1,
+            "unit": "병",
+            "base_quantity": 1,
+            "raw_text": "캬라멜 시럽"
+          },
+          {
+            "sku": "DAI-001",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 12,
+            "raw_text": "서울우유 흰우유 1L"
+          }
+        ]
+      },
+      "result": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 1,
+        "delivery_date": "2026-10-12",
+        "delivery_address": "서울특별시 마포구 월드컵로12길 34, 1층",
+        "items": [
+          {
+            "sku": "DAI-004",
+            "quantity": 2,
+            "unit": "개",
+            "base_quantity": 2,
+            "raw_text": "생크림 1L"
+          },
+          {
+            "sku": "FRT-001",
+            "quantity": 29,
+            "unit": "개",
+            "base_quantity": 29,
+            "raw_text": "레몬"
+          },
+          {
+            "sku": "SYR-002",
+            "quantity": 1,
+            "unit": "병",
+            "base_quantity": 1,
+            "raw_text": "캬라멜 시럽"
+          },
+          {
+            "sku": "DAI-001",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 12,
+            "raw_text": "서울우유 흰우유 1L"
+          }
+        ]
+      },
+      "score": {
+        "classification_ok": true,
+        "decision_ok": true,
+        "fields": {
+          "customer_id": true,
+          "delivery_date": true,
+          "delivery_address": true
+        },
+        "items_expected": 4,
+        "items_predicted": 4,
+        "items_correct": 4,
+        "order_exact": true,
+        "created": true,
+        "misregistered": false,
+        "missing_items": [],
+        "extra_items": []
+      },
+      "meta": {
+        "latency_ms": 0.0
+      },
+      "error": null
+    },
+    {
+      "case_id": "pdf_002",
+      "category": "pdf",
+      "expected": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 2,
+        "delivery_date": "2026-10-14",
+        "delivery_address": "서울특별시 성동구 서울숲2길 18",
+        "items": [
+          {
+            "sku": "SUP-006",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 5000,
+            "raw_text": "일자 빨대 개별포장"
+          },
+          {
+            "sku": "DAI-001",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 12,
+            "raw_text": "서울우유 1L"
+          },
+          {
+            "sku": "FRT-001",
+            "quantity": 13,
+            "unit": "개",
+            "base_quantity": 13,
+            "raw_text": "레몬"
+          },
+          {
+            "sku": "SUP-004",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 1000,
+            "raw_text": "아이스컵 돔리드 92파이"
+          }
+        ]
+      },
+      "result": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 2,
+        "delivery_date": "2026-10-14",
+        "delivery_address": "서울특별시 성동구 서울숲2길 18",
+        "items": [
+          {
+            "sku": "SUP-006",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 5000,
+            "raw_text": "일자 빨대 개별포장"
+          },
+          {
+            "sku": "DAI-001",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 12,
+            "raw_text": "서울우유 1L"
+          },
+          {
+            "sku": "FRT-001",
+            "quantity": 13,
+            "unit": "개",
+            "base_quantity": 13,
+            "raw_text": "레몬"
+          },
+          {
+            "sku": "SUP-004",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 1000,
+            "raw_text": "아이스컵 돔리드 92파이"
+          }
+        ]
+      },
+      "score": {
+        "classification_ok": true,
+        "decision_ok": true,
+        "fields": {
+          "customer_id": true,
+          "delivery_date": true,
+          "delivery_address": true
+        },
+        "items_expected": 4,
+        "items_predicted": 4,
+        "items_correct": 4,
+        "order_exact": true,
+        "created": true,
+        "misregistered": false,
+        "missing_items": [],
+        "extra_items": []
+      },
+      "meta": {
+        "latency_ms": 0.0
+      },
+      "error": null
+    },
+    {
+      "case_id": "pdf_003",
+      "category": "pdf",
+      "expected": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 3,
+        "delivery_date": "2026-10-14",
+        "delivery_address": "서울특별시 용산구 한강대로40길 7",
+        "items": [
+          {
+            "sku": "DAI-001",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 12,
+            "raw_text": "흰우유 1L"
+          },
+          {
+            "sku": "FRT-001",
+            "quantity": 18,
+            "unit": "개",
+            "base_quantity": 18,
+            "raw_text": "레몬"
+          }
+        ]
+      },
+      "result": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 3,
+        "delivery_date": "2026-10-14",
+        "delivery_address": "서울특별시 용산구 한강대로40길 7",
+        "items": [
+          {
+            "sku": "DAI-001",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 12,
+            "raw_text": "흰우유 1L"
+          },
+          {
+            "sku": "FRT-001",
+            "quantity": 18,
+            "unit": "개",
+            "base_quantity": 18,
+            "raw_text": "레몬"
+          }
+        ]
+      },
+      "score": {
+        "classification_ok": true,
+        "decision_ok": true,
+        "fields": {
+          "customer_id": true,
+          "delivery_date": true,
+          "delivery_address": true
+        },
+        "items_expected": 2,
+        "items_predicted": 2,
+        "items_correct": 2,
+        "order_exact": true,
+        "created": true,
+        "misregistered": false,
+        "missing_items": [],
+        "extra_items": []
+      },
+      "meta": {
+        "latency_ms": 0.0
+      },
+      "error": null
+    },
+    {
+      "case_id": "pdf_004",
+      "category": "pdf",
+      "expected": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 4,
+        "delivery_date": "2026-10-14",
+        "delivery_address": "경기도 성남시 분당구 정자일로 95, 102호",
+        "items": [
+          {
+            "sku": "SYR-001",
+            "quantity": 2,
+            "unit": "병",
+            "base_quantity": 2,
+            "raw_text": "바닐라 시럽 1L"
+          },
+          {
+            "sku": "DAI-001",
+            "quantity": 2,
+            "unit": "박스",
+            "base_quantity": 24,
+            "raw_text": "서울우유 1L"
+          }
+        ]
+      },
+      "result": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 4,
+        "delivery_date": "2026-10-14",
+        "delivery_address": "경기도 성남시 분당구 정자일로 95, 102호",
+        "items": [
+          {
+            "sku": "SYR-001",
+            "quantity": 2,
+            "unit": "병",
+            "base_quantity": 2,
+            "raw_text": "바닐라 시럽 1L"
+          },
+          {
+            "sku": "DAI-001",
+            "quantity": 2,
+            "unit": "박스",
+            "base_quantity": 24,
+            "raw_text": "서울우유 1L"
+          }
+        ]
+      },
+      "score": {
+        "classification_ok": true,
+        "decision_ok": true,
+        "fields": {
+          "customer_id": true,
+          "delivery_date": true,
+          "delivery_address": true
+        },
+        "items_expected": 2,
+        "items_predicted": 2,
+        "items_correct": 2,
+        "order_exact": true,
+        "created": true,
+        "misregistered": false,
+        "missing_items": [],
+        "extra_items": []
+      },
+      "meta": {
+        "latency_ms": 0.0
+      },
+      "error": null
+    },
+    {
+      "case_id": "pdf_005",
+      "category": "pdf",
+      "expected": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 5,
+        "delivery_date": "2026-10-17",
+        "delivery_address": "서울특별시 종로구 북촌로5길 21",
+        "items": [
+          {
+            "sku": "SUP-003",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 1000,
+            "raw_text": "13oz 핫컵"
+          },
+          {
+            "sku": "COF-001",
+            "quantity": 10,
+            "unit": "봉",
+            "base_quantity": 10,
+            "raw_text": "원두 하우스블렌드 1kg"
+          },
+          {
+            "sku": "COF-003",
+            "quantity": 3,
+            "unit": "봉",
+            "base_quantity": 3,
+            "raw_text": "원두 콜롬비아 수프리모 1kg"
+          }
+        ]
+      },
+      "result": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 5,
+        "delivery_date": "2026-10-17",
+        "delivery_address": "서울특별시 종로구 북촌로5길 21",
+        "items": [
+          {
+            "sku": "SUP-003",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 1000,
+            "raw_text": "13oz 핫컵"
+          },
+          {
+            "sku": "COF-001",
+            "quantity": 10,
+            "unit": "봉",
+            "base_quantity": 10,
+            "raw_text": "원두 하우스블렌드 1kg"
+          },
+          {
+            "sku": "COF-003",
+            "quantity": 3,
+            "unit": "봉",
+            "base_quantity": 3,
+            "raw_text": "원두 콜롬비아 수프리모 1kg"
+          }
+        ]
+      },
+      "score": {
+        "classification_ok": true,
+        "decision_ok": true,
+        "fields": {
+          "customer_id": true,
+          "delivery_date": true,
+          "delivery_address": true
+        },
+        "items_expected": 3,
+        "items_predicted": 3,
+        "items_correct": 3,
+        "order_exact": true,
+        "created": true,
+        "misregistered": false,
+        "missing_items": [],
+        "extra_items": []
+      },
+      "meta": {
+        "latency_ms": 0.0
+      },
+      "error": null
+    },
+    {
+      "case_id": "pdf_006",
+      "category": "pdf",
+      "expected": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 6,
+        "delivery_date": "2026-10-07",
+        "delivery_address": "서울특별시 강남구 도산대로17길 9, 2층",
+        "items": [
+          {
+            "sku": "SUP-004",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 1000,
+            "raw_text": "돔리드"
+          },
+          {
+            "sku": "SYR-001",
+            "quantity": 1,
+            "unit": "병",
+            "base_quantity": 1,
+            "raw_text": "바닐라시럽"
+          },
+          {
+            "sku": "DAI-002",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 12,
+            "raw_text": "서울우유 저지방 1L"
+          }
+        ]
+      },
+      "result": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 6,
+        "delivery_date": "2026-10-07",
+        "delivery_address": "서울특별시 강남구 도산대로17길 9, 2층",
+        "items": [
+          {
+            "sku": "SUP-004",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 1000,
+            "raw_text": "돔리드"
+          },
+          {
+            "sku": "SYR-001",
+            "quantity": 1,
+            "unit": "병",
+            "base_quantity": 1,
+            "raw_text": "바닐라시럽"
+          },
+          {
+            "sku": "DAI-002",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 12,
+            "raw_text": "서울우유 저지방 1L"
+          }
+        ]
+      },
+      "score": {
+        "classification_ok": true,
+        "decision_ok": true,
+        "fields": {
+          "customer_id": true,
+          "delivery_date": true,
+          "delivery_address": true
+        },
+        "items_expected": 3,
+        "items_predicted": 3,
+        "items_correct": 3,
+        "order_exact": true,
+        "created": true,
+        "misregistered": false,
+        "missing_items": [],
+        "extra_items": []
+      },
+      "meta": {
+        "latency_ms": 0.0
+      },
+      "error": null
+    },
+    {
+      "case_id": "pdf_007",
+      "category": "pdf",
+      "expected": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 7,
+        "delivery_date": "2026-10-07",
+        "delivery_address": "경기도 고양시 일산동구 정발산로 31",
+        "items": [
+          {
+            "sku": "FRT-001",
+            "quantity": 27,
+            "unit": "개",
+            "base_quantity": 27,
+            "raw_text": "레몬"
+          },
+          {
+            "sku": "FRT-006",
+            "quantity": 2,
+            "unit": "봉",
+            "base_quantity": 2,
+            "raw_text": "냉동 망고 1kg"
+          },
+          {
+            "sku": "FRT-004",
+            "quantity": 3,
+            "unit": "봉",
+            "base_quantity": 3,
+            "raw_text": "냉동 딸기 1kg"
+          },
+          {
+            "sku": "SUP-002",
+            "quantity": 2,
+            "unit": "박스",
+            "base_quantity": 2000,
+            "raw_text": "PET 아이스컵 20oz"
+          }
+        ]
+      },
+      "result": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 7,
+        "delivery_date": "2026-10-07",
+        "delivery_address": "경기도 고양시 일산동구 정발산로 31",
+        "items": [
+          {
+            "sku": "FRT-001",
+            "quantity": 27,
+            "unit": "개",
+            "base_quantity": 27,
+            "raw_text": "레몬"
+          },
+          {
+            "sku": "FRT-006",
+            "quantity": 2,
+            "unit": "봉",
+            "base_quantity": 2,
+            "raw_text": "냉동 망고 1kg"
+          },
+          {
+            "sku": "FRT-004",
+            "quantity": 3,
+            "unit": "봉",
+            "base_quantity": 3,
+            "raw_text": "냉동 딸기 1kg"
+          },
+          {
+            "sku": "SUP-002",
+            "quantity": 2,
+            "unit": "박스",
+            "base_quantity": 2000,
+            "raw_text": "PET 아이스컵 20oz"
+          }
+        ]
+      },
+      "score": {
+        "classification_ok": true,
+        "decision_ok": true,
+        "fields": {
+          "customer_id": true,
+          "delivery_date": true,
+          "delivery_address": true
+        },
+        "items_expected": 4,
+        "items_predicted": 4,
+        "items_correct": 4,
+        "order_exact": true,
+        "created": true,
+        "misregistered": false,
+        "missing_items": [],
+        "extra_items": []
+      },
+      "meta": {
+        "latency_ms": 0.0
+      },
+      "error": null
+    },
+    {
+      "case_id": "pdf_008",
+      "category": "pdf",
+      "expected": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 8,
+        "delivery_date": "2026-10-10",
+        "delivery_address": "서울특별시 서대문구 연희로 88",
+        "items": [
+          {
+            "sku": "SYR-004",
+            "quantity": 2,
+            "unit": "개",
+            "base_quantity": 2,
+            "raw_text": "카라멜 소스 1.9kg"
+          },
+          {
+            "sku": "SUP-001",
+            "quantity": 2,
+            "unit": "박스",
+            "base_quantity": 2000,
+            "raw_text": "PET 아이스컵 16oz"
+          }
+        ]
+      },
+      "result": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 8,
+        "delivery_date": "2026-10-10",
+        "delivery_address": "서울특별시 서대문구 연희로 88",
+        "items": [
+          {
+            "sku": "SYR-004",
+            "quantity": 2,
+            "unit": "개",
+            "base_quantity": 2,
+            "raw_text": "카라멜 소스 1.9kg"
+          },
+          {
+            "sku": "SUP-001",
+            "quantity": 2,
+            "unit": "박스",
+            "base_quantity": 2000,
+            "raw_text": "PET 아이스컵 16oz"
+          }
+        ]
+      },
+      "score": {
+        "classification_ok": true,
+        "decision_ok": true,
+        "fields": {
+          "customer_id": true,
+          "delivery_date": true,
+          "delivery_address": true
+        },
+        "items_expected": 2,
+        "items_predicted": 2,
+        "items_correct": 2,
+        "order_exact": true,
+        "created": true,
+        "misregistered": false,
+        "missing_items": [],
+        "extra_items": []
+      },
+      "meta": {
+        "latency_ms": 0.0
+      },
+      "error": null
+    },
+    {
+      "case_id": "pdf_009",
+      "category": "pdf",
+      "expected": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 9,
+        "delivery_date": "2026-10-09",
+        "delivery_address": "서울특별시 중구 을지로 100, 1층",
+        "items": [
+          {
+            "sku": "FRT-001",
+            "quantity": 26,
+            "unit": "개",
+            "base_quantity": 26,
+            "raw_text": "레몬"
+          },
+          {
+            "sku": "FRT-002",
+            "quantity": 20,
+            "unit": "개",
+            "base_quantity": 20,
+            "raw_text": "생라임"
+          },
+          {
+            "sku": "DAI-001",
+            "quantity": 2,
+            "unit": "박스",
+            "base_quantity": 24,
+            "raw_text": "서울우유 1리터"
+          },
+          {
+            "sku": "SYR-001",
+            "quantity": 3,
+            "unit": "병",
+            "base_quantity": 3,
+            "raw_text": "바닐라 시럽 1L"
+          }
+        ]
+      },
+      "result": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 9,
+        "delivery_date": "2026-10-09",
+        "delivery_address": "서울특별시 중구 을지로 100, 1층",
+        "items": [
+          {
+            "sku": "FRT-001",
+            "quantity": 26,
+            "unit": "개",
+            "base_quantity": 26,
+            "raw_text": "레몬"
+          },
+          {
+            "sku": "FRT-002",
+            "quantity": 20,
+            "unit": "개",
+            "base_quantity": 20,
+            "raw_text": "생라임"
+          },
+          {
+            "sku": "DAI-001",
+            "quantity": 2,
+            "unit": "박스",
+            "base_quantity": 24,
+            "raw_text": "서울우유 1리터"
+          },
+          {
+            "sku": "SYR-001",
+            "quantity": 3,
+            "unit": "병",
+            "base_quantity": 3,
+            "raw_text": "바닐라 시럽 1L"
+          }
+        ]
+      },
+      "score": {
+        "classification_ok": true,
+        "decision_ok": true,
+        "fields": {
+          "customer_id": true,
+          "delivery_date": true,
+          "delivery_address": true
+        },
+        "items_expected": 4,
+        "items_predicted": 4,
+        "items_correct": 4,
+        "order_exact": true,
+        "created": true,
+        "misregistered": false,
+        "missing_items": [],
+        "extra_items": []
+      },
+      "meta": {
+        "latency_ms": 0.0
+      },
+      "error": null
+    },
+    {
+      "case_id": "pdf_010",
+      "category": "pdf",
+      "expected": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 10,
+        "delivery_date": "2026-10-12",
+        "delivery_address": "서울특별시 마포구 독막로 45",
+        "items": [
+          {
+            "sku": "DAI-001",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 12,
+            "raw_text": "서울우유 1L"
+          },
+          {
+            "sku": "FRT-001",
+            "quantity": 29,
+            "unit": "개",
+            "base_quantity": 29,
+            "raw_text": "레몬"
+          },
+          {
+            "sku": "DAI-007",
+            "quantity": 3,
+            "unit": "개",
+            "base_quantity": 3,
+            "raw_text": "버터 450g"
+          }
+        ]
+      },
+      "result": {
+        "is_order": true,
+        "decision": "create",
+        "customer_id": 10,
+        "delivery_date": "2026-10-12",
+        "delivery_address": "서울특별시 마포구 독막로 45",
+        "items": [
+          {
+            "sku": "DAI-001",
+            "quantity": 1,
+            "unit": "박스",
+            "base_quantity": 12,
+            "raw_text": "서울우유 1L"
+          },
+          {
+            "sku": "FRT-001",
+            "quantity": 29,
+            "unit": "개",
+            "base_quantity": 29,
+            "raw_text": "레몬"
+          },
+          {
+            "sku": "DAI-007",
+            "quantity": 3,
+            "unit": "개",
+            "base_quantity": 3,
+            "raw_text": "버터 450g"
+          }
+        ]
+      },
+      "score": {
+        "classification_ok": true,
+        "decision_ok": true,
+        "fields": {
+          "customer_id": true,
+          "delivery_date": true,
+          "delivery_address": true
+        },
+        "items_expected": 3,
+        "items_predicted": 3,
+        "items_correct": 3,
+        "order_exact": true,
+        "created": true,
+        "misregistered": false,
+        "missing_items": [],
+        "extra_items": []
+      },
+      "meta": {
+        "latency_ms": 0.0
+      },
+      "error": null
+    }
+  ]
+}
