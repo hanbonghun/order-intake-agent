@@ -54,7 +54,7 @@ class OrderState(TypedDict, total=False):
     classify_reason: str
     customer_name: Optional[str]        # 문서에 적힌 상호
     customer_id: Optional[int]
-    customer_match: Optional[Literal["email", "name"]]   # 거래처를 무엇으로 식별했는지
+    customer_match: Optional[Literal["email", "name", "verified"]]   # 거래처 식별 근거 (verified: 검토자 확인)
     delivery_date: Optional[str]        # YYYY-MM-DD
     delivery_address: Optional[str]
     extracted_items: list[ExtractedItem]
@@ -67,6 +67,9 @@ class OrderState(TypedDict, total=False):
     reply_text: Optional[str]           # 거래처 회신 본문 (인용 제거 후)
     reply_received_at: Optional[str]
     changed_items: list[int]            # 회신으로 바뀌어 다시 매칭할 품목 인덱스
+    review_resolution: Optional[dict]   # 사람 검토 결과
+    reviewer_question: Optional[str]    # 검토자가 거래처에 물어보라고 한 내용
+    learned_aliases: list[dict]         # 검토 승인으로 새로 저장한 거래처 별칭
     order_id: Optional[int]
     reply_draft: Optional[str]          # 고객에게 보낼 초안 (재질의 또는 주문 확인)
 

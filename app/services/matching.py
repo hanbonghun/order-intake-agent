@@ -122,3 +122,15 @@ def customer_history(conn, customer_id: Optional[int]) -> list[dict]:
 
 def get_product(conn, sku: str) -> Optional[dict]:
     return conn.execute(f"SELECT {PRODUCT_COLUMNS}, p.category FROM products p WHERE p.sku = %s", (sku,)).fetchone()
+
+
+def learn_alias(conn, product_id: int, customer_id: int, alias: str) -> bool:
+    """검토에서 확정된 표현을 거래처 전용 별칭으로 저장한다. 이미 있으면 False."""
+    row = conn.execute(
+        """
+        INSERT INTO product_aliases (product_id, customer_id, alias, source) VALUES (%s, %s, %s, 'human_review')
+        ON CONFLICT DO NOTHING RETURNING id
+        """,
+        (product_id, customer_id, alias.strip()),
+    ).fetchone()
+    return row is not None

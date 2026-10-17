@@ -40,8 +40,16 @@ def score_case(expected: dict, result: dict) -> dict:
     if "first_decision" in expected:   # 재질의 시나리오: 회신 전 결정도 맞았는지
         first_ok = expected["first_decision"] == result.get("first_decision")
 
+    followup_ok = None
+    if "followup" in expected:   # 검토 후 같은 거래처의 후속 발주: 학습한 별칭으로 resolver 없이 처리됐는지
+        exp_f, got_f = expected["followup"], result.get("followup") or {}
+        followup_ok = (exp_f["decision"] == got_f.get("decision")
+                       and sorted(map(_item_key, exp_f["items"])) == sorted(map(_item_key, got_f.get("items", [])))
+                       and exp_f.get("resolver_items") == got_f.get("resolver_items"))
+
     return {
         "first_decision_ok": first_ok,
+        "followup_ok": followup_ok,
         "classification_ok": bool(expected.get("is_order")) == bool(result.get("is_order")),
         "decision_ok": expected.get("decision") == result.get("decision"),
         "fields": fields,
@@ -74,6 +82,8 @@ def aggregate(scored: list[dict]) -> dict:
 
     with_first = [s for s in scored if s["score"].get("first_decision_ok") is not None]
     metrics["first_decision_accuracy"] = _ratio(sum(s["score"]["first_decision_ok"] for s in with_first), len(with_first))
+    with_followup = [s for s in scored if s["score"].get("followup_ok") is not None]
+    metrics["followup_accuracy"] = _ratio(sum(s["score"]["followup_ok"] for s in with_followup), len(with_followup))
 
     exp_n = sum(s["score"]["items_expected"] for s in orders)
     got_n = sum(s["score"]["items_predicted"] for s in orders)

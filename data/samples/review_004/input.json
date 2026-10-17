@@ -1,0 +1,9 @@
+{
+  "message_id": "<review_004@mail.example>",
+  "in_reply_to": null,
+  "sender_email": "unknown.sender@mail.example",
+  "subject": "모퉁이커피 주문",
+  "body": "모퉁이커피입니다. 새 메일로 보내요. 하우스블렌드 4봉 10/22 납품해 주세요",
+  "received_at": "2026-10-19T11:00:00",
+  "attachments": []
+}

@@ -11,12 +11,31 @@ from app.services import intake
 
 
 def _status_of(snapshot) -> str:
-    if snapshot.next:   # interrupt로 멈춤 = 회신 대기
-        return "awaiting_reply"
+    if snapshot.interrupts:   # interrupt로 멈춤: 회신 대기 또는 사람 검토 대기
+        return {"awaiting_reply": "awaiting_reply", "review": "needs_review"}[snapshot.interrupts[0].value["type"]]
     values = snapshot.values
     if not values.get("is_order"):
         return "skipped"
-    return {"create": "done", "review": "needs_review"}.get(values.get("decision"), "failed")
+    if (values.get("review_resolution") or {}).get("action") == "reject":
+        return "rejected"
+    return "done" if values.get("order_id") else "failed"
+
+
+def _summary(document_id: int, thread_id: str, snapshot) -> dict:
+    status = _status_of(snapshot)
+    with get_conn() as conn:
+        intake.update_status(conn, document_id, status)
+    values = snapshot.values
+    return {
+        "document_id": document_id,
+        "thread_id": thread_id,
+        "status": status,
+        "decision": values.get("decision"),
+        "order_id": values.get("order_id"),
+        "inquiry_message_id": values.get("inquiry_message_id") if status == "awaiting_reply" else None,
+        "reply_draft": values.get("reply_draft"),
+        "learned_aliases": values.get("learned_aliases", []),
+    }
 
 
 def handle_email(raw: bytes, run_config: Optional[dict] = None) -> dict:
@@ -58,17 +77,23 @@ def handle_email(raw: bytes, run_config: Optional[dict] = None) -> dict:
         config = {"configurable": {"thread_id": thread_id}} | (run_config or {})
         graph.invoke({"document": document, "document_id": document_id}, config=config)
 
-    snapshot = graph.get_state({"configurable": {"thread_id": thread_id}})
-    status = _status_of(snapshot)
+    return _summary(document_id, thread_id, graph.get_state({"configurable": {"thread_id": thread_id}}))
+
+
+class ReviewNotPending(Exception):
+    pass
+
+
+def resolve_review(document_id: int, resolution: dict, run_config: Optional[dict] = None) -> dict:
+    """사람 검토 결과로 멈춰 있던 스레드를 재개한다."""
     with get_conn() as conn:
-        intake.update_status(conn, document_id, status)
-    values = snapshot.values
-    return {
-        "document_id": document_id,
-        "thread_id": thread_id,
-        "status": status,
-        "decision": values.get("decision"),
-        "order_id": values.get("order_id"),
-        "inquiry_message_id": values.get("inquiry_message_id") if status == "awaiting_reply" else None,
-        "reply_draft": values.get("reply_draft"),
-    }
+        doc = conn.execute("SELECT * FROM intake_documents WHERE id = %s", (document_id,)).fetchone()
+    if doc is None or doc["status"] != "needs_review" or not doc["thread_id"]:
+        raise ReviewNotPending(f"검토 대기 중인 문서가 아님: {document_id}")
+    graph = get_graph()
+    config = {"configurable": {"thread_id": doc["thread_id"]}}
+    snapshot = graph.get_state(config)
+    if not snapshot.interrupts or snapshot.interrupts[0].value["type"] != "review":
+        raise ReviewNotPending(f"그래프가 검토 대기 상태가 아님: {document_id}")
+    graph.invoke(Command(resume=resolution), config=config | (run_config or {}))
+    return _summary(document_id, doc["thread_id"], graph.get_state(config))

@@ -19,12 +19,24 @@ def oracle(case: Case, ctx: dict) -> dict:
     return dict(case.expected)
 
 
+STATUS_DECISION = {"done": "create", "awaiting_reply": "inquire", "needs_review": "review",
+                   "rejected": "reject", "skipped": "skip"}
+
+
+def _items(state: dict) -> list[dict]:
+    return [
+        {"sku": m.sku, "quantity": m.quantity, "unit": m.unit, "base_quantity": m.base_quantity}
+        for m in state.get("matched_items", [])
+        if m.status in ("confirmed", "out_of_stock")   # 품목·단위·수량이 확정된 것만
+    ]
+
+
 def graph(case: Case, ctx: dict) -> dict:
     """운영과 같은 경로로 실행한다: 메일 원본(.eml) → 수신 처리 → 그래프. 재질의 시나리오는 스크립트된 회신으로 재개한다."""
     from app.agent.runtime import get_graph
     from app.db.seed import load_seed, reset_schema
     from app.db.session import get_conn
-    from app.ingest.handler import handle_email
+    from app.ingest.handler import handle_email, resolve_review
     from evals.eml import build_eml, build_reply_eml
 
     with get_conn() as conn:
@@ -46,8 +58,23 @@ def graph(case: Case, ctx: dict) -> dict:
         with get_conn() as conn:
             inquiry = conn.execute("SELECT * FROM outbound_messages WHERE message_id = %s",
                                    (first["inquiry_message_id"],)).fetchone()
-        handle_email(build_reply_eml(case.input, case.reply, inquiry), run_config("reply"))
+        last = handle_email(build_reply_eml(case.input, case.reply, inquiry), run_config("reply"))
         replied = True
+    else:
+        last = first
+    reviewed = None
+    if case.review and last["status"] == "needs_review":
+        last = resolve_review(first["document_id"], case.review, run_config("review"))
+        reviewed = case.review["action"]
+    followup = None
+    if case.followup:
+        fu = handle_email(build_eml(case.followup, case.dir), run_config("followup"))
+        fu_state = get_graph().get_state({"configurable": {"thread_id": fu["thread_id"]}}).values
+        followup = {
+            "decision": STATUS_DECISION.get(fu["status"]),
+            "items": _items(fu_state),
+            "resolver_items": sum(1 for m in fu_state.get("matched_items", []) if m.method == "resolver"),
+        }
 
     state = get_graph().get_state({"configurable": {"thread_id": first["thread_id"]}}).values
     usage = state.get("usage", [])
@@ -61,16 +88,14 @@ def graph(case: Case, ctx: dict) -> dict:
         return {"is_order": False, "decision": "skip", "items": [], "meta": meta}
     return {
         "is_order": True,
-        "decision": state.get("decision"),
-        "first_decision": first.get("decision"),
+        # 결정은 스레드 처리 상태에서 읽는다 (검토자가 재질의를 요청한 경우 등 그래프 decision 값과 다를 수 있음)
+        "decision": STATUS_DECISION.get(last["status"]),
+        "first_decision": STATUS_DECISION.get(first["status"]),
+        "followup": followup,
         "customer_id": state.get("customer_id"),
         "delivery_date": state.get("delivery_date"),
         "delivery_address": state.get("delivery_address"),
-        "items": [
-            {"sku": m.sku, "quantity": m.quantity, "unit": m.unit, "base_quantity": m.base_quantity}
-            for m in state.get("matched_items", [])
-            if m.status in ("confirmed", "out_of_stock")   # 품목·단위·수량이 확정된 것만
-        ],
+        "items": _items(state),
         "meta": meta,
         "trace": {
             "classify_reason": state.get("classify_reason"),
@@ -81,6 +106,8 @@ def graph(case: Case, ctx: dict) -> dict:
             "order_id": state.get("order_id"),
             "first_status": first["status"],
             "replied": replied,
+            "reviewed": reviewed,
+            "learned_aliases": state.get("learned_aliases", []),
             "inquiry_count": state.get("inquiry_count", 0),
             "reply_draft": state.get("reply_draft"),
         },

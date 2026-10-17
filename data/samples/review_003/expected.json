@@ -1,0 +1,22 @@
+{
+  "case_id": "review_003",
+  "category": "review",
+  "description": "재고 부족 → 검토자가 거절",
+  "expected": {
+    "is_order": true,
+    "decision": "reject",
+    "customer_id": 4,
+    "delivery_date": "2026-10-23",
+    "delivery_address": "경기도 성남시 분당구 정자일로 95, 102호",
+    "items": [
+      {
+        "sku": "SYR-002",
+        "quantity": 2,
+        "unit": "박스",
+        "base_quantity": 12,
+        "raw_text": "카라멜 시럽"
+      }
+    ],
+    "first_decision": "review"
+  }
+}

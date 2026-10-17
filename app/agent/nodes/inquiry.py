@@ -27,6 +27,8 @@ def build_questions(conn, state: OrderState) -> list[Question]:
     for issue in state.get("issues", []):
         if issue.code in HEADER_ISSUES:
             questions.append(Question(no=len(questions) + 1, code=issue.code, detail=HEADER_ISSUES[issue.code]))
+    if state.get("reviewer_question"):
+        questions.append(Question(no=len(questions) + 1, code="reviewer", detail=state["reviewer_question"]))
     for idx, m in enumerate(state.get("matched_items", [])):
         if m.status not in CUSTOMER_ITEM_STATUSES:
             continue
@@ -142,6 +144,7 @@ def merge_reply(state: OrderState) -> dict:
         "changed_items": changed,
         "inquiry_count": state.get("inquiry_count", 0) + 1,
         "reply_text": None,
+        "reviewer_question": None,
         "usage": [usage],
     }
     if (date := normalize_date(update.delivery_date)):

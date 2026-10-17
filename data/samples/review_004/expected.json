@@ -1,0 +1,22 @@
+{
+  "case_id": "review_004",
+  "category": "review",
+  "description": "미확인 발신자 → 검토자가 본인 확인 질문을 거래처에 보내도록 요청 → 회신 대기",
+  "expected": {
+    "is_order": true,
+    "decision": "inquire",
+    "customer_id": 2,
+    "delivery_date": "2026-10-22",
+    "delivery_address": "서울특별시 성동구 서울숲2길 18",
+    "items": [
+      {
+        "sku": "COF-001",
+        "quantity": 4,
+        "unit": "봉",
+        "base_quantity": 4,
+        "raw_text": "하우스블렌드"
+      }
+    ],
+    "first_decision": "review"
+  }
+}

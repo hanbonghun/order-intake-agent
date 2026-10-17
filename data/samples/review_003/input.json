@@ -1,0 +1,9 @@
+{
+  "message_id": "<review_003@dabang.example>",
+  "in_reply_to": null,
+  "sender_email": "supsok@dabang.example",
+  "subject": "카라멜 시럽 주문",
+  "body": "카라멜 시럽 2박스 10/23까지 부탁드려요",
+  "received_at": "2026-10-19T10:00:00",
+  "attachments": []
+}

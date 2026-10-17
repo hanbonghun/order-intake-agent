@@ -8,6 +8,7 @@ from app.agent.nodes.match import match_products
 from app.agent.nodes.order import create_order, draft_confirmation
 from app.agent.nodes.parse import parse_document
 from app.agent.nodes.resolve import resolve_matches
+from app.agent.nodes.review import human_review
 from app.agent.nodes.validate import validate
 from app.agent.state import OrderState
 
@@ -25,8 +26,16 @@ def route_after_validate(state: OrderState):
     return {
         "create": "create_order",
         "inquire": "draft_inquiry",
-        "review": END,    # TODO: human_review (interrupt)
+        "review": "human_review",
     }[state["decision"]]
+
+
+def route_after_review(state: OrderState):
+    return {
+        "approve": "validate",             # 수정 반영 후 다시 검증 (문제가 남으면 다시 검토)
+        "request_inquiry": "draft_inquiry",
+        "reject": END,
+    }[state["review_resolution"]["action"]]
 
 
 def build_graph(checkpointer=None):
@@ -43,6 +52,7 @@ def build_graph(checkpointer=None):
     builder.add_node("draft_inquiry", draft_inquiry)
     builder.add_node("await_reply", await_reply)
     builder.add_node("merge_reply", merge_reply)
+    builder.add_node("human_review", human_review)
 
     builder.add_edge(START, "parse_document")
     builder.add_edge("parse_document", "classify")
@@ -51,7 +61,8 @@ def build_graph(checkpointer=None):
     builder.add_edge("identify_customer", "match_products")
     builder.add_conditional_edges("match_products", route_after_match, ["resolve_matches", "validate"])
     builder.add_edge("resolve_matches", "validate")
-    builder.add_conditional_edges("validate", route_after_validate, ["create_order", "draft_inquiry", END])
+    builder.add_conditional_edges("validate", route_after_validate, ["create_order", "draft_inquiry", "human_review"])
+    builder.add_conditional_edges("human_review", route_after_review, ["validate", "draft_inquiry", END])
     # 재질의 루프: 회신을 반영해 매칭부터 다시
     builder.add_edge("draft_inquiry", "await_reply")
     builder.add_edge("await_reply", "merge_reply")

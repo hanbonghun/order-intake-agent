@@ -1,0 +1,29 @@
+{
+  "case_id": "review_002",
+  "category": "review",
+  "description": "재고 부족 → 검토자가 가능한 수량(4병)으로 줄여 승인",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 1,
+    "delivery_date": "2026-10-22",
+    "delivery_address": "서울특별시 마포구 월드컵로12길 34, 1층",
+    "items": [
+      {
+        "sku": "SYR-002",
+        "quantity": 4,
+        "unit": "병",
+        "base_quantity": 4,
+        "raw_text": "카라멜 시럽"
+      },
+      {
+        "sku": "SYR-001",
+        "quantity": 2,
+        "unit": "병",
+        "base_quantity": 2,
+        "raw_text": "바닐라 시럽"
+      }
+    ],
+    "first_decision": "review"
+  }
+}

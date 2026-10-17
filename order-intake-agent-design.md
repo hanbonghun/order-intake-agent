@@ -399,11 +399,11 @@ def decide(issues: list[Issue], inquiry_count: int) -> str:
 
 | 검토 결과 | 동작 |
 |---|---|
-| `approve` (품목 SKU 지정·수정·제외 포함) | 수정 반영 후 `validate` 재실행. 지정한 매칭은 `product_aliases`에 거래처 별칭(`source='human_review'`)으로 저장 |
-| `request_inquiry` (질문 내용 포함) | `draft_inquiry`로 이동 |
+| `approve` (발신자 확인, 거래처 지정, 품목 SKU 지정·수량 수정·제외 포함) | 수정 반영 후 `validate` 재실행 (문제가 남으면 다시 검토) |
+| `request_inquiry` (질문 내용 포함) | 검토자 질문을 재질의에 넣어 `draft_inquiry`로 이동 |
 | `reject` | 문서 상태 `rejected`, END |
 
-**학습 루프**: 검토자가 확정한 매칭이 거래처 별칭으로 쌓여, 다음부터 같은 표현은 정확 일치로 처리된다. 평가에서 "같은 거래처의 두 번째 발주 자동처리율"로 효과를 측정한다.
+**학습 루프**: 승인된 주문에서 resolver 또는 검토자가 확정한 표현을 거래처 전용 별칭(`source='human_review'`)으로 저장한다. 주문 전체를 사람이 승인했으므로 resolver의 매칭도 사람이 확인한 것으로 본다. 이미 정확 일치로 풀리는 표현은 저장하지 않고, 수량·단위만 고친 품목은 검토자 매칭으로 보지 않는다. 평가는 같은 거래처의 후속 발주가 resolver 없이(정확 일치로) 처리되는지로 확인한다.
 
 ### 7-8. 재질의 루프 (2단계)
 
@@ -496,8 +496,8 @@ graph = builder.compile(checkpointer=checkpointer)  # PostgresSaver
 |---|---|---|
 | POST | `/intake` | 메일 원본(.eml, `message/rfc822`) 수신. 새 발주면 그래프 시작, 회신이면 기존 thread 재개 |
 | GET | `/intake/{id}` | 처리 상태와 우리가 보낸 메일(재질의 초안 등) 조회 |
-| GET | `/reviews` | 사람 검토 대기 목록 (2단계) |
-| POST | `/reviews/{id}/resolve` | `approve` / `request_inquiry` / `reject` 반영 후 그래프 재개 (2단계) |
+| GET | `/reviews` | 사람 검토 대기 목록 (각 건의 이슈·품목 포함) |
+| POST | `/reviews/{id}/resolve` | `approve` / `request_inquiry` / `reject` 반영 후 그래프 재개 |
 | GET | `/products?q=` | 상품 검색 (resolver 도구 겸용) |
 | POST | `/orders` | 주문 생성 (Mock ERP 역할) |
 | GET | `/orders/{id}` | 주문 조회 |

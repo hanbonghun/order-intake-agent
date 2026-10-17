@@ -13,6 +13,8 @@ class Case:
     input: dict           # input.json
     expected: dict        # expected.json의 "expected"
     reply: dict | None    # 재질의 시나리오의 스크립트된 회신 (reply.json: received_at, body)
+    review: dict | None = None     # 검토 시나리오의 스크립트된 검토 결과 (review.json)
+    followup: dict | None = None   # 같은 거래처의 후속 발주 (followup.json, input.json과 같은 형식)
 
 
 def load_cases(samples_dir: Path = SAMPLES_DIR, categories: list[str] | None = None) -> list[Case]:
@@ -22,6 +24,8 @@ def load_cases(samples_dir: Path = SAMPLES_DIR, categories: list[str] | None = N
         if categories and meta["category"] not in categories:
             continue
         reply_path = case_dir / "reply.json"
+        optional = {name: json.loads((case_dir / f"{name}.json").read_text(encoding="utf-8"))
+                    for name in ("review", "followup") if (case_dir / f"{name}.json").exists()}
         cases.append(Case(
             case_id=meta["case_id"],
             category=meta["category"],
@@ -29,5 +33,6 @@ def load_cases(samples_dir: Path = SAMPLES_DIR, categories: list[str] | None = N
             input=json.loads((case_dir / "input.json").read_text(encoding="utf-8")),
             expected=meta["expected"],
             reply=json.loads(reply_path.read_text(encoding="utf-8")) if reply_path.exists() else None,
+            **optional,
         ))
     return cases

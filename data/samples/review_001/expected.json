@@ -1,0 +1,42 @@
+{
+  "case_id": "review_001",
+  "category": "review",
+  "description": "미확인 발신자 → 검토자가 발신자 확인 후 승인 → '동물성 크림' 별칭 학습 → 후속 발주는 정확 일치",
+  "expected": {
+    "is_order": true,
+    "decision": "create",
+    "customer_id": 15,
+    "delivery_date": "2026-10-22",
+    "delivery_address": "경기도 수원시 영통구 광교중앙로 140",
+    "items": [
+      {
+        "sku": "BAK-001",
+        "quantity": 2,
+        "unit": "포대",
+        "base_quantity": 2,
+        "raw_text": "강력분"
+      },
+      {
+        "sku": "DAI-004",
+        "quantity": 3,
+        "unit": "개",
+        "base_quantity": 3,
+        "raw_text": "동물성 크림"
+      }
+    ],
+    "first_decision": "review",
+    "followup": {
+      "decision": "create",
+      "items": [
+        {
+          "sku": "DAI-004",
+          "quantity": 2,
+          "unit": "개",
+          "base_quantity": 2,
+          "raw_text": "동물성 크림"
+        }
+      ],
+      "resolver_items": 0
+    }
+  }
+}
