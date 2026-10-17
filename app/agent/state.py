@@ -11,7 +11,7 @@ class ExtractedItem(BaseModel):
     unit: Optional[str]         # 원문 그대로: "박스" / "box" / "개" / None
 
 
-ItemStatus = Literal["confirmed", "ambiguous", "unit_unclear", "quantity_missing", "not_found", "out_of_stock"]
+ItemStatus = Literal["confirmed", "ambiguous", "unclear_product", "unit_unclear", "quantity_missing", "not_found", "out_of_stock"]
 
 
 class MatchedItem(BaseModel):

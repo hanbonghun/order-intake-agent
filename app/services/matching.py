@@ -102,3 +102,23 @@ def history_unit(conn, customer_id: Optional[int], product_id: int) -> Optional[
         (customer_id, product_id),
     ).fetchone()
     return row["unit"] if row else None
+
+
+def customer_history(conn, customer_id: Optional[int]) -> list[dict]:
+    """거래처가 주문한 상품별 주문 횟수와 주로 쓴 단위."""
+    if customer_id is None:
+        return []
+    return conn.execute(
+        """
+        SELECT p.sku, p.name, count(DISTINCT o.id) AS orders, mode() WITHIN GROUP (ORDER BY oi.unit) AS usual_unit
+        FROM order_items oi JOIN orders o ON o.id = oi.order_id JOIN products p ON p.id = oi.product_id
+        WHERE o.customer_id = %s
+        GROUP BY p.sku, p.name
+        ORDER BY orders DESC, p.sku
+        """,
+        (customer_id,),
+    ).fetchall()
+
+
+def get_product(conn, sku: str) -> Optional[dict]:
+    return conn.execute(f"SELECT {PRODUCT_COLUMNS}, p.category FROM products p WHERE p.sku = %s", (sku,)).fetchone()

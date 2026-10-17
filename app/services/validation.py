@@ -10,6 +10,7 @@ MAX_INQUIRIES = 2
 ITEM_ISSUES = {
     "unit_unclear": ("unit_unclear", "customer"),
     "not_found": ("product_not_found", "customer"),
+    "unclear_product": ("unclear_product", "customer"),   # 후보가 여럿, 거래처 확인 필요
     "quantity_missing": ("quantity_missing", "customer"),
     "ambiguous": ("ambiguous_match", "internal"),
     "out_of_stock": ("out_of_stock", "internal"),
