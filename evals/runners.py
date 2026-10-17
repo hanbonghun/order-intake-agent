@@ -7,7 +7,6 @@
 from collections.abc import Callable
 from functools import cache
 
-from app.config import settings
 from evals.dataset import Case
 
 Runner = Callable[[Case], dict]
@@ -37,7 +36,8 @@ def graph(case: Case) -> dict:
     meta = {
         "input_tokens": sum(u["input_tokens"] for u in usage),
         "output_tokens": sum(u["output_tokens"] for u in usage),
-        "cost_usd": 0.0 if settings.llm_provider == "ollama" else None,  # API 모델 단가표는 비교 평가 때 추가
+        "cost_usd": None if any(u["cost_usd"] is None for u in usage) else sum(u["cost_usd"] for u in usage),
+        "models": sorted({u["model"] for u in usage}),
     }
     if not state.get("is_order"):
         return {"is_order": False, "decision": "skip", "items": [], "meta": meta}
